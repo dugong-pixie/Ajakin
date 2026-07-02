@@ -1,5 +1,5 @@
 :root {
-  --primary: #223c61;
+  --primary: #2c2e2d;
   --accent: #5a7a66;
   --white: #ffffff;
   --light-gray: #f4f6f9;
@@ -14,7 +14,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--light-gray);
+  background-color: var(--primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -65,13 +65,13 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 12px
+  border-radius: 12px; /* <-- Pastikan ada titik koma (;) di sini */
   padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-  opacity: 0; /* Default hidden */
+  opacity: 0; 
   pointer-events: none;
 }
 
@@ -94,7 +94,7 @@ main {
 
 /* Slide Belakang (Siap) */
 .carousel-card.stack-back {
-  opacity: 1;
+  opacity: 1; 
   z-index: 5;
   /* Distorsi perspektif, sedikit geser kanan, atas, dan diputar Y */
   transform: translate3d(80px, -20px, -200px) rotateY(-20deg) rotateX(2deg);
@@ -157,14 +157,43 @@ main {
 
 .info-card h2 {
   font-size: 28px;
-  color: var(--primary);
+  color: var(--white); /* Warna Putih */
   margin-bottom: 20px;
   line-height: 1.2;
 }
 
+/* FIX: Mengubah warna deskripsi menjadi putih/terang agar kontras dengan background hijau */
 .info-card p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.9); 
   line-height: 1.6;
+}
+
+.card-header-inline {
+  display: flex;
+  align-items: baseline; /* Menyamakan garis bawah teks */
+  gap: 12px;             /* Jarak antara nama dan NIM */
+  flex-wrap: wrap;       /* Agar tidak rusak/patah kalau nama terlalu panjang di layar hp */
+  margin-bottom: 10px;   /* Jarak ke deskripsi di bawahnya */
+}
+
+/* FIX: Mengubah warna teks NIM menjadi putih transparan agar kontras */
+#cardNim.card-small-text {
+  font-size: 14px;
+  color: var(--white);
+  opacity: 0.75;
+  margin: 0;            /* Hapus margin bawaan */
+  font-weight: 500;
+}
+
+/* FIX: Mengubah warna teks footer (Hobi & Motivasi) menjadi terang */
+.card-small-text-footer {
+  font-size: 13px;
+  color: var(--white);
+  opacity: 0.8;
+  margin-top: 16px;
+  margin-bottom: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4); /* Garis pembatas putih transparan */
+  padding-top: 10px;
 }
 
 /* ============ NAV & UTILITIES ============ */
@@ -223,7 +252,7 @@ ul { list-style: none; }
     font-weight: 500;
     transition: color 0.3s ease;
 }
-.nav-list a:hover { color: var(--light); }
+.nav-list a:hover { color: var(--white); }
 
 /* ============ FOOTER ============ */
 .footer {
@@ -284,7 +313,7 @@ ul { list-style: none; }
 }
 .social-links a:hover {
     background: var(--primary);
-    color: var(--secondary);
+    color: var(--white);
     transform: translateY(-5px);
 }
 .footer-bottom {
