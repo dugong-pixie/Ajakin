@@ -33,51 +33,34 @@
     </header>
 
     <!-- ============ MAIN CONTENT ============ -->
-    <main>
-        <section id="home" class="section">
-            <div class="content-box">
-                <i class="fas fa-home section-icon"></i>
-                <h2>Home</h2>
-                <p>Konten Home akan ditampilkan di sini. Scroll halaman untuk melihat animasi progress bar di navbar!</p>
-            </div>
-        </section>
+    <main class="main-container">
+    <div class="collin-carousel-wrapper">
+      
+      <div class="carousel-stack-area">
+        <div class="carousel-stack-track" id="stackTrack">
+          <div class="carousel-card stack-front" data-index="0">
+            <img src="assets/image/gondrong.jpeg" alt="Ajakin Branding">
+          </div>
+          <div class="carousel-card stack-back" data-index="1">
+            <img src="assets/image/miko.jpeg" alt="Ajakin Sosmed">
+          </div>
+          <div class="carousel-card stack-back-hidden" data-index="2">
+            <img src="assets/image/bambang.jpeg" alt="Ajakin Banner">
+          </div>
+          <div class="carousel-card stack-back-hidden2" data-index="3">
+            <img src="assets/image/nur.jpeg" alt="Ajakin Promosi">
+          </div>
+        </div>
+      </div>
 
-        <section id="sejarah" class="section">
-            <div class="content-box">
-                <i class="fas fa-history section-icon"></i>
-                <h2>Sejarah Kami</h2>
-                <p>Bagian sejarah Ajakin Graphic akan ditampilkan di sini.</p>
-            </div>
-        </section>
+      <div class="info-card-container">
+        <div class="info-card active" id="infoCard">
+          <h2 id="cardTitle">Branding & Identity</h2>
+          <p id="cardDesc">Solusi lengkap untuk membangun identitas visual bisnis Anda, mulai dari logo hingga panduan branding.</p>
+        </div>
+      </div>
 
-        <section id="filosofi" class="section">
-            <div class="content-box">
-                <i class="fas fa-lightbulb section-icon"></i>
-                <h2>Filosofi Kami</h2>
-                <p>Filosofi dan nilai-nilai perusahaan akan ditampilkan di sini.</p>
-            </div>
-        </section>
-
-        <section id="portofolio" class="section">
-            <div class="content-box">
-                <i class="fas fa-briefcase section-icon"></i>
-                <h2>Portofolio Kami</h2>
-                <p>Portofolio dan project-project terbaik kami akan ditampilkan di sini.</p>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="content-box">
-                <i class="fas fa-envelope section-icon"></i>
-                <h2>Hubungi Kami</h2>
-                <p>Formulir kontak dan informasi hubungi kami akan ditampilkan di sini.</p>
-            </div>
-        </section>
-
-        <section class="extra-section">
-            <h3>🎨 Ajakin Graphic Agency</h3>
-            <p>Scroll terus ke bawah untuk melihat animasi progress bar di navbar yang semakin penuh!</p>
-        </section>
+    </div>
     </main>
 
     <!-- ============ FOOTER ============ -->
@@ -125,5 +108,6 @@
     </footer>
 
     <script src="assets/JS/scroll.js"></script>
+    <script src="assets/JS/collins.js"></script>
 </body>
 </html>
