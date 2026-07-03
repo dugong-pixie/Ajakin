@@ -275,7 +275,12 @@ ul { list-style: none; }
     font-weight: 500;
     transition: color 0.3s ease;
 }
-.nav-list a:hover { color: var(--white); }
+.nav-list a:hover {
+    color: var(--white);
+    /* Memberikan bayangan hitam transparan yang halus di belakang teks */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6), 
+                 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
 
 .scroll-progress {
     position: absolute;
