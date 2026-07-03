@@ -1,7 +1,7 @@
 :root {
   --primary: #2c2e2d;
   --accent: #5a7a66;
-  --white: #ffffff;
+  --white: #e8edea;
   --light-gray: #f4f6f9;
   --transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -32,108 +32,113 @@ main {
   padding-bottom: 2rem;
 }
 
+/* --- CONTAINER UTAMA --- */
 .collin-carousel-wrapper {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 100px; /* <--- Jarak dinaikkan dari 60px menjadi 100px */
   flex-wrap: wrap;
 }
 
-/* --- KIRI: Stack Aset --- */
-.carousel-stack-area {
+/* --- KIRI: Desain Galeri Grid Kolase (Berdasarkan image_cd93a7.png) --- */
+.gallery-grid-area {
   flex: 1 1 0;
-  min-width: 0;
+  min-width: 350px;
+  max-width: 500px;
   height: 500px;
   position: relative;
-  margin-top: -34px;
-  /* Kunci Efek 3D */
-  perspective: 2000px;
-  cursor: grab;
-  touch-action: pan-y;
-  user-select: none;
-}
-
-.carousel-stack-track {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.carousel-card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 12px; /* <-- Pastikan ada titik koma (;) di sini */
-  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: var(--transition);
-  opacity: 0; 
-  pointer-events: none;
 }
 
-.carousel-card img {
-  max-width: 100%;
-  max-height: calc(100% - 8px);
-  object-fit: contain;
-}
-
-/* --- KUNCI: Pengaturan Posisi Stack --- */
-
-/* Slide Depan (Active) */
-.carousel-card.stack-front {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 10;
-  /* Posisi flat menghadap depan */
-  transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
-}
-
-/* Slide Belakang (Siap) */
-.carousel-card.stack-back {
-  opacity: 1; 
-  z-index: 5;
-  /* Distorsi perspektif, sedikit geser kanan, atas, dan diputar Y */
-  transform: translate3d(80px, -20px, -200px) rotateY(-20deg) rotateX(2deg);
-}
-
-/* Slide Sangat Belakang (Hidden) */
-.carousel-card.stack-back-hidden {
-  opacity: 0;
+/* Lingkaran abu-abu halus di latar belakang poster/kartu */
+.gallery-circle-backdrop {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background-color: var(--white);
+  border-radius: 50%;
   z-index: 1;
-  transform: translate3d(160px, -40px, -400px) rotateY(-30deg) rotateX(5deg);
-}
-.carousel-card.stack-back-hidden2 {
-  opacity: 0;
-  z-index: 1;
-  transform: translate3d(160px, -40px, -400px) rotateY(-30deg) rotateX(5deg);
 }
 
-/* Slide Keluar (Ke Kiri) */
-.carousel-card.stack-out {
-  opacity: 0;
-  z-index: 20;
-  transform: translate3d(-100px, 10px, 0) rotateX(-10deg) rotateY(20deg);
-}
-
-/* Tombol Geser */
-.carousel-stack-area {
-  flex: 1 1 0;
-  min-width: 0;
-  height: 500px;
+.gallery-grid-track {
   position: relative;
-  margin-top: -34px;
-  perspective: 2000px;
-  cursor: grab;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
-.carousel-stack-area.dragging {
-  cursor: grabbing;
+/* Styling Dasar Setiap Kartu */
+.grid-card {
+  position: absolute;
+  border: 5px solid var(--accent);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.grid-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* --- PEMBAGIAN POSISI KARTU ASIMETRIS (Sesuai Layout image_cd93a7.png) --- */
+/* Kartu 1 (Kiri Tengah - Agak Turun) */
+.grid-card[data-index="0"] {
+  width: 150px;
+  height: 210px;
+  left: 10px;
+  top: 150px;
+}
+
+/* Kartu 2 (Tengah Atas) */
+.grid-card[data-index="1"] {
+  width: 160px;
+  height: 220px;
+  left: 190px;
+  top: 20px;
+}
+
+/* Kartu 3 (Tengah Bawah) */
+.grid-card[data-index="2"] {
+  width: 160px;
+  height: 220px;
+  left: 190px;
+  top: 260px;
+}
+
+/* Kartu 4 (Kanan Tengah - Agak Naik) */
+.grid-card[data-index="3"] {
+  width: 140px;
+  height: 200px;
+  right: -10px;
+  top: 120px;
+}
+
+/* --- EFEK HOVER & ACTIVE STATE --- */
+.grid-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--accent);
+  
+  /* box-shadow: 0 10px 25px rgba(0,0,0,0.3); <--- HAPUS ATAU KOMENTARI BARIS INI */
+  
+  z-index: 5; 
+}
+
+/* --- UPDATE: Penanda Kartu yang Sedang Aktif (Lebih Besar) --- */
+.grid-card.active-card {
+ 
+  /* MENAIKKAN UKURAN: Menggunakan skala 1.25x (25% lebih besar dari ukuran aslinya) */
+  transform: scale(1.25); 
+  
+  /* KUNCI: Memastikan kartu yang aktif berada di layer paling depan dibanding kartu lain */
+  z-index: 10; 
 }
 
 /* --- KANAN: Kartu Info Teks --- */
@@ -206,6 +211,7 @@ main {
   border-top: 1px dashed rgba(255, 255, 255, 0.4); /* Garis pembatas putih transparan */
   padding-top: 10px;
 }
+
 
 /* ============ NAV & UTILITIES ============ */
 a { text-decoration: none; }
@@ -349,47 +355,16 @@ ul { list-style: none; }
 
 /* ============ MEDIA QUERIES (RESPONSIVE RULES) ============ */
 @media (max-width: 768px) {
-  .collin-carousel-wrapper {
-    flex-direction: column;
-    gap: 20px;
+  .gallery-grid-area {
+    height: 400px;
+    max-width: 100%;
   }
-  .carousel-stack-area {
-    width: 100%;
-    height: 300px;
-    margin-top: 0;
+  .gallery-circle-backdrop {
+    width: 280px;
+    height: 280px;
   }
-  .carousel-card { padding: 20px; }
-  .nav-btn { right: 10px; bottom: -25px; top: auto; transform: none; }
-}
-
-@media (min-width: 769px) {
-  .collin-carousel-wrapper {
-    align-items: center;
-    gap: 40px;
-  }
-
-  .carousel-stack-area {
-    flex: 0 1 380px;
-    max-width: 380px;
-    height: 380px;
-    margin-top: -10px;
-  }
-
-  .info-card-container {
-    flex: 0 1 420px;
-    max-width: 420px;
-  }
-
-  .info-card {
-    height: 380px;
-  }
-
-  .carousel-card {
-    padding: 14px;
-  }
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+  .grid-card[data-index="0"] { width: 100px; height: 140px; left: 10px; top: 120px; }
+  .grid-card[data-index="1"] { width: 110px; height: 150px; left: 130px; top: 20px; }
+  .grid-card[data-index="2"] { width: 110px; height: 150px; left: 130px; top: 190px; }
+  .grid-card[data-index="3"] { width: 100px; height: 140px; right: 10px; top: 100px; }
 }
