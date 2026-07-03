@@ -56,29 +56,28 @@ main {
   gap: 100px; /* <--- Jarak dinaikkan dari 60px menjadi 100px */
   flex-wrap: wrap;
 }
-
-/* --- KIRI: Desain Galeri Grid Kolase (Berdasarkan image_cd93a7.png) --- */
 .gallery-grid-area {
-  flex: 1 1 0;
-  min-width: 350px;
-  max-width: 500px;
-  height: 500px;
+  flex: 0 0 540px !important; /* Kunci lebar container agar tidak menciut/melar */
+  width: 540px !important;
+  height: 500px !important;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block !important;  /* Ubah ke block agar koordinat absolute bekerja akurat */
 }
 
-/* Lingkaran abu-abu halus di latar belakang poster/kartu */
+/* Lingkaran Abu-Abu Latar Belakang */
 .gallery-circle-backdrop {
   position: absolute;
   width: 380px;
   height: 380px;
-  background-color: rgba(90, 122, 102, 0.15); /* Menggunakan warna aksen dengan opacity rendah */
+  background-color: rgba(90, 122, 102, 0.15);
   border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
+/* Track Wrapper Kartu */
 .gallery-grid-track {
   position: relative;
   width: 100%;
@@ -86,75 +85,70 @@ main {
   z-index: 2;
 }
 
-/* Styling Dasar Setiap Kartu */
+/* Styling Dasar Setiap Kartu (Dipaksa Identik) */
 .grid-card {
-  position: absolute;
+  position: absolute ;
+  width: 150px ;       /* Kunci lebar semua kartu */
+  height: 210px ;      /* Kunci tinggi semua kartu agar tidak melar */
   border: 5px solid var(--accent);
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  background-color: var(--primary); 
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
 }
 
+/* Mengatur Gambar di Dalam Kartu */
 .grid-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% ;
+  height: 100% ;
+  object-fit: cover ;  /* Potong gambar secara proporsional di dalam bingkai */
+  object-position: center top;  /* Fokus pada area wajah subjek */
   border-radius: 2px;
+  display: block;
 }
 
-/* --- PEMBAGIAN POSISI KARTU ASIMETRIS (Sesuai Layout image_cd93a7.png) --- */
-/* Kartu 1 (Kiri Tengah - Agak Turun) */
+/* --- RE-KALKULASI KOORDINAT POSISI (ANTI-TABRAKAN) --- */
+
+/* Kartu 1 (Kiri Tengah - Bambang) */
 .grid-card[data-index="0"] {
-  width: 150px;
-  height: 210px;
-  left: 10px;
-  top: 150px;
+  left: 10px ;
+  top: 140px ;
+  right: auto ;
 }
 
-/* Kartu 2 (Tengah Atas) */
+/* Kartu 2 (Tengah Atas - Jatmiko/Miko) */
 .grid-card[data-index="1"] {
-  width: 160px;
-  height: 220px;
-  left: 190px;
-  top: 20px;
+  left: 185px ;
+  top: 15px ;
+  right: auto ;
 }
 
-/* Kartu 3 (Tengah Bawah) */
+/* Kartu 3 (Tengah Bawah - Ahmad/Gondrong) */
 .grid-card[data-index="2"] {
-  width: 160px;
-  height: 220px;
-  left: 190px;
-  top: 260px;
+  left: 185px ;
+  top: 255px ; /* Didorong ke bawah agar memberi space aman */
+  right: auto ;
 }
 
-/* Kartu 4 (Kanan Tengah - Agak Naik) */
+/* Kartu 4 (Kanan Tengah - Nur) */
 .grid-card[data-index="3"] {
-  width: 140px;
-  height: 200px;
-  right: -10px;
-  top: 120px;
+  left: 360px ;
+  top: 140px ;
+  right: auto ;
 }
 
 /* --- EFEK HOVER & ACTIVE STATE --- */
 .grid-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  border-color: var(--accent);
-  
-  /* box-shadow: 0 10px 25px rgba(0,0,0,0.3); <--- HAPUS ATAU KOMENTARI BARIS INI */
-  
-  z-index: 5; 
+  transform: translateY(-8px) scale(1.03) ;
+  z-index: 5 ; 
 }
 
-/* --- UPDATE: Penanda Kartu yang Sedang Aktif (Lebih Besar) --- */
 .grid-card.active-card {
- 
-  /* MENAIKKAN UKURAN: Menggunakan skala 1.25x (25% lebih besar dari ukuran aslinya) */
-  transform: scale(1.25); 
-  
-  /* KUNCI: Memastikan kartu yang aktif berada di layer paling depan dibanding kartu lain */
-  z-index: 10; 
+  transform: scale(1.15) ; /* Skala active sedikit diperhalus agar tidak menabrak tetangga */
+  z-index: 10 ; 
 }
 
 /* --- KANAN: Kartu Info Teks --- */
@@ -243,16 +237,18 @@ ul { list-style: none; }
     position: relative;
 }
 
-.brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.brand-logo {
+  height: 64px; /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.brand i { font-size: 2rem; }
+/* Efek opsional saat logo disentuh kursor */
+.brand-logo:hover {
+  transform: scale(1.05);
+}
 
 .nav-toggle {
     display: none;
@@ -371,6 +367,12 @@ ul { list-style: none; }
     }
 }
 
+@media (max-width: 768px) {
+  .brand-logo {
+    height: 20px; /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
+  }
+}
+
 /* ============ MEDIA QUERIES (RESPONSIVE RULES) ============ */
 @media (max-width: 768px) {
   .gallery-grid-area {
@@ -381,8 +383,5 @@ ul { list-style: none; }
     width: 280px;
     height: 280px;
   }
-  .grid-card[data-index="0"] { width: 100px; height: 140px; left: 10px; top: 120px; }
-  .grid-card[data-index="1"] { width: 110px; height: 150px; left: 130px; top: 20px; }
-  .grid-card[data-index="2"] { width: 110px; height: 150px; left: 130px; top: 190px; }
-  .grid-card[data-index="3"] { width: 100px; height: 140px; right: 10px; top: 100px; }
+
 }
