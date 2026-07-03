@@ -31,6 +31,22 @@ main {
   margin: 0 auto;
   padding-bottom: 2rem;
 }
+.hero-banner-flat {
+    width: 100%;
+    margin-bottom: 60px; /* Jarak aman sebelum masuk ke bagian card di bawahnya */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: var(--white); /* Latar belakang cadangan jika gambar loading */
+    display: flex;
+}
+
+.hero-flat-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
 
 /* --- CONTAINER UTAMA --- */
 .collin-carousel-wrapper {
@@ -208,7 +224,7 @@ a { text-decoration: none; }
 ul { list-style: none; }
 
 .header {
-    background-color: var(--accent);
+
     position: fixed;
     width: 100%;
     top: 0;
@@ -255,7 +271,7 @@ ul { list-style: none; }
 }
 
 .nav-list a {
-    color: var(--dark);
+    color: var(--accent);
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -341,6 +357,13 @@ ul { list-style: none; }
     padding-top: 2rem;
     text-align: center;
     color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .hero-banner-flat {
+        margin-bottom: 40px;
+        border-radius: 8px; /* Sudut sedikit lebih tegas di layar kecil */
+    }
 }
 
 /* ============ MEDIA QUERIES (RESPONSIVE RULES) ============ */
