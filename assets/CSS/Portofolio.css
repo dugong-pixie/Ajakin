@@ -1,7 +1,7 @@
 :root {
   --primary: #2c2e2d;
   --accent: #5a7a66;
-  --white: #e8edea;
+  --white: #f1ede2;
   --light-gray: #f4f6f9;
   --transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -58,7 +58,7 @@ main {
   position: absolute;
   width: 380px;
   height: 380px;
-  background-color: var(--white);
+  background-color: rgba(90, 122, 102, 0.15); /* Menggunakan warna aksen dengan opacity rendah */
   border-radius: 50%;
   z-index: 1;
 }
@@ -153,7 +153,7 @@ main {
 .info-card {
   width: 100%;
   height: 500px;
-  background-color: var(--accent);
+  background-color: var(--white);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -172,46 +172,36 @@ main {
 
 .info-card h2 {
   font-size: 28px;
-  color: var(--white); /* Warna Putih */
+  color: var(--accent); /* <--- Nama Utama diubah menjadi Hijau Sage */
   margin-bottom: 20px;
   line-height: 1.2;
 }
 
-/* FIX: Mengubah warna deskripsi menjadi putih/terang agar kontras dengan background hijau */
+/* Mengubah warna teks deskripsi menjadi abu-abu gelap kehitaman agar nyaman dibaca di background putih */
 .info-card p {
-  color: rgba(255, 255, 255, 0.9); 
+  color: #333333; 
   line-height: 1.6;
   flex: 1;
 }
 
-.card-header-inline {
-  display: flex;
-  align-items: baseline; /* Menyamakan garis bawah teks */
-  gap: 12px;             /* Jarak antara nama dan NIM */
-  flex-wrap: wrap;       /* Agar tidak rusak/patah kalau nama terlalu panjang di layar hp */
-  margin-bottom: 10px;   /* Jarak ke deskripsi di bawahnya */
-}
-
-/* FIX: Mengubah warna teks NIM menjadi putih transparan agar kontras */
+/* Gaya untuk NIM */
 #cardNim.card-small-text {
   font-size: 14px;
-  color: var(--white);
-  opacity: 0.75;
-  margin: 0;            /* Hapus margin bawaan */
-  font-weight: 500;
+  color: var(--accent); /* <--- NIM diubah menjadi Hijau Sage */
+  opacity: 0.8;
+  margin: 0;            
+  font-weight: 600; /* Sedikit lebih tebal agar jelas */
 }
 
-/* FIX: Mengubah warna teks footer (Hobi & Motivasi) menjadi terang */
+/* Gaya untuk Footer (Hobi & Motivasi) */
 .card-small-text-footer {
   font-size: 13px;
-  color: var(--white);
-  opacity: 0.8;
+  color: #555555; /* Abu-abu sedang agar estetik */
   margin-top: 16px;
   margin-bottom: 0;
-  border-top: 1px dashed rgba(255, 255, 255, 0.4); /* Garis pembatas putih transparan */
+  border-top: 1px dashed rgba(90, 122, 102, 0.3); /* Garis pembatas diubah ke hijau transparan */
   padding-top: 10px;
 }
-
 
 /* ============ NAV & UTILITIES ============ */
 a { text-decoration: none; }
