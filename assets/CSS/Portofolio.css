@@ -48,6 +48,35 @@ main {
     display: block;
 }
 
+.section-divider-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-divider-title span {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--accent); /* Hijau Sage */
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.section-divider-title h2 {
+    font-size: 36px;
+    color: var(--white); /* Mengikuti warna teks terang di bg gelap */
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 5px;
+    font-weight: 300; /* Dibuat agak tipis agar mirip style banner */
+}
+
+.section-divider-title .title-line {
+    width: 50px;
+    height: 1px;
+    background-color: var(--accent);
+    margin: 15px auto 0;
+}
+
 /* --- CONTAINER UTAMA --- */
 .collin-carousel-wrapper {
   display: flex;
@@ -69,11 +98,12 @@ main {
   position: absolute;
   width: 380px;
   height: 380px;
-  background-color: rgba(90, 122, 102, 0.15);
-  border-radius: 50%;
+  /* Mengubah bentuk bulat menjadi border kotak tipis estetik khas arsitektur/flat design */
+  border: 1px dashed rgba(90, 122, 102, 0.25); 
+  border-radius: 0% !important; /* Hilangkan bulatnya */
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 48%;
+  transform: translate(-50%, -50%) rotate(45deg); /* Diputar 45 derajat agar dinamis */
   z-index: 1;
 }
 
@@ -163,16 +193,26 @@ main {
 .info-card {
   width: 100%;
   height: 500px;
-  background-color: var(--white);
+  
+  /* KUNCI: Menggunakan putih transparan (opasitas 0.4 - 0.55) agar efek putih susunya pekat seperti referensi */
+  background: rgba(247, 246, 244, 0.479) ; /* Menggunakan warna --white kamu dengan transparansi */
+  
+  /* Efek blur kaca es tingkat tinggi */
+  backdrop-filter: blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+  
+  /* Garis tepi tipis warna putih terang agar terkesan mengkilap di ujungnya */
+  border: 1px solid rgba(255, 255, 255, 0.308) !important;
+  
   padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: translateY(20px);
-  opacity: 0;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px);
+  opacity: 0;
 }
 
 .info-card.active {
@@ -180,37 +220,44 @@ main {
   opacity: 1;
 }
 
+/* --- MENYESUAIKAN WARNA TEKS AGAR KONTRAS DI ATAS KACA PUTIH --- */
+
+/* Judul Nama Anggota (Menggunakan warna gelap utama website agar tajam) */
 .info-card h2 {
   font-size: 28px;
-  color: var(--accent); /* <--- Nama Utama diubah menjadi Hijau Sage */
-  margin-bottom: 20px;
-  line-height: 1.2;
+  color: var(--primary) !important; /* #2c2e2d */
+  margin-bottom: 6px;
+  line-height: 1.3;
+  font-weight: 700;
 }
 
-/* Mengubah warna teks deskripsi menjadi abu-abu gelap kehitaman agar nyaman dibaca di background putih */
+/* Gaya untuk NIM (Menggunakan Hijau Sage Gelap bawaan website agar senada dengan tema) */
+#cardNim.card-small-text {
+  font-size: 14px;
+  color: var(--accent) !important; /* #5a7a66 */
+  margin-bottom: 24px;            
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Warna Deskripsi Utama (Abu-abu gelap yang nyaman dibaca di latar terang) */
 .info-card p {
-  color: #333333; 
-  line-height: 1.6;
+  color: #3d403f !important; 
+  line-height: 1.7;
+  font-size: 15px;
+  font-weight: 500;
   flex: 1;
 }
 
-/* Gaya untuk NIM */
-#cardNim.card-small-text {
-  font-size: 14px;
-  color: var(--accent); /* <--- NIM diubah menjadi Hijau Sage */
-  opacity: 0.8;
-  margin: 0;            
-  font-weight: 600; /* Sedikit lebih tebal agar jelas */
-}
-
-/* Gaya untuk Footer (Hobi & Motivasi) */
+/* Gaya untuk Footer Kartu (Hobi & Motivasi) */
 .card-small-text-footer {
   font-size: 13px;
-  color: #555555; /* Abu-abu sedang agar estetik */
+  color: #555857 !important; 
   margin-top: 16px;
   margin-bottom: 0;
-  border-top: 1px dashed rgba(90, 122, 102, 0.3); /* Garis pembatas diubah ke hijau transparan */
-  padding-top: 10px;
+  border-top: 1px dashed rgba(90, 122, 102, 0.3) !important; /* Garis pembatas warna sage transparan */
+  padding-top: 12px;
+  font-weight: 500;
 }
 
 /* ============ NAV & UTILITIES ============ */
