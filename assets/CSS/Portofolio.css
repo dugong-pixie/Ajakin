@@ -34,15 +34,10 @@ main {
 }
 
 .hero-banner-flat {
-  width: 100%;
-  margin-bottom: 0px;
-  /* Jarak dikurangi agar tidak terlalu jauh */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  background-color: var(--white);
-  /* Latar belakang cadangan jika gambar loading */
-  display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+    overflow: hidden;
+    display: flex;
 }
 
 .hero-flat-img {
@@ -402,20 +397,19 @@ ul {
 }
 
 .header {
-
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  animation: slideIn 0.5s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 32px;
+  padding: 15px 32px; /* Disesuaikan agar navbar tidak terlalu tebal */
   /* Dikecilkan sedikit paddingnya agar pas */
   max-width: 1200px;
   margin: 0 auto;
@@ -423,12 +417,12 @@ ul {
 }
 
 .brand-logo {
-  height: 64px;
-  /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
-  width: auto;
-  display: block;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+    height: 64px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    margin-left: -15px; /* Digeser ke kiri secara proporsional */
 }
 
 /* Efek opsional saat logo disentuh kursor */
@@ -453,16 +447,16 @@ ul {
 }
 
 .nav-list a {
-  color: var(--accent);
-  font-weight: 500;
-  transition: color 0.3s ease;
+    color: var(--accent);
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-  color: var(--white);
-  /* Memberikan bayangan hitam transparan yang halus di belakang teks */
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6),
-    0px 4px 10px rgba(0, 0, 0, 0.3);
+    color: var(--white);
+    /* Memberikan bayangan hitam transparan yang halus di belakang teks */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6),
+        0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-progress {
@@ -594,18 +588,14 @@ ul {
   }
 
   .hero-banner-flat {
-    margin-bottom: 40px;
-    border-radius: 8px;
-    /* Sudut sedikit lebih tegas di layar kecil */
-  }
+    width: 100%;
+    margin-bottom: 60px;
+    overflow: hidden;
+    display: flex;
+}
 }
 
-@media (max-width: 768px) {
-  .brand-logo {
-    height: 20px;
-    /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
-  }
-}
+
 
 @media (max-width: 768px) {
   .split-bars-container {
@@ -693,3 +683,117 @@ ul {
     /* Ubah ke persegi saat di HP agar posisinya seimbang */
   }
 }
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 32px; /* Ukuran seragam untuk semua halaman di mobile */
+        margin-left: 0; /* Kembalikan margin di mobile agar tidak terpotong */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner-flat > img:first-of-type, .portfolio-hero-section > img:first-of-type {
+        object-position: 20% center !important; /* Menggeser bg saat mobile agar logo tidak bertabrakan dengan warna gelap */
+    }
+}
+
+/* === Styles extracted from HTML === */
+/* Hero Banner Split Layout */
+        .portfolio-hero-section {
+            display: flex;
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Mascot Image */
+        .hero-gondrong-img {
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            height: 90%;
+            z-index: 3;
+            object-fit: contain;
+            filter: drop-shadow(20px 15px 25px rgba(0,0,0,0.5));
+        }
+        
+        /* Text Content */
+        .hero-text-container {
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translateY(-50%);
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-text-visual {
+            font-family: 'Times New Roman', Times, serif;
+            color: var(--accent);
+            font-size: 14vw;
+            font-weight: bold;
+            line-height: 0.8;
+            margin: 0;
+        }
+        .hero-text-dev {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 4vw;
+            color: transparent;
+            -webkit-text-stroke: 1.5px var(--accent);
+            margin-top: 15px;
+            letter-spacing: 8px;
+        }
+        .hero-text-desc-wrapper {
+            margin-top: 50px;
+            max-width: 450px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .desc-strong {
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            display: block;
+            text-transform: uppercase;
+        }
+        .desc-p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 991px) {
+            .portfolio-hero-section {
+                flex-direction: column;
+                justify-content: flex-end;
+                aspect-ratio: auto;
+                min-height: 85vh;
+                padding: 120px 0;
+            }
+            .nav-list a {
+                color: var(--white) !important;
+            }
+            .nav-toggle i {
+                color: var(--white) !important;
+            }
+            .hero-text-container {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 40px 5%;
+                text-align: center;
+                align-items: center;
+            }
+            .hero-text-visual { font-size: 5rem; }
+            .hero-text-dev { font-size: 2rem; -webkit-text-stroke: 1px var(--accent); letter-spacing: 4px; }
+            .hero-gondrong-img {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                max-height: 50vh;
+            }
+        }
+

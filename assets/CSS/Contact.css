@@ -42,7 +42,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 32px;
+    padding: 15px 32px; /* Disesuaikan agar navbar tidak terlalu tebal */
     /* Dikecilkan sedikit paddingnya agar pas */
     max-width: 1200px;
     margin: 0 auto;
@@ -51,11 +51,11 @@ ul {
 
 .brand-logo {
     height: 64px;
-    /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
     width: auto;
     display: block;
     object-fit: contain;
     transition: transform 0.3s ease;
+    margin-left: -15px; /* Digeser ke kiri secara proporsional */
 }
 
 /* Efek opsional saat logo disentuh kursor */
@@ -110,12 +110,7 @@ ul {
 .hero-banner-flat {
     width: 100%;
     margin-bottom: 60px;
-    /* Jarak aman sebelum masuk ke bagian card di bawahnya */
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    background-color: var(--white);
-    /* Latar belakang cadangan jika gambar loading */
     display: flex;
 }
 
@@ -352,13 +347,37 @@ main {
 
 @media (max-width: 768px) {
     .hero-banner-flat {
-        margin-bottom: 40px;
-        border-radius: 8px;
-        /* Sudut sedikit lebih tegas di layar kecil */
-    }
+    width: 100%;
+    margin-bottom: 60px;
+    overflow: hidden;
+    display: flex;
+}
 
     .brand-logo {
         height: 20px;
         /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
     }
 }
+
+
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 32px; /* Ukuran seragam untuk semua halaman di mobile */
+        margin-left: 0; /* Kembalikan margin di mobile agar tidak terpotong */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner-flat > img:first-of-type, .portfolio-hero-section > img:first-of-type {
+        object-position: 20% center !important; /* Menggeser bg saat mobile agar logo tidak bertabrakan dengan warna gelap */
+    }
+}
+
+/* === Styles extracted from HTML === */
+.hero-banner-flat { aspect-ratio: 16/9; overflow: hidden; padding: 0; }
+        .hero-contact-img { max-height: 60vh; transform: scale(1.15); }
+        @media (max-width: 991px) {
+            .hero-banner-flat { aspect-ratio: auto; min-height: 85vh; padding: 120px 0; }
+            .hero-contact-img { max-height: 40vh !important; transform: scale(1) !important; margin-top: 1rem; }
+        }
+

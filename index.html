@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/CSS/HomeStyle.css">
+    
 </head>
 
 <body>
@@ -38,89 +39,119 @@
     </header>
 
     <!-- === BANNER HERO DENGAN KONTEN BERTUMPUK === -->
-    <section class="hero-banner-flat" style="position: relative;">
-        <!-- Gambar Background (Menentukan ukuran full banner) -->
-        <img src="assets/image/bg banner fp ppw.png" alt="Portfolio Banner Hero" class="hero-flat-img">
+    <section class="hero-banner-flat position-relative d-flex align-items-center">
+        <!-- Gambar Background -->
+        <img src="assets/image/bg banner fp ppw.png" alt="Portfolio Banner Hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center; z-index: 0;">
 
-        <!-- Shadow dari kiri (Gradasi gelap ke transparan) agar teks terbaca -->
-        <div style="position: absolute; top: 0; left: 0; width: 60%; height: 100%; background: linear-gradient(to right, rgba(20, 25, 22, 0.6) 0%, rgba(20, 25, 22, 0) 100%); z-index: 1;"></div>
+        <!-- Shadow (Gradasi gelap) agar teks terbaca di mobile dan desktop -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(20, 25, 22, 0.8) 0%, rgba(20, 25, 22, 0) 100%); z-index: 1;"></div>
+        
+        <!-- Tambahan Shadow bawah untuk mobile -->
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, rgba(20, 25, 22, 0.8) 0%, rgba(20, 25, 22, 0) 100%); z-index: 1;" class="d-lg-none"></div>
 
-        <!-- Konten yang Ditumpuk di Atasnya (Absolute) -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; z-index: 2;">
-            <div class="container">
+        <!-- Konten (Relative) -->
+        <div class="container position-relative" style="z-index: 2;">
                 <div class="row align-items-center">
                     <!-- Teks Hero -->
                     <div class="col-lg-6 text-center text-lg-start">
-                        <span style="font-size: 14px; letter-spacing: 4px; color: var(--accent); font-weight: 600; text-transform: uppercase;">Ajakin Graphic Agency</span>
-                        <h1 class="display-4 fw-bold mt-2 mb-3" style="color: var(--white); font-family: 'Segoe UI', sans-serif; line-height: 1.2;">
+                        <span
+                            style="font-size: 14px; letter-spacing: 4px; color: var(--accent); font-weight: 600; text-transform: uppercase;">Ajakin
+                            Graphic Agency</span>
+                        <h1 class="display-4 fw-bold mt-2 mb-3"
+                            style="color: var(--white); font-family: 'Segoe UI', sans-serif; line-height: 1.2;">
                             Elevate Your Brand<br>with Ajakin
                         </h1>
-                        <p class="lead mb-4" style="color: var(--white); font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                            Kami Membangun Identitas Visual yang Tak Terlupakan. Lebih dari sekadar estetika, kami merancang karya yang memiliki makna dan berdampak.
+                        <p class="lead mb-4"
+                            style="color: var(--white); font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                            Kami Membangun Identitas Visual yang Tak Terlupakan. Lebih dari sekadar estetika, kami
+                            merancang karya yang memiliki makna dan berdampak.
                         </p>
-                        <a href="portofolio.html" class="btn px-4 py-2 rounded-pill fw-bold" style="background-color: var(--accent); color: var(--white); box-shadow: 0 4px 15px rgba(90, 122, 102, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Lihat Karya Kami</a>
+                        <a href="portofolio.html" class="btn px-4 py-2 rounded-pill fw-bold"
+                            style="background-color: var(--accent); color: var(--white); box-shadow: 0 4px 15px rgba(90, 122, 102, 0.4); transition: transform 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-3px)'"
+                            onmouseout="this.style.transform='translateY(0)'">Lihat Karya Kami</a>
                     </div>
-                    
+
                     <!-- Gambar Ilustrasi -->
                     <div class="col-lg-6 text-center">
-                        <img src="assets/image/home ilus.png" alt="Ajakin Graphic Illustration" class="img-fluid" style="width: 100%; transform: scale(1.15); drop-shadow: 0 15px 25px rgba(0,0,0,0.6);">
+                        <img src="assets/image/home ilus.png" alt="Ajakin Graphic Illustration" class="img-fluid hero-ilus-img">
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- ============ MAIN CONTENT ============ -->
     <main class="container my-5 py-4">
-        
+
         <!-- SECTION 1: Cuplikan Sejarah (Tentang Kami) -->
         <div class="row align-items-center mb-5 pb-5 border-bottom border-secondary border-opacity-25">
             <div class="col-lg-5 mb-4 mb-lg-0 text-center">
                 <!-- Logo sebagai ilustrasi Tentang Kami -->
-                <img src="assets/image/ajakin logo.png" alt="Tentang Ajakin Graphic" class="img-fluid rounded-4 shadow-lg p-4" style="background-color: var(--primary); border: 1px solid rgba(90, 122, 102, 0.3); max-width: 300px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="assets/image/ajakin logo.png" alt="Tentang Ajakin Graphic"
+                    class="img-fluid rounded-4 shadow-lg p-4"
+                    style="background-color: var(--primary); border: 1px solid rgba(90, 122, 102, 0.3); max-width: 300px; transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             </div>
             <div class="col-lg-7">
-                <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px;">Kenali Kami</span>
-                <h2 class="display-6 fw-bold mb-3 mt-2" style="color: var(--white);">Lebih Dari Sekadar Agensi Desain.</h2>
+                <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px;">Kenali
+                    Kami</span>
+                <h2 class="display-6 fw-bold mb-3 mt-2" style="color: var(--white);">Lebih Dari Sekadar Agensi Desain.
+                </h2>
                 <p class="lead mb-4" style="color: var(--white); opacity: 0.85;">
-                    Berawal dari ide sederhana untuk membantu UMKM dan perusahaan lokal naik kelas, Ajakin Graphic tumbuh menjadi partner kreatif tepercaya. Kami menggabungkan seni, strategi, dan teknologi.
+                    Berawal dari ide sederhana untuk membantu UMKM dan perusahaan lokal naik kelas, Ajakin Graphic
+                    tumbuh menjadi partner kreatif tepercaya. Kami menggabungkan seni, strategi, dan teknologi.
                 </p>
-                <a href="sejarah.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Baca Kisah Kami <i class="fas fa-arrow-right ms-2"></i></a>
+                <a href="sejarah.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Baca Kisah Kami
+                    <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
         </div>
 
         <!-- SECTION 2: Cuplikan Layanan -->
         <div class="mb-5 pb-5 border-bottom border-secondary border-opacity-25 text-center">
-            <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px;">Apa Yang Kami Lakukan</span>
+            <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px;">Apa Yang Kami
+                Lakukan</span>
             <h2 class="display-6 fw-bold mb-5 mt-2" style="color: var(--white);">Layanan Unggulan Ajakin</h2>
-            
+
             <div class="row g-4 justify-content-center mb-5">
                 <!-- Layanan 1 -->
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4 shadow-sm" style="background-color: var(--white); border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card h-100 border-0 p-4 shadow-sm"
+                        style="background-color: var(--white); border-radius: 15px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-8px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
                         <i class="fas fa-bezier-curve mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
                         <h4 class="fw-bold" style="color: var(--primary);">Logo & Branding</h4>
-                        <p class="mb-0" style="color: var(--primary); opacity: 0.8;">Membangun identitas visual yang ikonik.</p>
+                        <p class="mb-0" style="color: var(--primary); opacity: 0.8;">Membangun identitas visual yang
+                            ikonik.</p>
                     </div>
                 </div>
                 <!-- Layanan 2 -->
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4 shadow-sm" style="background-color: var(--white); border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card h-100 border-0 p-4 shadow-sm"
+                        style="background-color: var(--white); border-radius: 15px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-8px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
                         <i class="fas fa-mobile-alt mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
                         <h4 class="fw-bold" style="color: var(--primary);">UI/UX Design</h4>
-                        <p class="mb-0" style="color: var(--primary); opacity: 0.8;">Menciptakan antarmuka digital yang intuitif.</p>
+                        <p class="mb-0" style="color: var(--primary); opacity: 0.8;">Menciptakan antarmuka digital yang
+                            intuitif.</p>
                     </div>
                 </div>
                 <!-- Layanan 3 -->
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4 shadow-sm" style="background-color: var(--white); border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card h-100 border-0 p-4 shadow-sm"
+                        style="background-color: var(--white); border-radius: 15px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-8px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
                         <i class="fas fa-share-alt mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
                         <h4 class="fw-bold" style="color: var(--primary);">Social Media</h4>
-                        <p class="mb-0" style="color: var(--primary); opacity: 0.8;">Manajemen konten digital yang interaktif.</p>
+                        <p class="mb-0" style="color: var(--primary); opacity: 0.8;">Manajemen konten digital yang
+                            interaktif.</p>
                     </div>
                 </div>
             </div>
-            <a href="service.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Jelajahi Semua Layanan <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="service.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Jelajahi Semua
+                Layanan <i class="fas fa-arrow-right ms-2"></i></a>
         </div>
 
         <!-- SECTION 3: Cuplikan Portofolio -->
@@ -130,56 +161,64 @@
             <p class="lead mx-auto mb-5" style="color: var(--white); opacity: 0.85; max-width: 600px;">
                 Intip beberapa project terbaru yang telah berhasil kami sulap menjadi mahakarya visual.
             </p>
-            
-            <div class="p-5 rounded-4 shadow-sm text-center" style="background: linear-gradient(135deg, var(--white) 0%, #e0dcd1 100%); position: relative; overflow: hidden;">
+
+            <div class="p-5 rounded-4 shadow-sm text-center"
+                style="background: linear-gradient(135deg, var(--white) 0%, #e0dcd1 100%); position: relative; overflow: hidden;">
                 <!-- Aksesoris background kotak abstrak -->
-                <div style="position: absolute; width: 200px; height: 200px; border: 4px solid rgba(90, 122, 102, 0.1); border-radius: 20px; top: -50px; right: -50px; transform: rotate(25deg);"></div>
-                
-                <h3 class="fw-bold mb-3" style="color: var(--primary); position: relative; z-index: 1;">Siap Untuk Terinspirasi?</h3>
-                <p class="mb-4" style="color: var(--primary); opacity: 0.8; position: relative; z-index: 1;">Jelajahi galeri lengkap berisi berbagai project dan desain yang pernah kami selesaikan untuk klien-klien hebat kami.</p>
-                <a href="portofolio.html" class="btn btn-lg rounded-pill px-5 fw-bold" style="background-color: var(--accent); color: var(--white); box-shadow: 0 4px 15px rgba(90, 122, 102, 0.4); position: relative; z-index: 1; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">Lihat Portofolio Lengkap <i class="fas fa-image ms-2"></i></a>
+                <div
+                    style="position: absolute; width: 200px; height: 200px; border: 4px solid rgba(90, 122, 102, 0.1); border-radius: 20px; top: -50px; right: -50px; transform: rotate(25deg);">
+                </div>
+
+                <h3 class="fw-bold mb-3" style="color: var(--primary); position: relative; z-index: 1;">Siap Untuk
+                    Terinspirasi?</h3>
+                <p class="mb-4" style="color: var(--primary); opacity: 0.8; position: relative; z-index: 1;">Jelajahi
+                    galeri lengkap berisi berbagai project dan desain yang pernah kami selesaikan untuk klien-klien
+                    hebat kami.</p>
+                <a href="portofolio.html" class="btn btn-lg rounded-pill px-5 fw-bold"
+                    style="background-color: var(--accent); color: var(--white); box-shadow: 0 4px 15px rgba(90, 122, 102, 0.4); position: relative; z-index: 1; transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-4px)'"
+                    onmouseout="this.style.transform='translateY(0)'">Lihat Portofolio Lengkap <i
+                        class="fas fa-image ms-2"></i></a>
             </div>
         </div>
     </main>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
-        <div class="footer-container container">
-            <div class="row g-4 w-100 justify-content-between m-0 p-0">
-                <div class="col-12 col-md-4 footer-col m-0 p-0">
-                    <h5><i class="fas fa-paint-brush"></i> Ajakin Graphic</h5>
-                    <p>Kami adalah agensi desain grafis profesional yang berdedikasi untuk menghadirkan solusi kreatif
-                        terbaik untuk bisnis Anda.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h5><i class="fas fa-paint-brush"></i> Ajakin Graphic</h5>
+                <p>Kami adalah agensi desain grafis profesional yang berdedikasi untuk menghadirkan solusi kreatif
+                    terbaik untuk bisnis Anda.</p>
+            </div>
+            <div class="footer-col">
+                <h5><i class="fas fa-cog"></i> Layanan Kami</h5>
+                <ul class="footer-links">
+                    <li><a href="#portofolio">Desain Grafis</a></li>
+                    <li><a href="#portofolio">Marketing Digital</a></li>
+                    <li><a href="#portofolio">Desain Banner</a></li>
+                    <li><a href="#portofolio">Branding & Identitas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5><i class="fas fa-phone"></i> Hubungi Kami</h5>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+62 812-3456-7890</span>
                 </div>
-                <div class="col-12 col-md-3 footer-col m-0 p-0">
-                    <h5><i class="fas fa-cog"></i> Layanan Kami</h5>
-                    <ul class="footer-links">
-                        <li><a href="#portofolio">Desain Grafis</a></li>
-                        <li><a href="#portofolio">Marketing Digital</a></li>
-                        <li><a href="#portofolio">Desain Banner</a></li>
-                        <li><a href="#portofolio">Branding & Identitas</a></li>
-                    </ul>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@ajakingraphic.com</span>
                 </div>
-                <div class="col-12 col-md-4 footer-col m-0 p-0">
-                    <h5><i class="fas fa-phone"></i> Hubungi Kami</h5>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+62 812-3456-7890</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@ajakingraphic.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jakarta, Indonesia</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jakarta, Indonesia</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
