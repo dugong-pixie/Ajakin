@@ -296,9 +296,7 @@ main {
   align-items: center;
 }
 
-.info-card {
-  width: 100%;
-  height: 320px;
+.info-card { width: 100%; min-height: 320px; height: auto;
 
   /* KUNCI: Menggunakan putih transparan (opasitas 0.4 - 0.55) agar efek putih susunya pekat seperti referensi */
   background: rgba(247, 246, 244, 0.479);
@@ -685,9 +683,7 @@ main {
     align-items: center;
   }
 
-  .info-card {
-    width: 100%;
-    height: 320px;
+  .info-card { width: 100%; min-height: 320px; height: auto;
 
     /* KUNCI: Menggunakan putih transparan (opasitas 0.4 - 0.55) agar efek putih susunya pekat seperti referensi */
     background: rgba(247, 246, 244, 0.479);
