@@ -1,12 +1,9 @@
 :root {
-        --primary: #2c2e2d;
-        --secondary: #5a7a66;
-        --accent: #5a7a66;
-        --dark: #2c2e2d;
-        --light: #ffffff;
-        --white: #ffffff;
-        --light-gray: #f4f6f9;
-        --transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  --primary: #2c2e2d;
+  --accent: #5a7a66;
+  --white: #f1ede2;
+  --light-gray: #f4f6f9;
+  --transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * {
@@ -18,7 +15,7 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: var(--dark);
+    color: var(--primary);
     background-color: var(--primary);
     scroll-behavior: smooth;
 }
@@ -45,23 +42,25 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 32px; /* Dikecilkan sedikit paddingnya agar pas */
+    padding: 20px 32px;
+    /* Dikecilkan sedikit paddingnya agar pas */
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
 
 .brand-logo {
-  height: 64px; /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
-  width: auto;
-  display: block;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+    height: 64px;
+    /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 /* Efek opsional saat logo disentuh kursor */
 .brand-logo:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .nav-toggle {
@@ -85,11 +84,12 @@ ul {
     font-weight: 500;
     transition: color 0.3s ease;
 }
+
 .nav-list a:hover {
     color: var(--white);
     /* Memberikan bayangan hitam transparan yang halus di belakang teks */
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6), 
-                 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6),
+        0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-progress {
@@ -109,11 +109,13 @@ ul {
 
 .hero-banner-flat {
     width: 100%;
-    margin-bottom: 60px; /* Jarak aman sebelum masuk ke bagian card di bawahnya */
+    margin-bottom: 60px;
+    /* Jarak aman sebelum masuk ke bagian card di bawahnya */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    background-color: var(--white); /* Latar belakang cadangan jika gambar loading */
+    background-color: var(--white);
+    /* Latar belakang cadangan jika gambar loading */
     display: flex;
 }
 
@@ -142,8 +144,8 @@ main {
     align-items: center;
     justify-content: center;
     min-height: 60vh;
-    background: var(--light);
-    color: var(--dark);
+    background: var(--white);
+    color: var(--primary);
     text-align: center;
     border-radius: 10px;
     padding: 3rem;
@@ -169,7 +171,7 @@ main {
 .extra-section {
     padding: 2rem 5% 3rem;
     text-align: center;
-    background: var(--light);
+    background: var(--white);
 }
 
 .extra-section h3 {
@@ -221,7 +223,7 @@ main {
 }
 
 .footer-links a:hover {
-    color: var(--light);
+    color: var(--white);
     padding-left: 0.5rem;
 }
 
@@ -281,9 +283,14 @@ main {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
+    .header-container {
+        position: static;
+    }
+
     .nav-toggle {
         display: block;
     }
+
 
     .nav-menu {
         display: none;
@@ -291,10 +298,22 @@ main {
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--accent);
+        background: rgba(44, 46, 45, 0.75);
+        /* Dark transparent */
+        backdrop-filter: blur(15px);
+        /* Glassmorphism effect */
+        -webkit-backdrop-filter: blur(15px);
         padding: 1rem 5%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
+
+    .nav-list a {
+        color: var(--white);
+        /* Ensure text is visible on dark transparent bg */
+        font-size: 1.1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
 
     .nav-menu.active {
         display: block;
@@ -336,11 +355,18 @@ main {
 }
 
 @media (max-width: 768px) {
+    .header-container {
+        position: static;
+    }
+
     .hero-banner-flat {
         margin-bottom: 40px;
-        border-radius: 8px; /* Sudut sedikit lebih tegas di layar kecil */
+        border-radius: 8px;
+        /* Sudut sedikit lebih tegas di layar kecil */
     }
+
     .brand-logo {
-        height: 20px; /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
+        height: 20px;
+        /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
     }
 }

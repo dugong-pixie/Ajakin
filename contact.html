@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/image/ajakin%20logo.png">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/CSS/Contact.css">
 </head>
 
@@ -25,7 +26,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sejarah.html">Sejarah</a></li>
-                    <li><a href="filosofi.html">Filosofi</a></li>
+                    <li><a href="service.html">Layanan</a></li>
                     <li><a href="portofolio.html">Portofolio</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -34,58 +35,155 @@
         <div class="scroll-progress"></div>
     </header>
 
-    <!-- === BANNER HERO (Menggunakan Gambar Jadi hero.png) === -->
-    <section class="hero-banner-flat">
-        <img src="assets/image/bg banner fp ppw.png" alt="Portfolio Banner Hero" class="hero-flat-img">
+    <!-- === HERO BANNER CONTACT === -->
+    <section class="hero-banner-flat position-relative" style="overflow: hidden; margin-bottom: 60px;">
+        <!-- Gambar Background -->
+        <img src="assets/image/bg banner fp ppw.png" alt="Contact Banner Hero" class="hero-flat-img" style="width: 100%; height: auto; object-fit: cover; display: block;">
+
+        <!-- Overlay gelap gradasi dari bawah ke atas agar teks di bawah terbaca jelas -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(44, 46, 45, 0.5) 0%, rgba(44, 46, 45, 0) 100%); z-index: 1;"></div>
+
+        <!-- Konten yang Ditumpuk di Atasnya (Absolute) -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2; padding-top: 80px;">
+            <!-- Gambar Kopi (Atas, Raksasa) -->
+            <img src="assets/image/kopi.png" alt="Ngopi Bareng Ajakin" class="img-fluid mb-2" style="max-height: 100%; transform: scale(1.25); object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));">
+            
+            <!-- Teks (Bawah, Gaya Berbisik/Sinematik) -->
+            <h1 class="fw-light text-uppercase mb-1" style="color: var(--white); letter-spacing: 15px; font-size: clamp(1rem, 2.5vw, 1.8rem); opacity: 0.9; padding-left: 15px;">
+                Mari <span style="color: var(--accent); font-weight: 500;">Bekerja Sama</span>
+            </h1>
+            <p class="mx-auto mb-0" style="color: var(--white); opacity: 0.6; letter-spacing: 6px; font-size: 0.8rem; text-transform: uppercase;">
+                Sebuah obrolan hangat untuk ide brilian Anda
+            </p>
+        </div>
     </section>
 
     <!-- ============ MAIN CONTENT ============ -->
-    <main>
-        <section id="home" class="section">
-            <div class="content-box">
-                <i class="fas fa-home section-icon"></i>
-                <h2>Home</h2>
-                <p>Konten Home akan ditampilkan di sini. Scroll halaman untuk melihat animasi progress bar di navbar!
-                </p>
-            </div>
-        </section>
+    <main class="container my-5 py-4">
 
-        <section id="sejarah" class="section">
-            <div class="content-box">
-                <i class="fas fa-history section-icon"></i>
-                <h2>Sejarah Kami</h2>
-                <p>Bagian sejarah Ajakin Graphic akan ditampilkan di sini.</p>
-            </div>
-        </section>
+        <div class="row g-5">
+            <!-- Kolom Kiri: Form Kerjasama -->
+            <div class="col-lg-7">
+                <div class="card p-4 p-md-5 border-0 shadow" style="background-color: var(--white); border-radius: 20px;">
+                    <h4 class="fw-bold mb-4" style="color: var(--primary);">Formulir Kerjasama</h4>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nama" class="form-label fw-semibold" style="color: var(--primary);">Nama Perusahaan / Personal</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" style="background-color: var(--light-gray); border: none; padding: 12px;">
+                        </div>
 
-        <section id="filosofi" class="section">
-            <div class="content-box">
-                <i class="fas fa-lightbulb section-icon"></i>
-                <h2>Filosofi Kami</h2>
-                <p>Filosofi dan nilai-nilai perusahaan akan ditampilkan di sini.</p>
-            </div>
-        </section>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold" style="color: var(--primary);">Email Kontak</label>
+                            <input type="email" class="form-control" id="email" placeholder="Masukkan email" style="background-color: var(--light-gray); border: none; padding: 12px;">
+                        </div>
 
-        <section id="portofolio" class="section">
-            <div class="content-box">
-                <i class="fas fa-briefcase section-icon"></i>
-                <h2>Portofolio Kami</h2>
-                <p>Portofolio dan project-project terbaik kami akan ditampilkan di sini.</p>
-            </div>
-        </section>
+                        <div class="mb-3">
+                            <label for="pesan" class="form-label fw-semibold" style="color: var(--primary);">Detail Proyek / Pesan</label>
+                            <textarea class="form-control" id="pesan" rows="4" placeholder="Ceritakan ide Anda..." style="background-color: var(--light-gray); border: none; padding: 12px;"></textarea>
+                        </div>
 
-        <section id="contact" class="section">
-            <div class="content-box">
-                <i class="fas fa-envelope section-icon"></i>
-                <h2>Hubungi Kami</h2>
-                <p>Formulir kontak dan informasi hubungi kami akan ditampilkan di sini.</p>
-            </div>
-        </section>
+                        <div class="mb-3">
+                            <label for="domisili" class="form-label fw-semibold" style="color: var(--primary);">Domisili</label>
+                            <select class="form-select" id="domisili" style="background-color: var(--light-gray); border: none; padding: 12px;">
+                                <option selected disabled>Pilih kota...</option>
+                                <option value="1">Yogyakarta</option>
+                                <option value="2">Jakarta</option>
+                                <option value="3">Surabaya</option>
+                                <option value="4">Bandung</option>
+                                <option value="5">Lainnya</option>
+                            </select>
+                        </div>
 
-        <section class="extra-section">
-            <h3>🎨 Ajakin Graphic Agency</h3>
-            <p>Scroll terus ke bawah untuk melihat animasi progress bar di navbar yang semakin penuh!</p>
-        </section>
+                        <div class="mb-4 mt-4">
+                            <label class="form-label d-block fw-semibold mb-3" style="color: var(--primary);">Jenis Kerjasama</label>
+                            <div class="form-check p-3 mb-2 shadow-sm" style="background-color: var(--light-gray); border-radius: 10px;">
+                                <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaProject" value="project" checked>
+                                <label class="form-check-label fw-bold w-100" for="kerjasamaProject" style="color: var(--primary);">
+                                    Project Base / Freelance
+                                    <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama pengerjaan proyek spesifik dengan tenggat waktu.</span>
+                                </label>
+                            </div>
+                            <div class="form-check p-3 mb-2 shadow-sm" style="background-color: var(--light-gray); border-radius: 10px;">
+                                <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKontrak" value="kontrak">
+                                <label class="form-check-label fw-bold w-100" for="kerjasamaKontrak" style="color: var(--primary);">
+                                    Kontrak / Retainer
+                                    <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Perekrutan untuk posisi kontrak jangka panjang bulanan.</span>
+                                </label>
+                            </div>
+                            <div class="form-check p-3 mb-2 shadow-sm" style="background-color: var(--light-gray); border-radius: 10px;">
+                                <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKolaborasi" value="kolaborasi">
+                                <label class="form-check-label fw-bold w-100" for="kerjasamaKolaborasi" style="color: var(--primary);">
+                                    Kolaborasi Portofolio
+                                    <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama non-komersial membangun proyek kreatif.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" style="color: var(--primary);">Tanggal Mulai Target</label>
+                            <input class="form-control" type="date" id="tanggalKerjasama" required style="background-color: var(--light-gray); border: none; padding: 12px;">
+                        </div>
+
+                        <div class="mb-4 form-check mt-4">
+                            <input type="checkbox" class="form-check-input mt-1" id="setuju" required>
+                            <label class="form-check-label" for="setuju" style="color: var(--primary); opacity: 0.8;">Saya setuju dengan syarat dan ketentuan kolaborasi.</label>
+                        </div>
+                        
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn px-4 py-2 fw-bold shadow-sm" style="background-color: var(--accent); color: var(--white); border-radius: 8px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Kirim Pesan <i class="fas fa-paper-plane ms-2"></i></button>
+                            <button type="reset" class="btn px-4 py-2 fw-bold" style="background-color: #ddd; color: var(--primary); border-radius: 8px;">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Info Kontak -->
+            <div class="col-lg-5">
+                <div class="card p-4 p-md-5 border-0 shadow h-100" style="background-color: var(--primary); color: var(--white); border-radius: 20px; position: sticky; top: 100px;">
+                    <h4 class="fw-bold mb-4" style="color: var(--white);">Informasi Kontak</h4>
+                    <p class="mb-5" style="opacity: 0.85;">Tim kami siap membalas pesan Anda dalam 1x24 jam kerja. Anda juga bisa mengunjungi kantor kami untuk berdiskusi langsung.</p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-box d-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 fw-bold">Telepon / WhatsApp</p>
+                            <span style="opacity: 0.8;">+62 812-3456-7890</span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-box d-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 fw-bold">Email</p>
+                            <span style="opacity: 0.8;">hello@ajakingraphic.com</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="icon-box d-flex align-items-center justify-content-center me-4 flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 fw-bold">Kantor Pusat</p>
+                            <span style="opacity: 0.8;">Jl. Jend. Sudirman No. 123<br>Jakarta Selatan, Indonesia 12190</span>
+                        </div>
+                    </div>
+
+                    <hr style="border-color: rgba(241, 237, 226, 0.2);">
+                    
+                    <h5 class="fw-bold mt-4 mb-3" style="color: var(--white);">Terhubung dengan Kami</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- ============ FOOTER ============ -->

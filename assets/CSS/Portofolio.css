@@ -21,7 +21,8 @@ body {
 }
 
 main {
-  padding: 110px 20px 40px; /* Ruang atas untuk header fixed */
+  padding: 110px 20px 40px;
+  /* Ruang atas untuk header fixed */
   flex: 1;
 }
 
@@ -31,278 +32,113 @@ main {
   margin: 0 auto;
   padding-bottom: 2rem;
 }
+
 .hero-banner-flat {
-    width: 100%;
-    margin-bottom: 60px; /* Jarak aman sebelum masuk ke bagian card di bawahnya */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    background-color: var(--white); /* Latar belakang cadangan jika gambar loading */
-    display: flex;
+  width: 100%;
+  margin-bottom: 0px;
+  /* Jarak dikurangi agar tidak terlalu jauh */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background-color: var(--white);
+  /* Latar belakang cadangan jika gambar loading */
+  display: flex;
 }
 
 .hero-flat-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-}
-
-.section-divider-title {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.section-divider-title span {
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: var(--accent); /* Hijau Sage */
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.section-divider-title h2 {
-    font-size: 36px;
-    color: var(--white); /* Mengikuti warna teks terang di bg gelap */
-    font-family: 'Segoe UI', sans-serif;
-    margin-top: 5px;
-    font-weight: 300; /* Dibuat agak tipis agar mirip style banner */
-}
-
-.section-divider-title .title-line {
-    width: 50px;
-    height: 1px;
-    background-color: var(--accent);
-    margin: 15px auto 0;
-}
-
-/* --- CONTAINER UTAMA --- */
-.collin-carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px; /* <--- Jarak dinaikkan dari 60px menjadi 100px */
-  flex-wrap: wrap;
-}
-.gallery-grid-area {
-  flex: 0 0 540px !important; /* Kunci lebar container agar tidak menciut/melar */
-  width: 540px !important;
-  height: 500px !important;
-  position: relative;
-  display: block !important;  /* Ubah ke block agar koordinat absolute bekerja akurat */
-}
-
-/* Lingkaran Abu-Abu Latar Belakang */
-.gallery-circle-backdrop {
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  /* Mengubah bentuk bulat menjadi border kotak tipis estetik khas arsitektur/flat design */
-  border: 1px dashed rgba(90, 122, 102, 0.25); 
-  border-radius: 0% !important; /* Hilangkan bulatnya */
-  top: 50%;
-  left: 48%;
-  transform: translate(-50%, -50%) rotate(45deg); /* Diputar 45 derajat agar dinamis */
-  z-index: 1;
-}
-
-/* Track Wrapper Kartu */
-.gallery-grid-track {
-  position: relative;
   width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-/* Styling Dasar Setiap Kartu (Dipaksa Identik) */
-.grid-card {
-  position: absolute ;
-  width: 150px ;       /* Kunci lebar semua kartu */
-  height: 210px ;      /* Kunci tinggi semua kartu agar tidak melar */
-  border: 5px solid var(--accent);
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-  background-color: var(--primary); 
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
-}
-
-/* Mengatur Gambar di Dalam Kartu */
-.grid-card img {
-  width: 100% ;
-  height: 100% ;
-  object-fit: cover ;  /* Potong gambar secara proporsional di dalam bingkai */
-  object-position: center top;  /* Fokus pada area wajah subjek */
-  border-radius: 2px;
+  height: auto;
+  object-fit: cover;
   display: block;
 }
 
-/* --- RE-KALKULASI KOORDINAT POSISI (ANTI-TABRAKAN) --- */
-
-/* Kartu 1 (Kiri Tengah - Bambang) */
-.grid-card[data-index="0"] {
-  left: 10px ;
-  top: 140px ;
-  right: auto ;
+.section-divider-title {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
 }
 
-/* Kartu 2 (Tengah Atas - Jatmiko/Miko) */
-.grid-card[data-index="1"] {
-  left: 185px ;
-  top: 15px ;
-  right: auto ;
+.section-divider-title span {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--accent);
+  /* Hijau Sage */
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-/* Kartu 3 (Tengah Bawah - Ahmad/Gondrong) */
-.grid-card[data-index="2"] {
-  left: 185px ;
-  top: 255px ; /* Didorong ke bawah agar memberi space aman */
-  right: auto ;
+.section-divider-title h2 {
+  font-size: 36px;
+  color: var(--white);
+  /* Mengikuti warna teks terang di bg gelap */
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 5px;
+  font-weight: 300;
+  /* Dibuat agak tipis agar mirip style banner */
 }
 
-/* Kartu 4 (Kanan Tengah - Nur) */
-.grid-card[data-index="3"] {
-  left: 360px ;
-  top: 140px ;
-  right: auto ;
-}
-
-/* --- EFEK HOVER & ACTIVE STATE --- */
-.grid-card:hover {
-  transform: translateY(-8px) scale(1.03) ;
-  z-index: 5 ; 
-}
-
-.grid-card.active-card {
-  transform: scale(1.15) ; /* Skala active sedikit diperhalus agar tidak menabrak tetangga */
-  z-index: 10 ; 
-}
-
-/* --- KANAN: Kartu Info Teks --- */
-.info-card-container {
-  flex: 1 1 400px; /* <--- Memberikan default base width 400px agar memanjang */
-  min-width: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.info-card {
-  width: 100%;
-  height: 320px; /* <--- Diubah dari 500px agar menjadi persegi panjang horizontal */
-  
-  /* Sisa code lainnya tetap pertahankan */
-  background: rgba(247, 246, 244, 0.479); 
-  backdrop-filter: blur(20px) saturate(160%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.308) !important;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: translateY(20px);
-  opacity: 0;
-}
-
-.info-card.active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* --- MENYESUAIKAN WARNA TEKS AGAR KONTRAS DI ATAS KACA PUTIH --- */
-
-/* Judul Nama Anggota (Menggunakan warna gelap utama website agar tajam) */
-.info-card h2 {
-  font-size: 28px;
-  color: var(--primary) !important; /* #2c2e2d */
-  margin-bottom: 6px;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-/* Gaya untuk NIM (Menggunakan Hijau Sage Gelap bawaan website agar senada dengan tema) */
-#cardNim.card-small-text {
-  font-size: 14px;
-  color: var(--accent) !important; /* #5a7a66 */
-  margin-bottom: 24px;            
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-/* Warna Deskripsi Utama (Abu-abu gelap yang nyaman dibaca di latar terang) */
-.info-card p {
-  color: #3d403f !important; 
-  line-height: 1.7;
-  font-size: 15px;
-  font-weight: 500;
-  flex: 1;
-}
-
-/* Gaya untuk Footer Kartu (Hobi & Motivasi) */
-.card-small-text-footer {
-  font-size: 13px;
-  color: #555857 !important; 
-  margin-top: 16px;
-  margin-bottom: 0;
-  border-top: 1px dashed rgba(90, 122, 102, 0.3) !important; /* Garis pembatas warna sage transparan */
-  padding-top: 12px;
-  font-weight: 500;
+.section-divider-title .title-line {
+  width: 50px;
+  height: 1px;
+  background-color: var(--accent);
+  margin: 15px auto 0;
 }
 
 /* ============ REVISI: SEKSYEN SPLIT MASKING BANNER 2 ============ */
 .portfolio-split-masking {
-    width: 100%;
-    margin-top: 100px;  /* Memberi jarak atas */
-    margin-bottom: 120px; /* Jarak bawah ekstra agar bilah tidak menabrak footer */
-    padding: 40px 20px;
-    background-color: #1a1c1b; /* Kotak abu-abu gelap portfolio Anda */
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    /* KUNCI UTAMA 1: Hilangkan pembatas */
-    overflow: visible !important; 
-    position: relative;
+  width: 100%;
+  margin-top: -50px;
+  /* Menggunakan margin negatif untuk menariknya ke atas karena main memiliki padding-top 110px */
+  margin-bottom: 120px;
+  /* Jarak bawah ekstra agar bilah tidak menabrak footer */
+  padding: 40px 20px;
+  background-color: #1a1c1b;
+  /* Kotak abu-abu gelap portfolio Anda */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* KUNCI UTAMA 1: Hilangkan pembatas */
+  overflow: visible !important;
+  position: relative;
 }
 
 /* Container utama bilah potongan */
 .split-bars-container {
-    width: 100%;
-    max-width: 900px;
-    height: 490px; /* Tinggi maksimal area galeri dikunci */
-    display: flex;
-    gap: 1%;
-    align-items: center; /* Mengunci semua balok agar sejajar tepat di tengah secara vertikal */
+  width: 100%;
+  max-width: 900px;
+  height: 490px;
+  /* Tinggi maksimal area galeri dikunci */
+  display: flex;
+  gap: 1%;
+  align-items: center;
+  /* Mengunci semua balok agar sejajar tepat di tengah secara vertikal */
 }
+
 /* Bagian Teks Atas yang Dipisah */
 .masking-header {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .masking-header h2 {
-    font-size: 5rem;
-    color: var(--white);
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    letter-spacing: 12px;
-    line-height: 1;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+  font-size: 5rem;
+  color: var(--white);
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  letter-spacing: 12px;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .masking-header p {
-    font-size: 14px;
-    color: var(--accent); /* Hijau Sage */
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  /* Hijau Sage */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 /* Container Utama Bilah Potongan (Menggunakan lebar fleksibel %) */
@@ -310,222 +146,285 @@ main {
 
 /* Pengaturan Setiap Bilah Potongan Gambar */
 .bar-item {
-    flex: 1;
-    background-repeat: no-repeat;
-    background-size: 600% 480px; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: 600% 480px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* --- MENGATUR TINGGI ASIMETRIS KOTAK --- */
-.bar-1 { height: 80%; }
-.bar-2 { height: 95%; }
-.bar-3 { height: 75%; }
-.bar-4 { height: 100%; }
-.bar-5 { height: 90%; }
-.bar-6 { height: 60%; }
+.bar-1 {
+  height: 80%;
+}
+
+.bar-2 {
+  height: 95%;
+}
+
+.bar-3 {
+  height: 75%;
+}
+
+.bar-4 {
+  height: 100%;
+}
+
+.bar-5 {
+  height: 90%;
+}
+
+.bar-6 {
+  height: 60%;
+}
 
 /* --- RUMUS RE-KALKULASI POSISI SINKRONISASI (SIMETRIS) --- 
    RAHASIA 2: Mengganti kata kunci 'center' dengan koordinat top/vertikal yang dihitung 
    berdasarkan selisih tinggi masing-masing bilah terhadap tinggi container utama (480px).
    Dengan rumus matematika ini, gambar di dalam dijamin lurus berurutan tanpa patah!
 */
-.bar-1 { background-position: 0%    calc((480px * 0.15) / -2); } /* Selisih sisa height 15% */
-.bar-2 { background-position: 20%   calc((480px * 0.05) / -2); } /* Selisih sisa height 5% */
-.bar-3 { background-position: 40%   calc((480px * 0.25) / -2); } /* Selisih sisa height 25% */
-.bar-4 { background-position: 60%   0px; }                       /* Height 100% pas */
-.bar-5 { background-position: 80%   calc((480px * 0.10) / -2); } /* Selisih sisa height 10% */
-.bar-6 { background-position: 100%  calc((480px * 0.20) / -2); } /* Selisih sisa height 20% */
+.bar-1 {
+  background-position: 0% calc((480px * 0.15) / -2);
+}
+
+/* Selisih sisa height 15% */
+.bar-2 {
+  background-position: 20% calc((480px * 0.05) / -2);
+}
+
+/* Selisih sisa height 5% */
+.bar-3 {
+  background-position: 40% calc((480px * 0.25) / -2);
+}
+
+/* Selisih sisa height 25% */
+.bar-4 {
+  background-position: 60% 0px;
+}
+
+/* Height 100% pas */
+.bar-5 {
+  background-position: 80% calc((480px * 0.10) / -2);
+}
+
+/* Selisih sisa height 10% */
+.bar-6 {
+  background-position: 100% calc((480px * 0.20) / -2);
+}
+
+/* Selisih sisa height 20% */
 
 /* Efek Interaktif Hover yang Aman */
 .bar-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
-    z-index: 3;
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  z-index: 3;
 }
+
 /* ============ main gallery ============ */
-  /* --- STYLING GLOBAL UNTUK SEKSYEN PROYEK INSTAGRAM --- */
+/* --- STYLING GLOBAL UNTUK SEKSYEN PROYEK INSTAGRAM --- */
 .instagram-project-section {
-    width: 100%;
-    margin-top: 60px;
-    margin-bottom: 80px;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 80px;
 }
 
 .project-info-header {
-    margin-bottom: 25px;
-    border-left: 4px solid var(--accent); /* Garis vertikal hijau sage bawaan web Anda */
-    padding-left: 15px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--accent);
+  /* Garis vertikal hijau sage bawaan web Anda */
+  padding-left: 15px;
 }
 
 .project-info-header h3 {
-    font-size: 24px;
-    color: var(--white);
-    font-weight: 500;
-    letter-spacing: 1px;
+  font-size: 24px;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .project-info-header p {
-    font-size: 14px;
-    color: rgba(241, 237, 226, 0.6); /* Putih transparan */
-    margin-top: 5px;
+  font-size: 14px;
+  color: rgba(241, 237, 226, 0.6);
+  /* Putih transparan */
+  margin-top: 5px;
 }
 
 /* ==========================================================================
    KODE UNTUK LAYOUT 2 (SPLIT MOCKUP + GRID)
    ========================================================================== */
 .gallery-split-feed-reverse {
-    display: flex;
-    gap: 25px;
-    width: 100%;
-    align-items: stretch; /* Memaksa tinggi sisi kanan mengikuti tinggi total sisi kiri */
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  align-items: stretch;
+  /* Memaksa tinggi sisi kanan mengikuti tinggi total sisi kiri */
 }
 
 /* Sisi Kiri: Mengatur formasi grid 2 kolom untuk 4 gambar */
 .feed-grid-left-side {
-    flex: 1; /* Mengambil setengah lebar kontainer */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  flex: 1;
+  /* Mengambil setengah lebar kontainer */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .feed-grid-left-side .sub-post {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Mengunci bentuk post kotak persegi */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    background-color: var(--primary);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* Mengunci bentuk post kotak persegi */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  background-color: var(--primary);
 }
 
 .feed-grid-left-side .sub-post img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 /* Sisi Kanan: Mengatur kontainer gambar besar */
 .feed-hero-right-side {
-    flex: 1; /* Mengambil setengah lebar sisanya */
-    display: flex;
+  flex: 1;
+  /* Mengambil setengah lebar sisanya */
+  display: flex;
 }
 
 .hero-post-wrapper {
-    width: 100%;
-    height: 100%; /* Memaksa tinggi melar penuh mengikuti tinggi grid kiri */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    background-color: var(--primary);
+  width: 100%;
+  height: 100%;
+  /* Memaksa tinggi melar penuh mengikuti tinggi grid kiri */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background-color: var(--primary);
 }
 
 .hero-post-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Mencegah gambar utama menjadi gepeng atau penyet */
-    display: block;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Mencegah gambar utama menjadi gepeng atau penyet */
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 /* Efek Hover Interaktif */
 .feed-grid-left-side .sub-post:hover img,
 .hero-post-wrapper:hover img {
-    transform: scale(1.04);
+  transform: scale(1.1);
 }
 
 /* ==========================================================================
    KODE UNTUK LAYOUT 3 (MODIFIKASI KHUSUS 3 POST)
    ========================================================================== */
 .asymmetric-triple-container {
-    display: flex;
-    gap: 25px;
-    width: 100%;
+  display: flex;
+  gap: 25px;
+  width: 100%;
 }
 
 /* Kolom Kiri: Mengatur susunan vertikal 2 kotak kecil */
 .triple-left-column {
-    flex: 1; /* Mengambil setengah lebar */
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Jarak antara post 1 dan post 2 */
+  flex: 1;
+  /* Mengambil setengah lebar */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /* Jarak antara post 1 dan post 2 */
 }
 
 /* Kotak Kecil di Sebelah Kiri */
 .triple-item-sub {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Mengunci bentuk persegi 1:1 */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    background-color: var(--primary);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* Mengunci bentuk persegi 1:1 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--primary);
 }
 
 .triple-item-sub img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 /* Kolom Kanan: Menampung post besar */
 .triple-right-column {
-    flex: 1; /* Mengambil setengah lebar sisanya */
-    display: flex;
+  flex: 1;
+  /* Mengambil setengah lebar sisanya */
+  display: flex;
 }
 
 /* Kotak Besar di Sebelah Kanan (Otomatis melar mencakup tinggi 2 kotak kiri + gap-nya) */
 .triple-item-main {
-    width: 100%;
-    height: 100%; /* Memaksa mengikuti tinggi flexbox induknya */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    background-color: var(--primary);
+  width: 100%;
+  height: 100%;
+  /* Memaksa mengikuti tinggi flexbox induknya */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background-color: var(--primary);
 }
 
 .triple-item-main img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Menjaga aset gambar di kanan tidak gepeng/tarik paksa */
-    display: block;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Menjaga aset gambar di kanan tidak gepeng/tarik paksa */
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 /* Efek Hover Komparasi */
 .triple-item-sub:hover img,
 .triple-item-main:hover img {
-    transform: scale(1.04);
+  transform: scale(1.1);
 }
 
 
 
 /* ============ NAV & UTILITIES ============ */
-a { text-decoration: none; }
-ul { list-style: none; }
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
 
 .header {
 
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    animation: slideIn 0.5s ease;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 32px; /* Dikecilkan sedikit paddingnya agar pas */
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  /* Dikecilkan sedikit paddingnya agar pas */
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .brand-logo {
-  height: 64px; /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
+  height: 64px;
+  /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
   width: auto;
   display: block;
   object-fit: contain;
@@ -538,196 +437,259 @@ ul { list-style: none; }
 }
 
 .nav-toggle {
-    display: none;
-    background: none;
-    border: 1px solid var(--white);
-    color: var(--white);
-    font-size: 1.5rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: 1px solid var(--white);
+  color: var(--white);
+  font-size: 1.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .nav-list {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-list a {
-    color: var(--accent);
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
+
 .nav-list a:hover {
-    color: var(--white);
-    /* Memberikan bayangan hitam transparan yang halus di belakang teks */
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6), 
-                 0px 4px 10px rgba(0, 0, 0, 0.3);
+  color: var(--white);
+  /* Memberikan bayangan hitam transparan yang halus di belakang teks */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6),
+    0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 6px;
-    background: var(--secondary);
-    width: 0%;
-    transition: width 0.3s ease;
-    z-index: 1001;
-    border-radius: 0 4px 4px 0;
-    box-shadow: 0 0 10px var(--white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  background: var(--secondary);
+  width: 0%;
+  transition: width 0.3s ease;
+  z-index: 1001;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px var(--white);
 }
 
 /* ============ FOOTER ============ */
 .footer {
-    background: var(--accent);
-    color: var(--white);
-    padding: 3rem 0;
+  background: var(--accent);
+  color: var(--white);
+  padding: 3rem 0;
 }
+
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 0 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
+
 .footer-col {
-    flex: 1;
-    min-width: 250px;
+  flex: 1;
+  min-width: 250px;
 }
+
 .footer-col h5 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
 }
-.footer-links li { margin-bottom: 0.7rem; }
+
+.footer-links li {
+  margin-bottom: 0.7rem;
+}
+
 .footer-links a {
-    color: var(--white);
-    transition: color 0.3s ease, padding 0.3s ease;
+  color: var(--white);
+  transition: color 0.3s ease, padding 0.3s ease;
 }
+
 .footer-links a:hover {
-    color: var(--light);
-    padding-left: 0.5rem;
+  color: var(--white);
+  padding-left: 0.5rem;
 }
+
 .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    gap: 0.7rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.7rem;
 }
+
 .social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
+
 .social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    color: var(--white);
-    transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--white);
+  transition: all 0.3s ease;
 }
+
 .social-links a:hover {
-    background: var(--primary);
-    color: var(--white);
-    transform: translateY(-5px);
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-5px);
 }
+
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin-top: 2rem;
-    padding-top: 2rem;
-    text-align: center;
-    color: var(--primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+  color: var(--primary);
 }
 
 @media (max-width: 768px) {
-    .hero-banner-flat {
-        margin-bottom: 40px;
-        border-radius: 8px; /* Sudut sedikit lebih tegas di layar kecil */
-    }
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(44, 46, 45, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1rem 5%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-list a {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-banner-flat {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    /* Sudut sedikit lebih tegas di layar kecil */
+  }
 }
 
 @media (max-width: 768px) {
   .brand-logo {
-    height: 20px; /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
+    height: 20px;
+    /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
   }
 }
 
 @media (max-width: 768px) {
-    .split-bars-container {
-        height: 320px; /* Tingginya mengecil di HP */
-        gap: 1%;
-    }
-    
-    .bar-item {
-        background-size: 600% 320px;
-        border-radius: 6px;
-    }
+  .split-bars-container {
+    height: 320px;
+    /* Tingginya mengecil di HP */
+    gap: 1%;
+  }
 
-    /* Kalibrasi ulang koordinat vertikal gambar berdasarkan base height baru di HP (320px) */
-    .bar-1 { background-position: 0%    calc((320px * 0.15) / -2); }
-    .bar-2 { background-position: 20%   calc((320px * 0.05) / -2); }
-    .bar-3 { background-position: 40%   calc((320px * 0.25) / -2); }
-    .bar-4 { background-position: 60%   0px; }
-    .bar-5 { background-position: 80%   calc((320px * 0.10) / -2); }
-    .bar-6 { background-position: 100%  calc((320px * 0.20) / -2); }
+  .bar-item {
+    background-size: 600% 320px;
+    border-radius: 6px;
+  }
+
+  /* Kalibrasi ulang koordinat vertikal gambar berdasarkan base height baru di HP (320px) */
+  .bar-1 {
+    background-position: 0% calc((320px * 0.15) / -2);
+  }
+
+  .bar-2 {
+    background-position: 20% calc((320px * 0.05) / -2);
+  }
+
+  .bar-3 {
+    background-position: 40% calc((320px * 0.25) / -2);
+  }
+
+  .bar-4 {
+    background-position: 60% 0px;
+  }
+
+  .bar-5 {
+    background-position: 80% calc((320px * 0.10) / -2);
+  }
+
+  .bar-6 {
+    background-position: 100% calc((320px * 0.20) / -2);
+  }
 }
+
 /* ============ MEDIA QUERIES (RESPONSIVE RULES) ============ */
-@media (max-width: 768px) {
-  .gallery-grid-area {
-    height: 400px;
-    max-width: 100%;
-  }
-  .gallery-circle-backdrop {
-    width: 280px;
-    height: 280px;
-  }
-
-}
+@media (max-width: 768px) {}
 
 
 @media (max-width: 768px) {
-    /* Layout 2 di HP: Gambar mockup di atas, grid post pindah ke bawahnya */
-.gallery-split-feed-reverse {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-.feed-grid-left-side {
-        gap: 12px; /* Rapatkan gap antar kotak di HP */
-    }
 
-    .hero-post-wrapper {
-        aspect-ratio: 1 / 1; /* Ubah gambar kanan jadi persegi di HP agar seimbang */
-        height: auto;
-    }
-    .sub-post, .triple-item {
-        border-radius: 8px; /* Lengkungan sedikit diperkecil di HP */
-    }
-    /* Layout 3 di HP: Tetap 3 kolom tapi gap dirapatkan agar hemat ruang */
-    .triple-feed-container {
-        gap: 10px;
-    }
-        .asymmetric-triple-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .triple-left-column {
-        gap: 15px;
-    }
-    
-    .triple-item-main {
-        aspect-ratio: 1 / 1; /* Ubah ke persegi saat di HP agar posisinya seimbang */
-    }
+  /* Layout 2 di HP: Gambar mockup di atas, grid post pindah ke bawahnya */
+  .gallery-split-feed-reverse {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feed-grid-left-side {
+    gap: 12px;
+    /* Rapatkan gap antar kotak di HP */
+  }
+
+  .hero-post-wrapper {
+    aspect-ratio: 1 / 1;
+    /* Ubah gambar kanan jadi persegi di HP agar seimbang */
+    height: auto;
+  }
+
+  .sub-post,
+  .triple-item {
+    border-radius: 8px;
+    /* Lengkungan sedikit diperkecil di HP */
+  }
+
+  /* Layout 3 di HP: Tetap 3 kolom tapi gap dirapatkan agar hemat ruang */
+  .triple-feed-container {
+    gap: 10px;
+  }
+
+  .asymmetric-triple-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .triple-left-column {
+    gap: 15px;
+  }
+
+  .triple-item-main {
+    aspect-ratio: 1 / 1;
+    /* Ubah ke persegi saat di HP agar posisinya seimbang */
+  }
 }
-    
-
-
