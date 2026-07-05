@@ -827,3 +827,19 @@ main {
             .hero-sejarah-img { max-height: 35vh !important; }
         }
 
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    .collin-carousel-wrapper {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .gallery-grid-area {
+        transform: scale(0.65);
+        transform-origin: center left;
+        margin-left: 15px;
+    }
+}
