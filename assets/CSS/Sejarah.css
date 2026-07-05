@@ -844,27 +844,30 @@ main {
     }
 }
 
+
+
 @media (max-width: 768px) {
     .gallery-grid-area {
         width: 100% !important;
+        height: 380px !important;
         transform: none !important;
         margin-left: 0 !important;
+        margin-top: 20px !important;
     }
     
-    /* Perkecil ukuran kartu yang tidak dipilih di mobile */
-    .grid-card {
-        width: 100px !important;
-        height: 150px !important;
+    .gallery-circle-backdrop {
+        width: 280px !important;
+        height: 280px !important;
+        left: 50% !important;
+        top: 50% !important;
     }
+
+    .grid-card { width: 120px !important; height: 170px !important; }
     
-    /* Koordinat digeser agar padat dan agak ke kanan (pas untuk mobile) */
-    .grid-card[data-index="0"] { left: 30px !important; top: 110px !important; }
-    .grid-card[data-index="1"] { left: 120px !important; top: 20px !important; }
-    .grid-card[data-index="2"] { left: 120px !important; top: 200px !important; }
-    .grid-card[data-index="3"] { left: 210px !important; top: 110px !important; }
+    .grid-card[data-index="0"] { left: calc(50% - 175px) !important; top: 105px !important; }
+    .grid-card[data-index="1"] { left: calc(50% - 60px) !important; top: 10px !important; }
+    .grid-card[data-index="2"] { left: calc(50% - 60px) !important; top: 200px !important; }
+    .grid-card[data-index="3"] { left: calc(50% + 55px) !important; top: 105px !important; }
     
-    /* Kartu yang dipilih diperbesar agar menonjol */
-    .grid-card.active-card {
-        transform: scale(1.35) !important;
-    }
+    .grid-card.active-card { transform: scale(1.15) !important; }
 }
