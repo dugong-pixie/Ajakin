@@ -343,7 +343,162 @@ main {
     box-shadow: 0 12px 25px rgba(0,0,0,0.5);
     z-index: 3;
 }
-  
+/* ============ main gallery ============ */
+  /* --- STYLING GLOBAL UNTUK SEKSYEN PROYEK INSTAGRAM --- */
+.instagram-project-section {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.project-info-header {
+    margin-bottom: 25px;
+    border-left: 4px solid var(--accent); /* Garis vertikal hijau sage bawaan web Anda */
+    padding-left: 15px;
+}
+
+.project-info-header h3 {
+    font-size: 24px;
+    color: var(--white);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.project-info-header p {
+    font-size: 14px;
+    color: rgba(241, 237, 226, 0.6); /* Putih transparan */
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   KODE UNTUK LAYOUT 2 (SPLIT MOCKUP + GRID)
+   ========================================================================== */
+.gallery-split-feed-reverse {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    align-items: stretch; /* Memaksa tinggi sisi kanan mengikuti tinggi total sisi kiri */
+}
+
+/* Sisi Kiri: Mengatur formasi grid 2 kolom untuk 4 gambar */
+.feed-grid-left-side {
+    flex: 1; /* Mengambil setengah lebar kontainer */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.feed-grid-left-side .sub-post {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mengunci bentuk post kotak persegi */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    background-color: var(--primary);
+}
+
+.feed-grid-left-side .sub-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Sisi Kanan: Mengatur kontainer gambar besar */
+.feed-hero-right-side {
+    flex: 1; /* Mengambil setengah lebar sisanya */
+    display: flex;
+}
+
+.hero-post-wrapper {
+    width: 100%;
+    height: 100%; /* Memaksa tinggi melar penuh mengikuti tinggi grid kiri */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background-color: var(--primary);
+}
+
+.hero-post-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mencegah gambar utama menjadi gepeng atau penyet */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Efek Hover Interaktif */
+.feed-grid-left-side .sub-post:hover img,
+.hero-post-wrapper:hover img {
+    transform: scale(1.04);
+}
+
+/* ==========================================================================
+   KODE UNTUK LAYOUT 3 (MODIFIKASI KHUSUS 3 POST)
+   ========================================================================== */
+.asymmetric-triple-container {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Kolom Kiri: Mengatur susunan vertikal 2 kotak kecil */
+.triple-left-column {
+    flex: 1; /* Mengambil setengah lebar */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Jarak antara post 1 dan post 2 */
+}
+
+/* Kotak Kecil di Sebelah Kiri */
+.triple-item-sub {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mengunci bentuk persegi 1:1 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    background-color: var(--primary);
+}
+
+.triple-item-sub img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Kolom Kanan: Menampung post besar */
+.triple-right-column {
+    flex: 1; /* Mengambil setengah lebar sisanya */
+    display: flex;
+}
+
+/* Kotak Besar di Sebelah Kanan (Otomatis melar mencakup tinggi 2 kotak kiri + gap-nya) */
+.triple-item-main {
+    width: 100%;
+    height: 100%; /* Memaksa mengikuti tinggi flexbox induknya */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background-color: var(--primary);
+}
+
+.triple-item-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga aset gambar di kanan tidak gepeng/tarik paksa */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Efek Hover Komparasi */
+.triple-item-sub:hover img,
+.triple-item-main:hover img {
+    transform: scale(1.04);
+}
+
+
 
 /* ============ NAV & UTILITIES ============ */
 a { text-decoration: none; }
@@ -536,3 +691,43 @@ ul { list-style: none; }
   }
 
 }
+
+
+@media (max-width: 768px) {
+    /* Layout 2 di HP: Gambar mockup di atas, grid post pindah ke bawahnya */
+.gallery-split-feed-reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+.feed-grid-left-side {
+        gap: 12px; /* Rapatkan gap antar kotak di HP */
+    }
+
+    .hero-post-wrapper {
+        aspect-ratio: 1 / 1; /* Ubah gambar kanan jadi persegi di HP agar seimbang */
+        height: auto;
+    }
+    .sub-post, .triple-item {
+        border-radius: 8px; /* Lengkungan sedikit diperkecil di HP */
+    }
+    /* Layout 3 di HP: Tetap 3 kolom tapi gap dirapatkan agar hemat ruang */
+    .triple-feed-container {
+        gap: 10px;
+    }
+        .asymmetric-triple-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .triple-left-column {
+        gap: 15px;
+    }
+    
+    .triple-item-main {
+        aspect-ratio: 1 / 1; /* Ubah ke persegi saat di HP agar posisinya seimbang */
+    }
+}
+    
+
+
