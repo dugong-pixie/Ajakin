@@ -385,7 +385,7 @@ main {
 .hero-banner-flat { aspect-ratio: 16/9; overflow: hidden; padding: 0; }
         .hero-ilus-img { width: 100%; transform: scale(1.15); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6)); }
         @media (max-width: 991px) {
-            .hero-banner-flat { aspect-ratio: auto; min-height: 85vh; padding: 120px 0; }
+            .hero-banner-flat { aspect-ratio: auto; min-height: 100vh; padding: 120px 0; }
             .hero-ilus-img { transform: scale(1); margin-top: 2rem; }
             .hero-banner-flat h1 { font-size: 2.2rem !important; }
         }

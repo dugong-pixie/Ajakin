@@ -377,7 +377,7 @@ main {
 .hero-banner-flat { aspect-ratio: 16/9; overflow: hidden; padding: 0; }
         .hero-service-img { max-height: 100%; transform: scale(1.25); }
         @media (max-width: 991px) {
-            .hero-banner-flat { aspect-ratio: auto; min-height: 85vh; padding: 120px 0; }
+            .hero-banner-flat { aspect-ratio: auto; min-height: 100vh; padding: 120px 0; }
             .hero-service-img { max-height: 50vh !important; transform: scale(1) !important; margin-top: 2rem; }
         }
 

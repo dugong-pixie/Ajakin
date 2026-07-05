@@ -768,7 +768,7 @@ ul {
                 flex-direction: column;
                 justify-content: flex-end;
                 aspect-ratio: auto;
-                min-height: 85vh;
+                min-height: 100vh;
                 padding: 120px 0;
             }
             .nav-list a {

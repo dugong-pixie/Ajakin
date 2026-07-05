@@ -822,7 +822,7 @@ main {
         .hero-sejarah-title { font-size: clamp(2.5rem, 8vw, 6rem); letter-spacing: 10px; transform: scaleX(1.1); }
         .hero-sejarah-img { max-height: 45vh; }
         @media (max-width: 991px) {
-            .hero-banner-flat { aspect-ratio: auto; min-height: 85vh; padding: 120px 0; }
+            .hero-banner-flat { aspect-ratio: auto; min-height: 100vh; padding: 120px 0; }
             .hero-sejarah-title { letter-spacing: 5px !important; font-size: 2.5rem !important; transform: scaleX(1) !important; }
             .hero-sejarah-img { max-height: 35vh !important; }
         }
@@ -841,5 +841,30 @@ main {
         transform: scale(0.65);
         transform-origin: center left;
         margin-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-area {
+        width: 100% !important;
+        transform: none !important;
+        margin-left: 0 !important;
+    }
+    
+    /* Perkecil ukuran kartu yang tidak dipilih di mobile */
+    .grid-card {
+        width: 100px !important;
+        height: 150px !important;
+    }
+    
+    /* Koordinat digeser agar padat dan agak ke kanan (pas untuk mobile) */
+    .grid-card[data-index="0"] { left: 30px !important; top: 110px !important; }
+    .grid-card[data-index="1"] { left: 120px !important; top: 20px !important; }
+    .grid-card[data-index="2"] { left: 120px !important; top: 200px !important; }
+    .grid-card[data-index="3"] { left: 210px !important; top: 110px !important; }
+    
+    /* Kartu yang dipilih diperbesar agar menonjol */
+    .grid-card.active-card {
+        transform: scale(1.35) !important;
     }
 }
