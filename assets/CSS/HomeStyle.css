@@ -33,7 +33,6 @@ ul {
 
 /* ============ HEADER & NAVBAR ============ */
 .header {
-    background: var(--accent);
     position: fixed;
     width: 100%;
     top: 0;
@@ -46,23 +45,23 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 32px; 
+    padding: 20px 32px; /* Dikecilkan sedikit paddingnya agar pas */
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
 
-.brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.brand-logo {
+  height: 64px; /* <--- Diperkecil menjadi 24px agar tampil lebih sleek dan compact */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.brand i {
-    font-size: 2rem;
+/* Efek opsional saat logo disentuh kursor */
+.brand-logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-toggle {
@@ -82,13 +81,15 @@ ul {
 }
 
 .nav-list a {
-    color: var(--dark);
+    color: var(--accent);
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
 .nav-list a:hover {
     color: var(--white);
+    /* Memberikan bayangan hitam transparan yang halus di belakang teks */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6), 
+                 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-progress {
@@ -105,6 +106,24 @@ ul {
 }
 
 /* ============ MAIN CONTENT ============ */
+
+.hero-banner-flat {
+    width: 100%;
+    margin-bottom: 60px; /* Jarak aman sebelum masuk ke bagian card di bawahnya */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: var(--white); /* Latar belakang cadangan jika gambar loading */
+    display: flex;
+}
+
+.hero-flat-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
 main {
     margin-top: 80px;
     min-height: calc(100vh - 80px);
@@ -313,5 +332,15 @@ main {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner-flat {
+        margin-bottom: 40px;
+        border-radius: 8px; /* Sudut sedikit lebih tegas di layar kecil */
+    }
+    .brand-logo {
+        height: 20px; /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
     }
 }
