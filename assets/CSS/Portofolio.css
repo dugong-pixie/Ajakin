@@ -255,6 +255,96 @@ main {
   font-weight: 500;
 }
 
+/* ============ REVISI: SEKSYEN SPLIT MASKING BANNER 2 ============ */
+.portfolio-split-masking {
+    width: 100%;
+    margin-top: 100px;  /* Memberi jarak atas */
+    margin-bottom: 120px; /* Jarak bawah ekstra agar bilah tidak menabrak footer */
+    padding: 40px 20px;
+    background-color: #1a1c1b; /* Kotak abu-abu gelap portfolio Anda */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* KUNCI UTAMA 1: Hilangkan pembatas */
+    overflow: visible !important; 
+    position: relative;
+}
+
+/* Container utama bilah potongan */
+.split-bars-container {
+    width: 100%;
+    max-width: 900px;
+    height: 490px; /* Tinggi maksimal area galeri dikunci */
+    display: flex;
+    gap: 1%;
+    align-items: center; /* Mengunci semua balok agar sejajar tepat di tengah secara vertikal */
+}
+/* Bagian Teks Atas yang Dipisah */
+.masking-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.masking-header h2 {
+    font-size: 5rem;
+    color: var(--white);
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 12px;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.masking-header p {
+    font-size: 14px;
+    color: var(--accent); /* Hijau Sage */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Container Utama Bilah Potongan (Menggunakan lebar fleksibel %) */
+
+
+/* Pengaturan Setiap Bilah Potongan Gambar */
+.bar-item {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: 600% 480px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- MENGATUR TINGGI ASIMETRIS KOTAK --- */
+.bar-1 { height: 80%; }
+.bar-2 { height: 95%; }
+.bar-3 { height: 75%; }
+.bar-4 { height: 100%; }
+.bar-5 { height: 90%; }
+.bar-6 { height: 60%; }
+
+/* --- RUMUS RE-KALKULASI POSISI SINKRONISASI (SIMETRIS) --- 
+   RAHASIA 2: Mengganti kata kunci 'center' dengan koordinat top/vertikal yang dihitung 
+   berdasarkan selisih tinggi masing-masing bilah terhadap tinggi container utama (480px).
+   Dengan rumus matematika ini, gambar di dalam dijamin lurus berurutan tanpa patah!
+*/
+.bar-1 { background-position: 0%    calc((480px * 0.15) / -2); } /* Selisih sisa height 15% */
+.bar-2 { background-position: 20%   calc((480px * 0.05) / -2); } /* Selisih sisa height 5% */
+.bar-3 { background-position: 40%   calc((480px * 0.25) / -2); } /* Selisih sisa height 25% */
+.bar-4 { background-position: 60%   0px; }                       /* Height 100% pas */
+.bar-5 { background-position: 80%   calc((480px * 0.10) / -2); } /* Selisih sisa height 10% */
+.bar-6 { background-position: 100%  calc((480px * 0.20) / -2); } /* Selisih sisa height 20% */
+
+/* Efek Interaktif Hover yang Aman */
+.bar-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    z-index: 3;
+}
+  
+
 /* ============ NAV & UTILITIES ============ */
 a { text-decoration: none; }
 ul { list-style: none; }
@@ -415,6 +505,25 @@ ul { list-style: none; }
   }
 }
 
+@media (max-width: 768px) {
+    .split-bars-container {
+        height: 320px; /* Tingginya mengecil di HP */
+        gap: 1%;
+    }
+    
+    .bar-item {
+        background-size: 600% 320px;
+        border-radius: 6px;
+    }
+
+    /* Kalibrasi ulang koordinat vertikal gambar berdasarkan base height baru di HP (320px) */
+    .bar-1 { background-position: 0%    calc((320px * 0.15) / -2); }
+    .bar-2 { background-position: 20%   calc((320px * 0.05) / -2); }
+    .bar-3 { background-position: 40%   calc((320px * 0.25) / -2); }
+    .bar-4 { background-position: 60%   0px; }
+    .bar-5 { background-position: 80%   calc((320px * 0.10) / -2); }
+    .bar-6 { background-position: 100%  calc((320px * 0.20) / -2); }
+}
 /* ============ MEDIA QUERIES (RESPONSIVE RULES) ============ */
 @media (max-width: 768px) {
   .gallery-grid-area {
