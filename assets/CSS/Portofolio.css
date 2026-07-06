@@ -255,8 +255,10 @@ main {
    ========================================================================== */
 .gallery-split-feed-reverse {
   display: flex;
-  gap: 25px;
+  gap: 18px;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   align-items: stretch;
   /* Memaksa tinggi sisi kanan mengikuti tinggi total sisi kiri */
 }
@@ -325,8 +327,10 @@ main {
    ========================================================================== */
 .asymmetric-triple-container {
   display: flex;
-  gap: 25px;
+  gap: 18px;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Kolom Kiri: Mengatur susunan vertikal 2 kotak kecil */
@@ -390,6 +394,47 @@ main {
   transform: scale(1.1);
 }
 
+/* ============ RESPONSIVE MOBILE LAYOUTS ============ */
+@media (max-width: 768px) {
+  .gallery-split-feed-reverse,
+  .asymmetric-triple-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .feed-grid-left-side,
+  .triple-left-column,
+  .triple-right-column,
+  .feed-hero-right-side {
+    width: 100%;
+    flex: none;
+  }
+
+  .feed-grid-left-side {
+    grid-template-columns: 1fr;
+  }
+
+  .feed-grid-left-side .sub-post,
+  .hero-post-wrapper,
+  .triple-item-main,
+  .triple-item-sub {
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-post-wrapper {
+    min-height: 360px;
+  }
+
+  .triple-left-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .triple-right-column {
+    display: block;
+  }
+}
 
 
 /* ============ NAV & UTILITIES ============ */
