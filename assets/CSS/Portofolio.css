@@ -326,28 +326,26 @@ main {
    KODE UNTUK LAYOUT 3 (MODIFIKASI KHUSUS 3 POST)
    ========================================================================== */
 .asymmetric-triple-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
   gap: 18px;
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
-/* Kolom Kiri: Mengatur susunan vertikal 2 kotak kecil */
 .triple-left-column {
-  flex: 1;
-  /* Mengambil setengah lebar */
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  /* Jarak antara post 1 dan post 2 */
+  display: grid;
+  gap: 18px;
 }
 
 /* Kotak Kecil di Sebelah Kiri */
 .triple-item-sub {
-  width: 200%;
-  aspect-ratio: 2 / 1;
-  /* Mengunci bentuk persegi 1:1 */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 180px;
+  /* Mengunci bentuk persegi panjang horizontal */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -356,7 +354,7 @@ main {
 
 .triple-item-sub img {
   width: 100%;
-  height: 100%;
+  height: 100%; 
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -366,13 +364,14 @@ main {
   flex: 1;
   /* Mengambil setengah lebar sisanya */
   display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
 
-/* Kotak Besar di Sebelah Kanan (Otomatis melar mencakup tinggi 2 kotak kiri + gap-nya) */
+/* Kotak Besar di Sebelah Kanan (Mengikuti total tinggi dua kotak kiri) */
 .triple-item-main {
   width: 100%;
   height: 100%;
-  /* Memaksa mengikuti tinggi flexbox induknya */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -398,8 +397,11 @@ main {
 @media (max-width: 768px) {
   .gallery-split-feed-reverse,
   .asymmetric-triple-container {
-    flex-direction: column;
     gap: 16px;
+  }
+
+  .asymmetric-triple-container {
+    grid-template-columns: 1fr;
   }
 
   .feed-grid-left-side,
@@ -418,7 +420,7 @@ main {
   .hero-post-wrapper,
   .triple-item-main,
   .triple-item-sub {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
   }
 
   .hero-post-wrapper {
@@ -734,7 +736,7 @@ ul {
   }
 
   .triple-item-main {
-    aspect-ratio: 1 / 1;
-    /* Ubah ke persegi saat di HP agar posisinya seimbang */
+    aspect-ratio: 16 / 9;
+    /* Tetap persegi panjang di HP */
   }
 }
