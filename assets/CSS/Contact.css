@@ -1,7 +1,7 @@
 :root {
   --primary: #2c2e2d;
   --accent: #5a7a66;
-  --white: #f1ede2;
+  --white: #eceae5;
   --light-gray: #f4f6f9;
   --transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -161,6 +161,11 @@ main {
 .content-box p {
     font-size: 1.1rem;
     opacity: 0.8;
+
+}
+.kerjasama-option:has(input:checked) {
+    border-color: var(--accent) !important;
+    background-color: var(--accent)!important;
 }
 
 .extra-section {

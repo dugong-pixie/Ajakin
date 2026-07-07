@@ -61,82 +61,117 @@
 
     <!-- ============ MAIN CONTENT ============ -->
     <main class="container my-5 py-4">
+        
+        <!-- ============ AJAKAN KERJASAMA ============ -->
+<div class="text-center mb-5 py-5 px-3" style="background-color: var(--primary); border-radius: 20px;">
+    <p class="fw-bold mb-2" style="color: var(--accent); letter-spacing: 4px; font-size: 0.85rem;">MARI BEKERJASAMA</p>
+    <h2 class="fw-light mb-0" style="color: var(--white);">
+        Wujudkan <span class="fw-bold" style="color: var(--accent);">Ide Kreatif</span> Anda Bersama Kami
+    </h2>
+    <div class="mx-auto mt-3 mb-3" style="width: 60px; height: 2px; background-color: var(--accent);"></div>
+    <p class="mb-0 mx-auto" style="color: var(--white); opacity: 0.7; max-width: 600px;">
+        Kami percaya setiap ide besar layak mendapat mitra yang tepat. Ceritakan proyek Anda, dan mari kita mulai kolaborasi yang menghasilkan karya luar biasa.
+    </p>
+</div>
 
-        <div class="row g-5">
-            <!-- Kolom Kiri: Form Kerjasama -->
-            <div class="col-lg-7">
-                <div class="card p-4 p-md-5 border-0 shadow" style="background-color: var(--white); border-radius: 20px;">
-                    <h4 class="fw-bold mb-4" style="color: var(--primary);">Formulir Kerjasama</h4>
-                    <form>
-                        <div class="mb-3">
-                            <label for="nama" class="form-label fw-semibold" style="color: var(--primary);">Nama Perusahaan / Personal</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" style="background-color: var(--light-gray); border: none; padding: 12px;">
-                        </div>
+        <form>
+    <div class="mb-3">
+        <label for="nama" class="form-label fw-semibold" style="color: var(--primary);">Nama Perusahaan / Personal</label>
+        <div class="input-group">
+            <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fas fa-building" style="color: var(--accent);"></i></span>
+            <input type="text" class="form-control border-0" id="nama" placeholder="Masukkan nama" style="background-color: var(--light-gray); padding: 12px;">
+        </div>
+    </div>
 
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-semibold" style="color: var(--primary);">Email Kontak</label>
-                            <input type="email" class="form-control" id="email" placeholder="Masukkan email" style="background-color: var(--light-gray); border: none; padding: 12px;">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="pesan" class="form-label fw-semibold" style="color: var(--primary);">Detail Proyek / Pesan</label>
-                            <textarea class="form-control" id="pesan" rows="4" placeholder="Ceritakan ide Anda..." style="background-color: var(--light-gray); border: none; padding: 12px;"></textarea>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="domisili" class="form-label fw-semibold" style="color: var(--primary);">Domisili</label>
-                            <select class="form-select" id="domisili" style="background-color: var(--light-gray); border: none; padding: 12px;">
-                                <option selected disabled>Pilih kota...</option>
-                                <option value="1">Yogyakarta</option>
-                                <option value="2">Jakarta</option>
-                                <option value="3">Surabaya</option>
-                                <option value="4">Bandung</option>
-                                <option value="5">Lainnya</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-4 mt-4">
-                            <label class="form-label d-block fw-semibold mb-3" style="color: var(--primary);">Jenis Kerjasama</label>
-                            <div class="form-check p-3 mb-2 shadow-sm" style="background-color: var(--light-gray); border-radius: 10px;">
-                                <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaProject" value="project" checked>
-                                <label class="form-check-label fw-bold w-100" for="kerjasamaProject" style="color: var(--primary);">
-                                    Project Base / Freelance
-                                    <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama pengerjaan proyek spesifik dengan tenggat waktu.</span>
-                                </label>
-                            </div>
-                            <div class="form-check p-3 mb-2 shadow-sm" style="background-color: var(--light-gray); border-radius: 10px;">
-                                <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKontrak" value="kontrak">
-                                <label class="form-check-label fw-bold w-100" for="kerjasamaKontrak" style="color: var(--primary);">
-                                    Kontrak / Retainer
-                                    <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Perekrutan untuk posisi kontrak jangka panjang bulanan.</span>
-                                </label>
-                            </div>
-                            <div class="form-check p-3 mb-2 shadow-sm" style="background-color: var(--light-gray); border-radius: 10px;">
-                                <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKolaborasi" value="kolaborasi">
-                                <label class="form-check-label fw-bold w-100" for="kerjasamaKolaborasi" style="color: var(--primary);">
-                                    Kolaborasi Portofolio
-                                    <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama non-komersial membangun proyek kreatif.</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label fw-semibold" style="color: var(--primary);">Tanggal Mulai Target</label>
-                            <input class="form-control" type="date" id="tanggalKerjasama" required style="background-color: var(--light-gray); border: none; padding: 12px;">
-                        </div>
-
-                        <div class="mb-4 form-check mt-4">
-                            <input type="checkbox" class="form-check-input mt-1" id="setuju" required>
-                            <label class="form-check-label" for="setuju" style="color: var(--primary); opacity: 0.8;">Saya setuju dengan syarat dan ketentuan kolaborasi.</label>
-                        </div>
-                        
-                        <div class="d-flex gap-3">
-                            <button type="submit" class="btn px-4 py-2 fw-bold shadow-sm" style="background-color: var(--accent); color: var(--white); border-radius: 8px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Kirim Pesan <i class="fas fa-paper-plane ms-2"></i></button>
-                            <button type="reset" class="btn px-4 py-2 fw-bold" style="background-color: #ddd; color: var(--primary); border-radius: 8px;">Reset</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="email" class="form-label fw-semibold" style="color: var(--primary);">Email Kontak</label>
+            <div class="input-group">
+                <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fas fa-envelope" style="color: var(--accent);"></i></span>
+                <input type="email" class="form-control border-0" id="email" placeholder="nama@email.com" style="background-color: var(--light-gray); padding: 12px;">
             </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="whatsapp" class="form-label fw-semibold" style="color: var(--primary);">Nomor WhatsApp</label>
+            <div class="input-group">
+                <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fab fa-whatsapp" style="color: var(--accent);"></i></span>
+                <input type="tel" class="form-control border-0" id="whatsapp" placeholder="0812xxxxxxxx" style="background-color: var(--light-gray); padding: 12px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="pesan" class="form-label fw-semibold" style="color: var(--primary);">Detail Proyek / Pesan</label>
+        <textarea class="form-control border-0" id="pesan" rows="4" placeholder="Ceritakan ide Anda..." style="background-color: var(--light-gray); padding: 12px;"></textarea>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="domisili" class="form-label fw-semibold" style="color: var(--primary);">Domisili</label>
+            <select class="form-select border-0" id="domisili" style="background-color: var(--light-gray); padding: 12px;">
+                <option selected disabled>Pilih kota...</option>
+                <option value="1">Yogyakarta</option>
+                <option value="2">Jakarta</option>
+                <option value="3">Surabaya</option>
+                <option value="4">Bandung</option>
+                <option value="5">Lainnya</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="budget" class="form-label fw-semibold" style="color: var(--primary);">Estimasi Anggaran</label>
+            <select class="form-select border-0" id="budget" style="background-color: var(--light-gray); padding: 12px;">
+                <option selected disabled>Pilih rentang...</option>
+                <option value="1">&lt; Rp 5 Juta</option>
+                <option value="2">Rp 5 - 15 Juta</option>
+                <option value="3">Rp 15 - 50 Juta</option>
+                <option value="4">&gt; Rp 50 Juta</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-4 mt-4">
+        <label class="form-label d-block fw-semibold mb-3" style="color: var(--primary);">Jenis Kerjasama</label>
+
+        <div class="form-check p-3 mb-2 kerjasama-option" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
+            <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaProject" value="project" checked>
+            <label class="form-check-label fw-bold w-100" for="kerjasamaProject" style="color: var(--primary);">
+                Project Base / Freelance
+                <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama pengerjaan proyek spesifik dengan tenggat waktu.</span>
+            </label>
+        </div>
+
+        <div class="form-check p-3 mb-2 kerjasama-option" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
+            <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKontrak" value="kontrak">
+            <label class="form-check-label fw-bold w-100" for="kerjasamaKontrak" style="color: var(--primary);">
+                Kontrak / Retainer
+                <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Perekrutan untuk posisi kontrak jangka panjang bulanan.</span>
+            </label>
+        </div>
+
+        <div class="form-check p-3 mb-2 kerjasama-option" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
+            <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKolaborasi" value="kolaborasi">
+            <label class="form-check-label fw-bold w-100" for="kerjasamaKolaborasi" style="color: var(--primary);">
+                Kolaborasi Portofolio
+                <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama non-komersial membangun proyek kreatif.</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label fw-semibold" style="color: var(--primary);">Tanggal Mulai Target</label>
+        <input class="form-control border-0" type="date" id="tanggalKerjasama" required style="background-color: var(--light-gray); padding: 12px;">
+    </div>
+
+    <div class="mb-4 form-check mt-4">
+        <input type="checkbox" class="form-check-input mt-1" id="setuju" required>
+        <label class="form-check-label" for="setuju" style="color: var(--primary); opacity: 0.8;">Saya setuju dengan syarat dan ketentuan kolaborasi.</label>
+    </div>
+
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn px-4 py-2 fw-bold shadow-sm" style="background-color: var(--accent); color: var(--white); border-radius: 8px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Kirim Pesan <i class="fas fa-paper-plane ms-2"></i></button>
+        <button type="reset" class="btn px-4 py-2 fw-bold" style="background-color: #ddd; color: var(--primary); border-radius: 8px;">Reset</button>
+    </div>
+</form>
 
             <!-- Kolom Kanan: Info Kontak -->
             <div class="col-lg-5">
