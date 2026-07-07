@@ -229,26 +229,6 @@ main {
   margin-bottom: 80px;
 }
 
-.project-info-header {
-  margin-bottom: 25px;
-  border-left: 4px solid var(--accent);
-  /* Garis vertikal hijau sage bawaan web Anda */
-  padding-left: 15px;
-}
-
-.project-info-header h3 {
-  font-size: 24px;
-  color: var(--white);
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-.project-info-header p {
-  font-size: 14px;
-  color: rgba(241, 237, 226, 0.6);
-  /* Putih transparan */
-  margin-top: 5px;
-}
 
 /* ==========================================================================
    KODE UNTUK LAYOUT 2 (SPLIT MOCKUP + GRID)
@@ -288,6 +268,27 @@ main {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+}
+
+/* Section terakhir: grid 1 kolom di web */
+.instagram-project-section:last-of-type .feed-grid-left-side {
+  grid-template-columns: 1fr;
+}
+
+/* Section ke-2: grid 1 kolom di web */
+.instagram-project-section:nth-of-type(2) .feed-grid-left-side {
+  grid-template-columns: 1fr;
+}
+
+/* Pastikan mobile tetap mempertahankan layout yang sama */
+@media (max-width: 768px) {
+  .instagram-project-section:nth-of-type(2) .feed-grid-left-side {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-project-section:last-of-type .feed-grid-left-side {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Sisi Kanan: Mengatur kontainer gambar besar */
@@ -343,9 +344,9 @@ main {
 /* Kotak Kecil di Sebelah Kiri */
 .triple-item-sub {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   min-height: 180px;
-  /* Mengunci bentuk persegi panjang horizontal */
+  /* Mengunci bentuk persegi */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -393,6 +394,120 @@ main {
   transform: scale(1.1);
 }
 
+/* ============ POSTS GRID LAYOUT ============ */
+.posts-grid-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 0.8fr;
+  gap: 18px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.posts-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.posts-col-left {
+  flex: 1;
+}
+
+.posts-col-center {
+  flex: 1;
+}
+
+.posts-col-right {
+  flex: 1;
+  margin-top: 60px;
+}
+
+.post-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--primary);
+}
+
+.post-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.post-large {
+  aspect-ratio: 1 / 1;
+  margin: 150px 0 40px 0;
+  min-height: 350px;
+  flex-grow: 1;
+}
+
+.post-medium {
+  aspect-ratio: 1 / 1;
+  flex: 1;
+  min-height: 250px;
+}
+
+.post-landscape {
+  aspect-ratio: 1.5 / 1;
+  flex: 1.2;
+  min-height: 200px;
+}
+
+.post-small {
+  aspect-ratio: 1 / 1;
+  flex: 1;
+  min-height: 150px;
+}
+
+.post-item:hover img {
+  transform: scale(1.1);
+}
+
+/* ============ STORIES GRID LAYOUT ============ */
+.stories-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.story-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--primary);
+}
+
+.story-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.story-item-lg {
+  aspect-ratio: 0.8 / 1;
+  min-height: 400px;
+}
+
+.story-item-sm {
+  aspect-ratio: 0.8 / 1;
+  min-height: 400px;
+}
+
+.story-item:hover img {
+  transform: scale(1.1);
+}
+
 /* ============ RESPONSIVE MOBILE LAYOUTS ============ */
 @media (max-width: 768px) {
   .gallery-split-feed-reverse,
@@ -400,9 +515,7 @@ main {
     gap: 16px;
   }
 
-  .asymmetric-triple-container {
-    grid-template-columns: 1fr;
-  }
+
 
   .feed-grid-left-side,
   .triple-left-column,
@@ -410,21 +523,6 @@ main {
   .feed-hero-right-side {
     width: 100%;
     flex: none;
-  }
-
-  .feed-grid-left-side {
-    grid-template-columns: 1fr;
-  }
-
-  .feed-grid-left-side .sub-post,
-  .hero-post-wrapper,
-  .triple-item-main,
-  .triple-item-sub {
-    aspect-ratio: 16 / 9;
-  }
-
-  .hero-post-wrapper {
-    min-height: 360px;
   }
 
   .triple-left-column {
@@ -435,6 +533,69 @@ main {
 
   .triple-right-column {
     display: block;
+  }
+
+  /* Pertahankan POSTS layout di mobile */
+  .posts-grid-layout {
+    grid-template-columns: 0.8fr 1.2fr 0.8fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .posts-col {
+    gap: 16px;
+  }
+
+  /* Pertahankan POSTS layout di mobile */
+  .posts-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .posts-col {
+    gap: 12px;
+  }
+
+  .posts-col-right {
+    margin-top: 0;
+  }
+
+  .post-large {
+    aspect-ratio: 1 / 1;
+    margin: 0 0 30px 0;
+    min-height: 200px;
+    flex-grow: 1;
+  }
+
+  .post-medium {
+    aspect-ratio: 1 / 1;
+    min-height: 180px;
+  }
+
+  .post-landscape {
+    aspect-ratio: 1.5 / 1;
+    min-height: 150px;
+  }
+
+  .post-small {
+    aspect-ratio: 1 / 1;
+    min-height: 150px;
+  }
+
+  /* Pertahankan STORIES layout di mobile */
+  .stories-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .story-item-lg {
+    aspect-ratio: 0.8 / 1;
+    min-height: 220px;
+  }
+
+  .story-item-sm {
+    aspect-ratio: 0.8 / 1;
+    min-height: 220px;
   }
 }
 
