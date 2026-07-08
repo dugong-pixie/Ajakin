@@ -229,171 +229,6 @@ main {
   margin-bottom: 80px;
 }
 
-
-/* ==========================================================================
-   KODE UNTUK LAYOUT 2 (SPLIT MOCKUP + GRID)
-   ========================================================================== */
-.gallery-split-feed-reverse {
-  display: flex;
-  gap: 18px;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  align-items: stretch;
-  /* Memaksa tinggi sisi kanan mengikuti tinggi total sisi kiri */
-}
-
-/* Sisi Kiri: Mengatur formasi grid 2 kolom untuk 4 gambar */
-.feed-grid-left-side {
-  flex: 1;
-  /* Mengambil setengah lebar kontainer */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.feed-grid-left-side .sub-post {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  /* Mengunci bentuk post kotak persegi */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-  background-color: var(--primary);
-}
-
-.feed-grid-left-side .sub-post img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-/* Section terakhir: grid 1 kolom di web */
-.instagram-project-section:last-of-type .feed-grid-left-side {
-  grid-template-columns: 1fr;
-}
-
-/* Section ke-2: grid 1 kolom di web */
-.instagram-project-section:nth-of-type(2) .feed-grid-left-side {
-  grid-template-columns: 1fr;
-}
-
-/* Pastikan mobile tetap mempertahankan layout yang sama */
-@media (max-width: 768px) {
-  .instagram-project-section:nth-of-type(2) .feed-grid-left-side {
-    grid-template-columns: 1fr;
-  }
-
-  .instagram-project-section:last-of-type .feed-grid-left-side {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Sisi Kanan: Mengatur kontainer gambar besar */
-.feed-hero-right-side {
-  flex: 1;
-  /* Mengambil setengah lebar sisanya */
-  display: flex;
-}
-
-.hero-post-wrapper {
-  width: 100%;
-  height: 100%;
-  /* Memaksa tinggi melar penuh mengikuti tinggi grid kiri */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  background-color: var(--primary);
-}
-
-.hero-post-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Mencegah gambar utama menjadi gepeng atau penyet */
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-/* Efek Hover Interaktif */
-.feed-grid-left-side .sub-post:hover img,
-.hero-post-wrapper:hover img {
-  transform: scale(1.1);
-}
-
-/* ==========================================================================
-   KODE UNTUK LAYOUT 3 (MODIFIKASI KHUSUS 3 POST)
-   ========================================================================== */
-.asymmetric-triple-container {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-  gap: 18px;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-.triple-left-column {
-  display: grid;
-  gap: 18px;
-}
-
-/* Kotak Kecil di Sebelah Kiri */
-.triple-item-sub {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  min-height: 180px;
-  /* Mengunci bentuk persegi */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  background-color: var(--primary);
-}
-
-.triple-item-sub img {
-  width: 100%;
-  height: 100%; 
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-/* Kolom Kanan: Menampung post besar */
-.triple-right-column {
-  flex: 1;
-  /* Mengambil setengah lebar sisanya */
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-}
-
-/* Kotak Besar di Sebelah Kanan (Mengikuti total tinggi dua kotak kiri) */
-.triple-item-main {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  background-color: var(--primary);
-}
-
-.triple-item-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Menjaga aset gambar di kanan tidak gepeng/tarik paksa */
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-/* Efek Hover Komparasi */
-.triple-item-sub:hover img,
-.triple-item-main:hover img {
-  transform: scale(1.1);
-}
-
 /* ============ POSTS GRID LAYOUT ============ */
 .posts-grid-layout {
   display: grid;
@@ -594,9 +429,154 @@ main {
     grid-template-columns: 1fr 1fr;
   }
 }
+/* ==========================================================================
+   4. KUNCI PERBAIKAN: ASYMMETRIC CLOCKWISE INSTAGRAM GRID (POSTS #3)
+   ========================================================================== */
+.instagram-project-section {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
 
+.project-info-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-/* ============ NAV & UTILITIES ============ */
+.project-info-header h3 {
+  font-size: 24px;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.project-info-header p {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+/* Container Utama Kertas Putih Gading */
+.asymmetric-clockwise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr; /* Membagi halaman menjadi 3 kolom seimbang */
+  gap: 28px;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  align-items: center; /* Menjaga semua box sejajar lurus secara horizontal */
+}
+
+/* Item Box Pembungkus Utama */
+.grid-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Frame Gambar Kunci Bocor */
+.grid-box .img-wrapper {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden; /* Memotong ujung gambar agar tidak keluar container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  background-color: #000;
+}
+
+.grid-box .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menjaga aset gambar tetap proporsional */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.grid-box:hover .img-wrapper img {
+  transform: scale(1.04);
+}
+
+/* --- STANDARDISASI UKURAN KANVAS PHOTOSHOP --- */
+.box-square .img-wrapper {
+  aspect-ratio: 1 / 1; /* Rasio Kotak Sempurna 1350 x 1350 */
+}
+
+.box-landscape .img-wrapper {
+  aspect-ratio: 3 / 2; /* Rasio Persegi Panjang Sempurna 1620 x 1080 */
+}
+
+/* Dekorasi Titik Bulat Oranye */
+.orange-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #d35400;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* --- PEMETAAN POSISI GRID DAN PIN POINT TITIK ORANYE --- */
+.box-1 { grid-column: 1; grid-row: 1; }
+.box-1 .orange-dot { bottom: -7px; right: 20px; }
+
+.box-2 { grid-column: 2; grid-row: 1; width: 90%; justify-self: center; }
+.box-2 .orange-dot { bottom: -7px; left: 20px; }
+
+.box-3 { grid-column: 3; grid-row: 1; }
+.box-3 .orange-dot { bottom: -7px; left: 20px; }
+
+.box-4 { grid-column: 1; grid-row: 2; }
+.box-4 .orange-dot { bottom: -7px; right: 20px; }
+
+/* Komponen Deskripsi Tengah */
+.grid-text-center {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: justify;
+}
+
+.grid-text-center p {
+  color: #2c2e2d;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.box-5 { grid-column: 3; grid-row: 2; }
+.box-5 .orange-dot { bottom: 20px; left: -7px; }
+
+.box-6 { grid-column: 1; grid-row: 3; }
+.box-6 .orange-dot { bottom: -7px; right: 20px; }
+
+.box-7 { grid-column: 2; grid-row: 3; width: 85%; justify-self: center; }
+.box-7 .orange-dot { bottom: -7px; left: 20px; }
+
+/* Komponen Judul Besar Kanan Bawah */
+.grid-title-bottom {
+  grid-column: 3;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.grid-title-bottom h2 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #1a1c1b;
+  line-height: 1.1;
+  margin: 0;
+}/* ============ NAV & UTILITIES ============ */
 a {
   text-decoration: none;
 }
