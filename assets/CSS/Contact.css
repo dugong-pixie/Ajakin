@@ -163,6 +163,14 @@ main {
     opacity: 0.8;
 
 }
+
+form{
+    padding-left: 70px;
+}
+
+.col-lg-5{
+    padding-right: 70px;
+}
 .kerjasama-option:has(input:checked) {
     border-color: var(--accent) !important;
     background-color: var(--accent)!important;
