@@ -73,152 +73,143 @@
         Kami percaya setiap ide besar layak mendapat mitra yang tepat. Ceritakan proyek Anda, dan mari kita mulai kolaborasi yang menghasilkan karya luar biasa.
     </p>
 </div>
-
-        <form>
-    <div class="mb-3">
-        <label for="nama" class="form-label fw-semibold" style="color: var(--primary);">Nama Perusahaan / Personal</label>
-        <div class="input-group">
-            <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fas fa-building" style="color: var(--accent);"></i></span>
-            <input type="text" class="form-control border-0" id="nama" placeholder="Masukkan nama" style="background-color: var(--light-gray); padding: 12px;">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="email" class="form-label fw-semibold" style="color: var(--primary);">Email Kontak</label>
-            <div class="input-group">
-                <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fas fa-envelope" style="color: var(--accent);"></i></span>
-                <input type="email" class="form-control border-0" id="email" placeholder="nama@email.com" style="background-color: var(--light-gray); padding: 12px;">
-            </div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <label for="whatsapp" class="form-label fw-semibold" style="color: var(--primary);">Nomor WhatsApp</label>
-            <div class="input-group">
-                <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fab fa-whatsapp" style="color: var(--accent);"></i></span>
-                <input type="tel" class="form-control border-0" id="whatsapp" placeholder="0812xxxxxxxx" style="background-color: var(--light-gray); padding: 12px;">
-            </div>
-        </div>
-    </div>
-
-    <div class="mb-3">
-        <label for="pesan" class="form-label fw-semibold" style="color: var(--primary);">Detail Proyek / Pesan</label>
-        <textarea class="form-control border-0" id="pesan" rows="4" placeholder="Ceritakan ide Anda..." style="background-color: var(--light-gray); padding: 12px;"></textarea>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="domisili" class="form-label fw-semibold" style="color: var(--primary);">Domisili</label>
-            <select class="form-select border-0" id="domisili" style="background-color: var(--light-gray); padding: 12px;">
-                <option selected disabled>Pilih kota...</option>
-                <option value="1">Yogyakarta</option>
-                <option value="2">Jakarta</option>
-                <option value="3">Surabaya</option>
-                <option value="4">Bandung</option>
-                <option value="5">Lainnya</option>
-            </select>
-        </div>
-        <div class="col-md-6 mb-3">
-            <label for="budget" class="form-label fw-semibold" style="color: var(--primary);">Estimasi Anggaran</label>
-            <select class="form-select border-0" id="budget" style="background-color: var(--light-gray); padding: 12px;">
-                <option selected disabled>Pilih rentang...</option>
-                <option value="1">&lt; Rp 5 Juta</option>
-                <option value="2">Rp 5 - 15 Juta</option>
-                <option value="3">Rp 15 - 50 Juta</option>
-                <option value="4">&gt; Rp 50 Juta</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="mb-4 mt-4">
-        <label class="form-label d-block fw-semibold mb-3" style="color: var(--primary);">Jenis Kerjasama</label>
-
-        <div class="form-check p-3 mb-2 kerjasama-option" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
-            <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaProject" value="project" checked>
-            <label class="form-check-label fw-bold w-100" for="kerjasamaProject" style="color: var(--primary);">
-                Project Base / Freelance
-                <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama pengerjaan proyek spesifik dengan tenggat waktu.</span>
-            </label>
-        </div>
-
-        <div class="form-check p-3 mb-2 kerjasama-option" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
-            <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKontrak" value="kontrak">
-            <label class="form-check-label fw-bold w-100" for="kerjasamaKontrak" style="color: var(--primary);">
-                Kontrak / Retainer
-                <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Perekrutan untuk posisi kontrak jangka panjang bulanan.</span>
-            </label>
-        </div>
-
-        <div class="form-check p-3 mb-2 kerjasama-option" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
-            <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKolaborasi" value="kolaborasi">
-            <label class="form-check-label fw-bold w-100" for="kerjasamaKolaborasi" style="color: var(--primary);">
-                Kolaborasi Portofolio
-                <span class="d-block small fw-normal mt-1" style="opacity: 0.7;">Kerjasama non-komersial membangun proyek kreatif.</span>
-            </label>
-        </div>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label fw-semibold" style="color: var(--primary);">Tanggal Mulai Target</label>
-        <input class="form-control border-0" type="date" id="tanggalKerjasama" required style="background-color: var(--light-gray); padding: 12px;">
-    </div>
-
-    <div class="mb-4 form-check mt-4">
-        <input type="checkbox" class="form-check-input mt-1" id="setuju" required>
-        <label class="form-check-label" for="setuju" style="color: var(--primary); opacity: 0.8;">Saya setuju dengan syarat dan ketentuan kolaborasi.</label>
-    </div>
-
-    <div class="d-flex gap-3">
-        <button type="submit" class="btn px-4 py-2 fw-bold shadow-sm" style="background-color: var(--accent); color: var(--white); border-radius: 8px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Kirim Pesan <i class="fas fa-paper-plane ms-2"></i></button>
-        <button type="reset" class="btn px-4 py-2 fw-bold" style="background-color: #ddd; color: var(--primary); border-radius: 8px;">Reset</button>
-    </div>
-</form>
-
-            <!-- Kolom Kanan: Info Kontak -->
-            <div class="col-lg-5">
-                <div class="card p-4 p-md-5 border-0 shadow h-100" style="background-color: var(--primary); color: var(--white); border-radius: 20px; position: sticky; top: 100px;">
-                    <h4 class="fw-bold mb-4" style="color: var(--white);">Informasi Kontak</h4>
-                    <p class="mb-5" style="opacity: 0.85;">Tim kami siap membalas pesan Anda dalam 1x24 jam kerja. Anda juga bisa mengunjungi kantor kami untuk berdiskusi langsung.</p>
-                    
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="icon-box d-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div>
-                            <p class="mb-0 fw-bold">Telepon / WhatsApp</p>
-                            <span style="opacity: 0.8;">+62 812-3456-7890</span>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="icon-box d-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p class="mb-0 fw-bold">Email</p>
-                            <span style="opacity: 0.8;">hello@ajakingraphic.com</span>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="icon-box d-flex align-items-center justify-content-center me-4 flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <p class="mb-0 fw-bold">Kantor Pusat</p>
-                            <span style="opacity: 0.8;">Jl. Jend. Sudirman No. 123<br>Jakarta Selatan, Indonesia 12190</span>
-                        </div>
-                    </div>
-
-                    <hr style="border-color: rgba(241, 237, 226, 0.2);">
-                    
-                    <h5 class="fw-bold mt-4 mb-3" style="color: var(--white);">Terhubung dengan Kami</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-dribbble"></i></a>
+<div class="container my-5">
+    <div class="row g-5"> <div class="col-lg-7">
+            <form>
+                <div class="mb-1">
+                    <label for="nama" class="form-label fw-semibold" style="color: var(--light-gray);">Nama Perusahaan / Personal</label>
+                    <div class="input-group">
+                        <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fas fa-building" style="color: var(--accent);"></i></span>
+                        <input type="text" class="form-control border-0" id="nama" placeholder="Masukkan nama" style="background-color: var(--light-gray); padding: 12px;">
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-1">
+                        <label for="email" class="form-label fw-semibold" style="color: var(--light-gray);">Email Kontak</label>
+                        <div class="input-group">
+                            <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fas fa-envelope" style="color: var(--accent);"></i></span>
+                            <input type="email" class="form-control border-0" id="email" placeholder="nama@email.com" style="background-color: var(--light-gray); padding: 12px;">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <label for="whatsapp" class="form-label fw-semibold" style="color: var(--light-gray);">Nomor WhatsApp</label>
+                        <div class="input-group">
+                            <span class="input-group-text border-0" style="background-color: var(--light-gray);"><i class="fab fa-whatsapp" style="color: var(--accent);"></i></span>
+                            <input type="tel" class="form-control border-0" id="whatsapp" placeholder="0812xxxxxxxx" style="background-color: var(--light-gray); padding: 12px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-1">
+                    <label for="domisili" class="form-label fw-semibold" style="color: var(--light-gray);">Domisili</label>
+                    <select class="form-select border-0" id="domisili" style="background-color: var(--light-gray); padding: 12px;">
+                        <option selected disabled>Pilih kota...</option>
+                        <option value="1">Yogyakarta</option>
+                        <option value="2">Jakarta</option>
+                        <option value="3">Surabaya</option>
+                        <option value="4">Bandung</option>
+                        <option value="5">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="mb-1">
+                    <label for="pesan" class="form-label fw-semibold" style="color: var(--light-gray);">Detail Proyek / Pesan</label>
+                    <textarea class="form-control border-0" id="pesan" rows="4" placeholder="Ceritakan ide Anda..." style="background-color: var(--light-gray); padding: 12px;"></textarea>
+                </div>  
+
+                <div class="mb-1 mt-4">
+                    <label class="form-label d-block fw-semibold mb-3" style="color: var(--light-gray);">Jenis Kerjasama</label>
+
+                    <div class="form-check p-3 mb-2 kerjasama-option d-flex align-items-start" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
+                        <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaProject" value="project" checked style="margin-top: 0.3rem;">
+                        <label class="form-check-label fw-bold" for="kerjasamaProject" style="color: var(--primary); line-height: 1.2;">
+                            Project Base / Freelance
+                            <span class="d-block small fw-normal mt-1" style="opacity: 0.7; line-height: 1.4;">Kerjasama pengerjaan proyek spesifik dengan tenggat waktu.</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-check p-3 mb-2 kerjasama-option d-flex align-items-start" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
+                        <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKontrak" value="kontrak" style="margin-top: 0.3rem;">
+                        <label class="form-check-label fw-bold" for="kerjasamaKontrak" style="color: var(--primary); line-height: 1.2;">
+                            Kontrak / Retainer
+                            <span class="d-block small fw-normal mt-1" style="opacity: 0.7; line-height: 1.4;">Perekrutan untuk posisi kontrak jangka panjang bulanan.</span>
+                        </label>
+                    </div>
+
+                    <div class="form-check p-3 mb-2 kerjasama-option d-flex align-items-start" style="background-color: var(--light-gray); border-radius: 10px; border: 2px solid transparent; transition: all 0.2s;">
+                        <input class="form-check-input ms-0 me-3 mt-2" type="radio" name="jenisKerjasama" id="kerjasamaKolaborasi" value="kolaborasi" style="margin-top: 0.3rem;">
+                        <label class="form-check-label fw-bold" for="kerjasamaKolaborasi" style="color: var(--primary); line-height: 1.2;">
+                            Kolaborasi Portofolio
+                            <span class="d-block small fw-normal mt-1" style="opacity: 0.7; line-height: 1.4;">Kerjasama non-komersial membangun proyek kreatif.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold" style="color: var(--light-gray);">Tanggal Mulai Target</label>
+                    <input class="form-control border-0" type="date" id="tanggalKerjasama" required style="background-color: var(--light-gray); padding: 12px;">
+                </div>
+
+                <div class="mb-4 form-check mt-4 d-flex align-items-center">
+                    <input type="checkbox" class="form-check-input me-2 mt-0" id="setuju" required>
+                    <label class="form-check-label" for="setuju" style="color: var(--light-gray); opacity: 0.8;">Saya setuju dengan syarat dan ketentuan kolaborasi.</label>
+                </div>
+
+                <div class="d-flex gap-3">
+                    <button type="submit" class="btn px-4 py-2 fw-bold shadow-sm" style="background-color: var(--accent); color: var(--white); border-radius: 8px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Kirim Pesan <i class="fas fa-paper-plane ms-2"></i></button>
+                    <button type="reset" class="btn px-4 py-2 fw-bold" style="background-color: #ddd; color: var(--primary); border-radius: 8px;">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card p-4 p-md-5 border-0 shadow h-100" style="background-color: var(--primary); color: var(--white); border-radius: 20px; position: sticky; top: 100px;">
+                <h4 class="fw-bold mb-4" style="color: var(--white);">Informasi Kontak</h4>
+                <p class="mb-5" style="opacity: 0.85;">Tim kami siap membalas pesan Anda dalam 1x24 jam kerja. Anda juga bisa mengunjungi kantor kami untuk berdiskusi langsung.</p>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="icon-box d-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <p class="mb-0 fw-bold">Telepon / WhatsApp</p>
+                        <span style="opacity: 0.8;">+62 812-3456-7890</span>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="icon-box d-flex align-items-center justify-content-center me-4" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p class="mb-0 fw-bold">Email</p>
+                        <span style="opacity: 0.8;">hello@ajakingraphic.com</span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-5">
+                    <div class="icon-box d-flex align-items-center justify-content-center me-4 flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; font-size: 1.2rem; color: var(--accent);">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p class="mb-0 fw-bold">Kantor Pusat</p>
+                        <span style="opacity: 0.8;">Jl. Jend. Sudirman No. 123<br>Jakarta Selatan, Indonesia 12190</span>
+                    </div>
+                </div>
+
+                <hr style="border-color: rgba(241, 237, 226, 0.2);">
+                
+                <h5 class="fw-bold mt-4 mb-3" style="color: var(--white);">Terhubung dengan Kami</h5>
+                <div class="d-flex gap-3">
+                    <a href="https://www.instagram.com/yaelahhhwiii?igsh=enJwcXMwN3ZtZHo1" target="_blank" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/bambang-supriyadi-6a6b3a31a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(241, 237, 226, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.backgroundColor='var(--accent)'" onmouseout="this.style.backgroundColor='rgba(241, 237, 226, 0.1)'"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
+        </div>
+
+    </div>
+</div>
         </div>
     </main>
 
