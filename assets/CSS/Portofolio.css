@@ -274,32 +274,27 @@ main {
   transition: transform 0.4s ease;
 }
 
-.post-large {
-  aspect-ratio: 1 / 1;
-  margin: 150px 0 40px 0;
-}
+  .post-large {
+    aspect-ratio: 1 / 1;
+    margin: 270px 0 40px 0;
+  }
 
-.post-medium {
-  aspect-ratio: 1 / 1;
-  flex: 1;
-  min-height: 250px;
-}
+  .post-medium {
+    aspect-ratio: 1 / 1;
+  }
 
-.post-landscape {
-  aspect-ratio: 1.5 / 1;
-  flex: 1.2;
-  min-height: 200px;
-}
+  .post-landscape {
+    aspect-ratio: 1.5 / 1;
+  }
 
-.post-small {
-  aspect-ratio: 1 / 1;
-  flex: 1;
-  min-height: 150px;
-}
+  .post-small {
+    aspect-ratio: 1 / 1;
+  }
+  .post-potrait {
+    aspect-ratio: 3 / 4;
+    margin: 100px 0 40px 0;
+  }
 
-.post-item:hover img {
-  transform: scale(1.1);
-}
 
 /* ============ STORIES GRID LAYOUT ============ */
 .stories-grid-layout {
@@ -384,22 +379,37 @@ main {
     margin-top: 60px;
   }
 
-  .post-large {
-    aspect-ratio: 1 / 1;
+.post-large {
+  aspect-ratio: 1 / 1;
+  flex: 1;
+  margin: 150px 0 40px 0;
+}
+  .post-potrait {
+    aspect-ratio: 3 / 4;
     margin: 0 0 40px 0;
   }
 
-  .post-medium {
-    aspect-ratio: 1 / 1;
-  }
+.post-medium {
+  aspect-ratio: 1 / 1;
+  flex: 1;
+  min-height: 250px;
+}
 
-  .post-landscape {
-    aspect-ratio: 1.5 / 1;
-  }
+.post-landscape {
+  aspect-ratio: 1.5 / 1;
+  flex: 1.2;
+  min-height: 200px;
+}
 
-  .post-small {
-    aspect-ratio: 1 / 1;
-  }
+.post-small {
+  aspect-ratio: 1 / 1;
+  flex: 1;
+  min-height: 150px;
+}
+
+.post-item:hover img {
+  transform: scale(1.1);
+}
 
   /* Pertahankan STORIES layout di mobile */
   .stories-grid-layout {
