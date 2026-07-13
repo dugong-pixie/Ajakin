@@ -120,7 +120,7 @@ main {
 }
 
 .masking-header h2 {
-  font-size: 14.5rem;
+  font-size: 8.5rem;
   color: var(--white);
   font-family: 'Impact', 'Arial Black', sans-serif;
   letter-spacing: 12px;
@@ -630,13 +630,18 @@ ul {
 }
 
 .header {
-
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
   animation: slideIn 0.5s ease;
+}
+
+.header.scrolled {
+  background: var(--primary);
+  box-shadow: 0 4px 20px rgba(44, 46, 45, 0.35);
 }
 
 .header-container {
@@ -698,12 +703,12 @@ ul {
   bottom: 0;
   left: 0;
   height: 6px;
-  background: var(--secondary);
+  background: var(--accent);
   width: 0%;
   transition: width 0.3s ease;
   z-index: 1001;
   border-radius: 0 4px 4px 0;
-  box-shadow: 0 0 10px var(--white);
+  box-shadow: 0 0 10px rgba(241, 237, 226, 0.5);
 }
 
 /* ============ FOOTER ============ */
@@ -768,7 +773,7 @@ ul {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(241, 237, 226, 0.2);
   border-radius: 50%;
   color: var(--white);
   transition: all 0.3s ease;
@@ -781,11 +786,114 @@ ul {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(241, 237, 226, 0.2);
   margin-top: 2rem;
   padding-top: 2rem;
   text-align: center;
   color: var(--primary);
+}
+
+/* ============ CALL TO ACTION BANNER ============ */
+.portfolio-cta-banner {
+  background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(44, 46, 45, 0.15);
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aksesoris background kotak abstrak */
+.portfolio-cta-banner::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 4px solid rgba(90, 122, 102, 0.08);
+  border-radius: 20px;
+  top: -50px;
+  right: -50px;
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.portfolio-cta-banner h2 {
+  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-cta-banner p {
+  color: var(--primary);
+  opacity: 0.8;
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-cta-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary-cta {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 4px 15px rgba(90, 122, 102, 0.4);
+}
+
+.btn-primary-cta:hover {
+  transform: translateY(-3px);
+  background-color: #4a6654;
+}
+
+.btn-secondary-cta {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 4px 15px rgba(44, 46, 45, 0.2);
+}
+
+.btn-secondary-cta:hover {
+  transform: translateY(-3px);
+  background-color: #1a1c1b;
+}
+
+/* ============ REVEAL ON SCROLL ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -951,5 +1059,28 @@ ul {
   /* Kurangi padding atas main di mobile agar pas */
   main {
     padding: 90px 10px 20px;
+  }
+
+  /* Kustom Responsif untuk CTA Banner */
+  .portfolio-cta-banner {
+    padding: 3rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 12px;
+  }
+  .portfolio-cta-banner h2 {
+    font-size: 1.6rem;
+  }
+  .portfolio-cta-banner p {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  .portfolio-cta-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    width: 100%; /* Tombol memanjang penuh di HP */
+    text-align: center;
+  }
+  .portfolio-cta-buttons {
+    gap: 0.8rem;
   }
 }
