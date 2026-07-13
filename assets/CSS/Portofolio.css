@@ -558,7 +558,7 @@ main {
 
 .grid-text-center p {
   color: #2c2e2d;
-  font-size: 13px;
+  font-size: 25px;
   line-height: 1.6;
   margin: 0;
 }
@@ -585,7 +585,7 @@ main {
 .grid-title-bottom h2 {
   font-family: 'Segoe UI', sans-serif;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 56px;
   color: #1a1c1b;
   line-height: 1.1;
   margin: 0;
