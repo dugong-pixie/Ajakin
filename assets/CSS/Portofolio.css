@@ -36,19 +36,16 @@ main {
 .hero-banner-flat {
   width: 100%;
   margin-bottom: 0px;
-  /* Jarak dikurangi agar tidak terlalu jauh */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(44, 46, 45, 0.15);
   background-color: var(--white);
-  /* Latar belakang cadangan jika gambar loading */
-  display: flex;
+  display: block;
 }
 
 .hero-flat-img {
   width: 100%;
   height: auto;
-  object-fit: cover;
   display: block;
 }
 
@@ -123,7 +120,7 @@ main {
 }
 
 .masking-header h2 {
-  font-size: 14.5 rem;
+  font-size: 14.5rem;
   color: var(--white);
   font-family: 'Impact', 'Arial Black', sans-serif;
   letter-spacing: 12px;
@@ -339,12 +336,16 @@ main {
 
 /* ============ RESPONSIVE MOBILE LAYOUTS ============ */
 @media (max-width: 768px) {
+  /* Skala Ukuran Judul Gallery agar Muat di Layar HP */
+  .masking-header h2 {
+    font-size: 4.5rem;
+    letter-spacing: 6px;
+  }
+
   .gallery-split-feed-reverse,
   .asymmetric-triple-container {
     gap: 16px;
   }
-
-
 
   .feed-grid-left-side,
   .triple-left-column,
@@ -364,67 +365,68 @@ main {
     display: block;
   }
 
-  /* Pertahankan POSTS layout di mobile */
+  /* Pertahankan POSTS layout di mobile tanpa gap kosong berlebihan */
   .posts-grid-layout {
     grid-template-columns: 0.8fr 1.2fr 0.8fr;
-    gap: 16px;
+    gap: 10px;
     align-items: start;
   }
 
   .posts-col {
-    gap: 16px;
+    gap: 10px;
   }
 
   .posts-col-right {
-    margin-top: 60px;
+    margin-top: 15px;
   }
 
-.post-large {
-  aspect-ratio: 1 / 1;
-  flex: 1;
-  margin: 150px 0 40px 0;
-}
+  .post-large {
+    aspect-ratio: 1 / 1;
+    flex: 1;
+    margin: 30px 0 10px 0;
+  }
+
   .post-potrait {
     aspect-ratio: 3 / 4;
-    margin: 0 0 40px 0;
+    margin: 0 0 10px 0;
   }
 
-.post-medium {
-  aspect-ratio: 1 / 1;
-  flex: 1;
-  min-height: 250px;
-}
+  .post-medium {
+    aspect-ratio: 1 / 1;
+    flex: 1;
+    min-height: auto;
+  }
 
-.post-landscape {
-  aspect-ratio: 1.5 / 1;
-  flex: 1.2;
-  min-height: 200px;
-}
+  .post-landscape {
+    aspect-ratio: 1.5 / 1;
+    flex: 1.2;
+    min-height: auto;
+  }
 
-.post-small {
-  aspect-ratio: 1 / 1;
-  flex: 1;
-  min-height: 150px;
-}
+  .post-small {
+    aspect-ratio: 1 / 1;
+    flex: 1;
+    min-height: auto;
+  }
 
-.post-item:hover img {
-  transform: scale(1.1);
-}
+  .post-item:hover img {
+    transform: scale(1.1);
+  }
 
-  /* Pertahankan STORIES layout di mobile */
+  /* Pertahankan STORIES layout di mobile tanpa distorsi/stretching */
   .stories-grid-layout {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 10px;
   }
 
   .story-item-lg {
     aspect-ratio: 0.8 / 1;
-    min-height: 300px;
+    min-height: auto; /* Hilangkan min-height agar tidak ketarik vertikal */
   }
 
   .story-item-sm {
     aspect-ratio: 0.8 / 1;
-    min-height: 300px;
+    min-height: auto; /* Hilangkan min-height agar tidak ketarik vertikal */
   }
 
   /* STORIES 2 responsive */
@@ -438,6 +440,35 @@ main {
     gap: 12px;
     grid-template-columns: 1fr 1fr;
   }
+}
+
+@media (max-width: 576px) {
+  /* Skala tambahan khusus smartphone layar kecil (iPhone 12 / Android Portrait) */
+  .masking-header h2 {
+    font-size: 3.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .masking-header p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .split-bars-container {
+    height: 200px; /* Kurangi tinggi area split bars agar proporsional */
+  }
+
+  .bar-item {
+    background-size: 600% 200px;
+  }
+
+  .bar-1 { background-position: 0% calc((200px * 0.15) / -2); }
+  .bar-2 { background-position: 20% calc((200px * 0.05) / -2); }
+  .bar-3 { background-position: 40% calc((200px * 0.25) / -2); }
+  .bar-4 { background-position: 60% 0px; }
+  .bar-5 { background-position: 80% calc((200px * 0.10) / -2); }
+  .bar-6 { background-position: 100% calc((200px * 0.20) / -2); }
 }
 /* ==========================================================================
    4. KUNCI PERBAIKAN: ASYMMETRIC CLOCKWISE INSTAGRAM GRID (POSTS #3)
@@ -843,50 +874,82 @@ ul {
 }
 
 /* ============ MEDIA QUERIES (RESPONSIVE RULES) ============ */
-@media (max-width: 768px) {}
-
-
 @media (max-width: 768px) {
-
-  /* Layout 2 di HP: Gambar mockup di atas, grid post pindah ke bawahnya */
-  .gallery-split-feed-reverse {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .feed-grid-left-side {
+  /* Skala Responsif Mikro untuk Asymmetric Clockwise Grid di Tablet */
+  .asymmetric-clockwise-grid {
+    grid-template-columns: 1fr 1.1fr 1fr;
     gap: 12px;
-    /* Rapatkan gap antar kotak di HP */
+    padding: 20px;
   }
 
-  .hero-post-wrapper {
-    aspect-ratio: 1 / 1;
-    /* Ubah gambar kanan jadi persegi di HP agar seimbang */
-    height: auto;
+  .grid-text-center p {
+    font-size: 14px;
+    line-height: 1.5;
   }
 
-  .sub-post,
-  .triple-item {
+  .grid-title-bottom h2 {
+    font-size: 32px;
+  }
+
+  .orange-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Penyesuaian koordinat titik oranye untuk tablet */
+  .box-1 .orange-dot { bottom: -4px; right: 10px; }
+  .box-2 .orange-dot { bottom: -4px; left: 10px; }
+  .box-3 .orange-dot { bottom: -4px; left: 10px; }
+  .box-4 .orange-dot { bottom: -4px; right: 10px; }
+  .box-5 .orange-dot { bottom: 10px; left: -4px; }
+  .box-6 .orange-dot { bottom: -4px; right: 10px; }
+  .box-7 .orange-dot { bottom: -4px; left: 10px; }
+}
+
+@media (max-width: 576px) {
+  /* Skala Responsif Mikro untuk Asymmetric Clockwise Grid di Handphone Portrait */
+  .asymmetric-clockwise-grid {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 6px;
+    padding: 8px;
     border-radius: 8px;
-    /* Lengkungan sedikit diperkecil di HP */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 
-  /* Layout 3 di HP: Tetap 3 kolom tapi gap dirapatkan agar hemat ruang */
-  .triple-feed-container {
-    gap: 10px;
+  .grid-text-center {
+    padding: 5px;
   }
 
-  .asymmetric-triple-container {
-    flex-direction: column;
-    gap: 15px;
+  .grid-text-center p {
+    font-size: 9.5px;
+    line-height: 1.45;
   }
 
-  .triple-left-column {
-    gap: 15px;
+  .grid-title-bottom {
+    padding-left: 5px;
   }
 
-  .triple-item-main {
-    aspect-ratio: 16 / 9;
-    /* Tetap persegi panjang di HP */
+  .grid-title-bottom h2 {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .orange-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Penyesuaian koordinat titik oranye untuk mobile */
+  .box-1 .orange-dot { bottom: -3px; right: 5px; }
+  .box-2 .orange-dot { bottom: -3px; left: 5px; }
+  .box-3 .orange-dot { bottom: -3px; left: 5px; }
+  .box-4 .orange-dot { bottom: -3px; right: 5px; }
+  .box-5 .orange-dot { bottom: 5px; left: -3px; }
+  .box-6 .orange-dot { bottom: -3px; right: 5px; }
+  .box-7 .orange-dot { bottom: -3px; left: 5px; }
+  
+  /* Kurangi padding atas main di mobile agar pas */
+  main {
+    padding: 90px 10px 20px;
   }
 }

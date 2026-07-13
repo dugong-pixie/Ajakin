@@ -1,9 +1,9 @@
+/* ============ DESIGN SYSTEM & VARIABLES ============ */
 :root {
   --primary: #2c2e2d;
   --accent: #5a7a66;
-  --white: #eceae5;
+  --white: #f1ede2;
   --light-gray: #f4f6f9;
-  --transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * {
@@ -34,16 +34,21 @@ ul {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
     animation: slideIn 0.5s ease;
+}
+
+.header.scrolled {
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(44, 46, 45, 0.35);
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 32px; /* Disesuaikan agar navbar tidak terlalu tebal */
-    /* Dikecilkan sedikit paddingnya agar pas */
+    padding: 15px 32px;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -55,10 +60,9 @@ ul {
     display: block;
     object-fit: contain;
     transition: transform 0.3s ease;
-    margin-left: -15px; /* Digeser ke kiri secara proporsional */
+    margin-left: -15px;
 }
 
-/* Efek opsional saat logo disentuh kursor */
 .brand-logo:hover {
     transform: scale(1.05);
 }
@@ -87,9 +91,7 @@ ul {
 
 .nav-list a:hover {
     color: var(--white);
-    /* Memberikan bayangan hitam transparan yang halus di belakang teks */
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6),
-        0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 2px 4px rgba(44, 46, 45, 0.6), 0px 4px 10px rgba(44, 46, 45, 0.3);
 }
 
 .scroll-progress {
@@ -97,34 +99,34 @@ ul {
     bottom: 0;
     left: 0;
     height: 6px;
-    background: var(--secondary);
+    background: var(--accent);
     width: 0%;
     transition: width 0.3s ease;
     z-index: 1001;
     border-radius: 0 4px 4px 0;
-    box-shadow: 0 0 10px var(--white);
+    box-shadow: 0 0 10px rgba(241, 237, 226, 0.5);
 }
 
-/* ============ MAIN CONTENT ============ */
+/* ============ MAIN CONTENT & HERO ============ */
+main {
+    margin-top: 0;
+    min-height: calc(100vh - 80px);
+    background-color: var(--primary);
+}
 
 .hero-banner-flat {
     width: 100%;
     margin-bottom: 60px;
     overflow: hidden;
     display: flex;
+    aspect-ratio: 16/9;
+    padding: 0;
 }
 
-.hero-flat-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-}
-
-main {
-    margin-top: 80px;
-    min-height: calc(100vh - 80px);
-    background-color: var(--primary);
+.hero-contact-img {
+    max-height: 60vh;
+    transform: scale(1.15);
+    filter: drop-shadow(0 20px 30px rgba(44, 46, 45, 0.8));
 }
 
 .section {
@@ -161,19 +163,24 @@ main {
 .content-box p {
     font-size: 1.1rem;
     opacity: 0.8;
-
 }
 
-form{
+form {
     padding-left: 70px;
 }
 
-.col-lg-5{
+.col-lg-5 {
     padding-right: 70px;
 }
+
 .kerjasama-option:has(input:checked) {
     border-color: var(--accent) !important;
-    background-color: var(--accent)!important;
+    background-color: var(--accent) !important;
+}
+
+.kerjasama-option:has(input:checked) label,
+.kerjasama-option:has(input:checked) span {
+    color: var(--white) !important;
 }
 
 .extra-section {
@@ -183,7 +190,7 @@ form{
 }
 
 .extra-section h3 {
-    color: var(--secondary);
+    color: var(--accent);
 }
 
 .extra-section p {
@@ -260,7 +267,7 @@ form{
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(241, 237, 226, 0.2);
     border-radius: 50%;
     color: var(--white);
     transition: all 0.3s ease;
@@ -273,7 +280,7 @@ form{
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(241, 237, 226, 0.2);
     margin-top: 2rem;
     padding-top: 2rem;
     text-align: center;
@@ -289,12 +296,24 @@ form{
     color: var(--primary);
 }
 
-/* ============ RESPONSIVE ============ */
-@media (max-width: 768px) {
+/* ============ KEYFRAMES ============ */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ RESPONSIVE LAYOUT OVERRIDES ============ */
+@media (max-width: 991px) {
+    /* Navbar Toggle */
     .nav-toggle {
         display: block;
     }
-
 
     .nav-menu {
         display: none;
@@ -302,22 +321,13 @@ form{
         position: absolute;
         top: 100%;
         left: 0;
-        background: rgba(44, 46, 45, 0.75);
-        /* Dark transparent */
+        background: rgba(44, 46, 45, 0.95);
         backdrop-filter: blur(15px);
-        /* Glassmorphism effect */
         -webkit-backdrop-filter: blur(15px);
-        padding: 1rem 5%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem 5%;
+        box-shadow: 0 4px 15px rgba(44, 46, 45, 0.3);
+        border-bottom: 1px solid rgba(90, 122, 102, 0.2);
     }
-
-    .nav-list a {
-        color: var(--white);
-        /* Ensure text is visible on dark transparent bg */
-        font-size: 1.1rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
 
     .nav-menu.active {
         display: block;
@@ -325,13 +335,57 @@ form{
 
     .nav-list {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
     }
 
-    .brand {
-        font-size: 1.4rem;
+    .nav-list a {
+        color: var(--white);
+        font-size: 1.15rem;
+        text-shadow: 0 2px 4px rgba(44, 46, 45, 0.5);
+        display: block;
+        padding: 8px 0;
+    }
+    
+    .nav-list a.active {
+        border-bottom: none;
+        border-left: 3px solid var(--accent);
+        padding-left: 10px;
     }
 
+    /* Layout column form adjustments */
+    form {
+        padding-left: 0;
+    }
+
+    .col-lg-5 {
+        padding-right: 0;
+        margin-top: 3rem;
+    }
+
+    /* Hero Banner Mobile */
+    .hero-banner-flat {
+        aspect-ratio: auto;
+        min-height: auto;
+        padding: 120px 0 60px;
+    }
+
+    .hero-contact-img {
+        max-height: 40vh !important;
+        transform: scale(1) !important;
+        margin-top: 1rem;
+    }
+
+    .brand-logo {
+        height: 36px;
+        margin-left: 0;
+    }
+
+    .hero-banner-flat > img:first-of-type {
+        object-position: 20% center !important;
+    }
+}
+
+@media (max-width: 768px) {
     .content-box {
         min-height: 50vh;
         padding: 2rem;
@@ -346,51 +400,23 @@ form{
     }
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
+/* ============ MOBILE PORTRAIT ADAPTATIONS ============ */
+@media (max-width: 576px) {
     .hero-banner-flat {
-    width: 100%;
-    margin-bottom: 60px;
-    overflow: hidden;
-    display: flex;
-}
+        padding: 90px 0 40px;
+    }
 
-    .brand-logo {
-        height: 20px;
-        /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
+    .hero-contact-img {
+        max-height: 30vh !important;
+    }
+    
+    /* Kirim Pesan / Reset button layout */
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 0.8rem !important;
+    }
+    
+    .d-flex.gap-3 button {
+        width: 100%;
     }
 }
-
-
-@media (max-width: 768px) {
-    .brand-logo {
-        height: 32px; /* Ukuran seragam untuk semua halaman di mobile */
-        margin-left: 0; /* Kembalikan margin di mobile agar tidak terpotong */
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-banner-flat > img:first-of-type, .portfolio-hero-section > img:first-of-type {
-        object-position: 20% center !important; /* Menggeser bg saat mobile agar logo tidak bertabrakan dengan warna gelap */
-    }
-}
-
-/* === Styles extracted from HTML === */
-.hero-banner-flat { aspect-ratio: 16/9; overflow: hidden; padding: 0; }
-        .hero-contact-img { max-height: 60vh; transform: scale(1.15); }
-        @media (max-width: 991px) {
-            .hero-banner-flat { aspect-ratio: auto; min-height: 100vh; padding: 120px 0; }
-            .hero-contact-img { max-height: 40vh !important; transform: scale(1) !important; margin-top: 1rem; }
-        }
-

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ajakin Graphic</title>
+    <link rel="icon" type="image/png" href="assets/image/ajakin%20logo.png">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/About.css">
+</head>
+
+<body>
+    <!-- ============ HEADER & NAVBAR ============ -->
+    <header class="header">
+        <div class="header-container">
+            <a class="brand" href="index.html">
+                <img src="assets/image/ajakin logo.png" alt="Ajakin Graphic Logo" class="brand-logo">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Layanan</a></li>
+                    <li><a href="portofolio.html">Portofolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="scroll-progress"></div>
+    </header>
+
+    <!-- === HERO BANNER ABOUT US === -->
+    <section class="hero-banner-flat position-relative d-flex flex-column justify-content-center align-items-center">
+        <!-- Gambar Background -->
+        <img src="assets/image/bg banner fp ppw.png" alt="About Us Banner Hero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center; z-index: 0;">
+
+        <!-- Overlay gradasi dari bawah ke atas agar lebih bersih -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(44, 46, 45, 0.6) 0%, rgba(44, 46, 45, 0) 80%); z-index: 1;"></div>
+        
+        <!-- Overlay efek cahaya di tengah -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; height: 50%; background: radial-gradient(circle, rgba(90, 122, 102, 0.4) 0%, rgba(44, 46, 45, 0) 70%); border-radius: 50%; z-index: 1;"></div>
+
+        <!-- Konten (Relative) -->
+        <div class="container position-relative d-flex flex-column align-items-center justify-content-center h-100" style="z-index: 2;">
+            <!-- Teks Atas -->
+            <h1 class="fw-bold m-0 hero-about-title" style="color: var(--white); font-family: 'Arial Black', Impact, sans-serif; line-height: 1; white-space: nowrap; text-shadow: 0 10px 20px rgba(44, 46, 45, 0.5);">
+                1945 x <span style="color: var(--primary);">2026</span>
+            </h1>
+            <p class="mb-4 mt-2 text-uppercase text-center hero-about-subtext" style="color: var(--accent); font-weight: 700; letter-spacing: 4px; font-size: clamp(0.7rem, 1.5vw, 1.2rem); text-shadow: 0 2px 4px rgba(44, 46, 45, 0.8);">
+                Semangat Juang dalam Setiap Desain
+            </p>
+            
+            <!-- Gambar Bawah (diperbesar) -->
+            <img src="assets/image/warior.png" alt="Semangat 1945" class="img-fluid mb-2 hero-about-img" style="object-fit: contain; filter: drop-shadow(0 20px 30px rgba(44, 46, 45, 0.8));">
+        </div>
+    </section>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-container">
+        
+        <!-- SECTION 1: Cerita Kami (Our Story) -->
+        <div class="row align-items-center my-5 py-4 reveal">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+                <img src="assets/image/ajakin logo.png" alt="Logo Ajakin Graphic" class="img-fluid rounded-4 shadow-lg p-5" style="background-color: var(--primary); border: 1px solid rgba(90, 122, 102, 0.3); max-width: 320px;">
+            </div>
+            <div class="col-lg-6">
+                <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px; font-size: 0.85rem;">Cerita Kami</span>
+                <h2 class="display-6 fw-bold mb-3 mt-2" style="color: var(--white);">Perjalanan Kreatif Ajakin Graphic</h2>
+                <p style="color: var(--white); opacity: 0.85; line-height: 1.8;">
+                    Didirikan dengan tekad untuk merevolusi lanskap visual UMKM dan bisnis lokal, Ajakin Graphic bermula dari kolaborasi empat pikiran kreatif yang memiliki satu visi: membuat desain berkelas dunia yang dapat diakses oleh semua orang.
+                </p>
+                <p style="color: var(--white); opacity: 0.85; line-height: 1.8;">
+                    Kami percaya bahwa desain bukan hanya tentang estetika permukaan, melainkan sebuah bahasa strategis untuk menyampaikan cerita merek Anda secara mendalam. Dari coretan tangan sederhana hingga identitas digital berskala penuh, kami berdedikasi penuh dalam memadukan seni dan strategi pemasaran demi menciptakan dampak nyata.
+                </p>
+            </div>
+        </div>
+
+        <!-- SECTION: Core Perusahaan (Core Values) -->
+        <div class="my-5 py-4 reveal">
+            <div class="text-center mb-5">
+                <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px; font-size: 0.85rem;">Nilai Inti</span>
+                <h2 class="display-6 fw-bold mb-3 mt-2" style="color: var(--white);">Core Values Kami</h2>
+                <div class="mx-auto mt-3" style="width: 50px; height: 1px; background-color: var(--accent);"></div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Value 1: Kreativitas -->
+                <div class="col-md-4 text-center">
+                    <div class="p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.06); height: 100%;">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: rgba(90, 122, 102, 0.12); border-radius: 50%; font-size: 1.8rem; color: var(--accent);">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="fw-bold mb-2" style="color: var(--white); font-size: 1.15rem;">Kreativitas Tanpa Batas</h4>
+                        <p class="mb-0" style="color: var(--white); opacity: 0.8; font-size: 0.9rem; line-height: 1.6;">
+                            Kami selalu menghadirkan ide-ide visual orisinal, segar, dan berani tampil beda di pasar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 2: Strategi -->
+                <div class="col-md-4 text-center">
+                    <div class="p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.06); height: 100%;">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: rgba(90, 122, 102, 0.12); border-radius: 50%; font-size: 1.8rem; color: var(--accent);">
+                            <i class="fas fa-chess-knight"></i>
+                        </div>
+                        <h4 class="fw-bold mb-2" style="color: var(--white); font-size: 1.15rem;">Desain Strategis</h4>
+                        <p class="mb-0" style="color: var(--white); opacity: 0.8; font-size: 0.9rem; line-height: 1.6;">
+                            Desain kami bukan sekadar estetika, melainkan solusi fungsional yang mendukung target bisnis Anda.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 3: Kolaborasi -->
+                <div class="col-md-4 text-center">
+                    <div class="p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.06); height: 100%;">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: rgba(90, 122, 102, 0.12); border-radius: 50%; font-size: 1.8rem; color: var(--accent);">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="fw-bold mb-2" style="color: var(--white); font-size: 1.15rem;">Kolaborasi Terbuka</h4>
+                        <p class="mb-0" style="color: var(--white); opacity: 0.8; font-size: 0.9rem; line-height: 1.6;">
+                            Menjalin kemitraan yang erat, terbuka, dan komunikatif guna mewujudkan visi bersama dengan presisi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Visi & Misi -->
+        <div class="my-5 py-5 border-top border-bottom border-secondary border-opacity-25 reveal">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.06); height: 100%;">
+                        <div class="d-inline-flex align-items-center justify-content-center me-3 mb-3" style="width: 54px; height: 54px; background: rgba(90, 122, 102, 0.12); border-radius: 50%; font-size: 1.8rem; color: var(--accent);">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3" style="color: var(--white);">Visi Kami</h3>
+                        <p style="color: var(--white); opacity: 0.8; line-height: 1.7; font-size: 0.95rem;">
+                            Menjadi agensi kreatif terdepan yang menginspirasi pertumbuhan bisnis secara berkelanjutan melalui inovasi desain visual berstandar global dengan tetap menjunjung nilai lokalitas.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.06); height: 100%;">
+                        <div class="d-inline-flex align-items-center justify-content-center me-3 mb-3" style="width: 54px; height: 54px; background: rgba(90, 122, 102, 0.12); border-radius: 50%; font-size: 1.8rem; color: var(--accent);">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3" style="color: var(--white);">Misi Kami</h3>
+                        <ul class="p-0 m-0" style="list-style: none;">
+                            <li class="mb-3 d-flex align-items-start gap-2" style="color: var(--white); opacity: 0.8; font-size: 0.95rem;">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                <span>Menyediakan solusi desain branding, media sosial, dan promosi yang orisinal serta berdampak nyata bagi klien.</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start gap-2" style="color: var(--white); opacity: 0.8; font-size: 0.95rem;">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                <span>Menjalin kemitraan kolaboratif jangka panjang berasaskan komunikasi yang terbuka dan transparan.</span>
+                            </li>
+                            <li class="mb-0 d-flex align-items-start gap-2" style="color: var(--white); opacity: 0.8; font-size: 0.95rem;">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                <span>Terus beradaptasi dengan tren desain digital modern guna menghantarkan solusi terbaik yang relevan dengan pasar saat ini.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Timeline Perjalanan (Milestones) -->
+        <div class="my-5 py-4 reveal">
+            <div class="text-center mb-5">
+                <span class="text-uppercase fw-bold" style="color: var(--accent); letter-spacing: 2px; font-size: 0.85rem;">Milestone</span>
+                <h2 class="display-6 fw-bold mb-3 mt-2" style="color: var(--white);">Perjalanan Kami</h2>
+            </div>
+            
+            <div class="about-timeline position-relative mx-auto mt-5" style="max-width: 900px;">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item d-flex mb-5">
+                    <div class="timeline-badge"><i class="fas fa-flag"></i></div>
+                    <div class="timeline-panel ms-4 p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.05); flex: 1;">
+                        <span class="badge mb-2 px-3 py-2 fw-bold" style="background-color: var(--accent); color: var(--white);">2024</span>
+                        <h4 class="fw-bold mb-2 text-white">Pendirian Agensi</h4>
+                        <p class="mb-0" style="color: var(--white); opacity: 0.8; font-size: 0.95rem;">
+                            Ajakin Graphic resmi dibentuk dengan fokus melayani jasa pembuatan desain logo dasar bagi wirausaha lokal dan UMKM.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item d-flex mb-5">
+                    <div class="timeline-badge"><i class="fas fa-users"></i></div>
+                    <div class="timeline-panel ms-4 p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.05); flex: 1;">
+                        <span class="badge mb-2 px-3 py-2 fw-bold" style="background-color: var(--accent); color: var(--white);">2025</span>
+                        <h4 class="fw-bold mb-2 text-white">Ekspansi Layanan & Tim</h4>
+                        <p class="mb-0" style="color: var(--white); opacity: 0.8; font-size: 0.95rem;">
+                            Menambah divisi Social Media Management dan Media Promosi Fisik. Tim inti berkembang menjadi 4 desainer spesialis.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item d-flex mb-5">
+                    <div class="timeline-badge"><i class="fas fa-globe"></i></div>
+                    <div class="timeline-panel ms-4 p-4 rounded-4" style="background: rgba(241, 237, 226, 0.02); border: 1px solid rgba(241, 237, 226, 0.05); flex: 1;">
+                        <span class="badge mb-2 px-3 py-2 fw-bold" style="background-color: var(--accent); color: var(--white);">2026</span>
+                        <h4 class="fw-bold mb-2 text-white">Go Digital & Layanan Terintegrasi</h4>
+                        <p class="mb-0" style="color: var(--white); opacity: 0.8; font-size: 0.95rem;">
+                            Meluncurkan platform kolaborasi digital terintegrasi untuk mempercepat komunikasi review project dan menjangkau klien nasional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: Tim Kreatif (Collin Carousel Wrapper) -->
+        <div class="section-divider-title reveal mt-5 pt-5 border-top border-secondary border-opacity-25">
+            <span>CREATIVE MINDSET</span>
+            <h2>Meet Our Creative Team</h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="team-accordion-container reveal" style="margin-top: 3rem;">
+            <!-- Team Member 1 -->
+            <div class="team-acc-card active-card" data-index="0">
+                <div class="team-img-wrapper">
+                    <img src="assets/image/bambang.png" alt="Bambang Supriadi">
+                </div>
+                <div class="team-text-wrapper">
+                    <div class="team-text-header">
+                        <h4>Bambang Supriadi</h4>
+                        <span class="team-role">CEO Ajakin</span>
+                    </div>
+                    <div class="team-text-details">
+                        <span class="team-nim">NIM. 25.12.3610</span>
+                        <p class="team-desc">Membuat konsep branding yang kuat, desain visual yang menarik, dan strategi pemasaran yang efektif untuk meningkatkan kesadaran merek.</p>
+                        <div class="team-footer">
+                            <span>Hobi: Friendzone</span>
+                            <span class="team-divider">|</span>
+                            <span>Motivasi: serendah-rendahnya palung mariana, saya lebih rendah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-acc-card" data-index="1">
+                <div class="team-img-wrapper">
+                    <img src="assets/image/miko.png" alt="Jatmiko Adhi Prasetyo">
+                </div>
+                <div class="team-text-wrapper">
+                    <div class="team-text-header">
+                        <h4>Jatmiko Adhi Prasetyo</h4>
+                        <span class="team-role">CMO Ajakin</span>
+                    </div>
+                    <div class="team-text-details">
+                        <span class="team-nim">NIM. 25.12.3638</span>
+                        <p class="team-desc">Strategi pemasaran media sosial yang interaktif dan efektif untuk meningkatkan konversi dan engagement.</p>
+                        <div class="team-footer">
+                            <span>Hobi: Bersabar</span>
+                            <span class="team-divider">|</span>
+                            <span>Motivasi: Hari ini harus lebih baik dari kemarin.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-acc-card" data-index="2">
+                <div class="team-img-wrapper">
+                    <img src="assets/image/gondrong.png" alt="Ahmad Mukhlisin Fahriel Diza">
+                </div>
+                <div class="team-text-wrapper">
+                    <div class="team-text-header">
+                        <h4>Ahmad Mukhlisin F. D.</h4>
+                        <span class="team-role">Fullstack Developer</span>
+                    </div>
+                    <div class="team-text-details">
+                        <span class="team-nim">NIM. 25.12.3644</span>
+                        <p class="team-desc">Pembuatan sistem web dinamis, manajemen database performa tinggi, dan optimasi interaksi antar tumpukan kartu.</p>
+                        <div class="team-footer">
+                            <span>Hobi: Gaming</span>
+                            <span class="team-divider">|</span>
+                            <span>Motivasi: Ilmu tanah-tetap rebahan walaupun diinjak-injak.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-acc-card" data-index="3">
+                <div class="team-img-wrapper">
+                    <img src="assets/image/nur.png" alt="Nur Dwi Cahyo">
+                </div>
+                <div class="team-text-wrapper">
+                    <div class="team-text-header">
+                        <h4>Nur Dwi Cahyo</h4>
+                        <span class="team-role">Desainer Ajakin</span>
+                    </div>
+                    <div class="team-text-details">
+                        <span class="team-nim">NIM. 25.12.3609</span>
+                        <p class="team-desc">Pembuatan materi promosi fisik (banner, x-banner, baliho) dengan kualitas visual terbaik dan hierarki terbaca.</p>
+                        <div class="team-footer">
+                            <span>Hobi: Desain</span>
+                            <span class="team-divider">|</span>
+                            <span>Motivasi: Error adalah jalan ninja ku.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FUN YOUTUBE EMBED ============ -->
+        <div class="mt-5 pt-5 pb-2 mb-0 border-top border-secondary border-opacity-25 text-center reveal">
+            <h3 class="fw-bold mb-3" style="color: var(--white); font-size: 1.5rem;">Behind the Scene</h3>
+            <p class="mx-auto mb-4" style="color: var(--white); opacity: 0.8; max-width: 600px; font-size: 0.95rem;">
+                Sekelompok mahasiswa berubah menjadi uget-uget di tepi pantai karena tugas final project.
+            </p>
+            <div class="mx-auto" style="max-width: 850px; border-radius: 12px; overflow: hidden; border: 4px solid var(--accent); box-shadow: 0 8px 24px rgba(44, 46, 45, 0.3);">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/vy5Xc78frko?si=SzTf-EgB00rRE5SG&amp;start=402" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ CALL TO ACTION BANNER ============ -->
+        <div class="mt-5 p-5 text-center shadow-lg reveal" style="background-color: var(--accent); border-radius: 20px;">
+            <h2 class="fw-bold mb-3" style="color: var(--white);">Siap Berkolaborasi Dengan Kami?</h2>
+            <p class="lead mb-4" style="color: var(--white); opacity: 0.9;">Mari wujudkan gagasan kreatif Anda menjadi solusi visual yang berdampak.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-4 fw-bold" style="color: var(--accent); background-color: var(--white); border: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Hubungi Kami</a>
+                <a href="portofolio.html" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold" style="border: 2px solid var(--white); color: var(--white); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Lihat Portofolio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h5><i class="fas fa-paint-brush"></i> Ajakin Graphic</h5>
+                <p>Kami adalah agensi desain grafis profesional yang berdedikasi untuk menghadirkan solusi kreatif terbaik untuk bisnis Anda.</p>
+            </div>
+            <div class="footer-col">
+                <h5><i class="fas fa-cog"></i> Layanan Kami</h5>
+                <ul class="footer-links">
+                    <li><a href="service.html">Branding</a></li>
+                    <li><a href="service.html">Social Media</a></li>
+                    <li><a href="service.html">Promosi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5><i class="fas fa-phone"></i> Hubungi Kami</h5>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+62 812-3456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@ajakingraphic.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jakarta, Indonesia</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yaelahhh.desain?igsh=MTJ2dGk0ZmpyYTkzag==" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/bambang-supriyadi-6a6b3a31a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ajakin Graphic. Semua hak dilindungi.</p>
+            <p>Dibuat dengan <i class="fas fa-heart heart-icon"></i> untuk kesuksesan bisnis Anda</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/collins.js"></script>
+</body>
+
+</html>

@@ -97,7 +97,7 @@ ul {
     bottom: 0;
     left: 0;
     height: 6px;
-    background: var(--secondary);
+    background: var(--accent);
     width: 0%;
     transition: width 0.3s ease;
     z-index: 1001;
@@ -247,7 +247,7 @@ main {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(241, 237, 226, 0.2);
     border-radius: 50%;
     color: var(--white);
     transition: all 0.3s ease;
@@ -260,7 +260,7 @@ main {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(241, 237, 226, 0.2);
     margin-top: 2rem;
     padding-top: 2rem;
     text-align: center;
@@ -276,7 +276,393 @@ main {
     color: var(--primary);
 }
 
-/* ============ RESPONSIVE ============ */
+/* ============ ACTIVE NAVBAR HIGHLIGHT ============ */
+.nav-list a.active {
+    color: var(--white);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 4px;
+    text-shadow: 0px 2px 4px rgba(44, 46, 45, 0.6);
+}
+
+/* ============ SECTION BREAK: SCROLLING TICKER ============ */
+.ticker-section {
+    background-color: var(--accent);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 18px 0;
+    margin-bottom: 0;
+    box-shadow: inset 0 5px 15px rgba(44, 46, 45, 0.15), inset 0 -5px 15px rgba(44, 46, 45, 0.15);
+}
+
+.ticker-wrap {
+    display: inline-block;
+    padding-left: 100%;
+    animation: tickerScroll 30s linear infinite;
+}
+
+.ticker-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.ticker-content span {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--white);
+}
+
+.ticker-dot {
+    color: var(--white);
+    opacity: 0.5;
+    font-size: 0.8rem;
+}
+
+@keyframes tickerScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* ============ SECTION BANNER 2 ============ */
+.banner-two-section {
+    position: relative;
+    background-image: url('../image/banner2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 140px 0;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.banner-two-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 46, 45, 0.88) 0%, rgba(44, 46, 45, 0.96) 100%);
+    z-index: 1;
+}
+
+.banner-two-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.banner-two-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: block;
+}
+
+.banner-two-heading {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 1.8rem;
+    color: var(--white);
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.banner-two-paragraph {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    line-height: 1.85;
+    margin-bottom: 2.2rem;
+    color: var(--white);
+}
+
+.banner-two-decor-line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    margin: 2.5rem auto;
+}
+
+.banner-two-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.7;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============ WHY CHOOSE US CARDS ============ */
+.why-card {
+    background: rgba(241, 237, 226, 0.03);
+    border: 1px solid rgba(241, 237, 226, 0.08);
+    border-radius: 16px;
+    padding: 3rem 2.2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    height: 100%;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    background: rgba(241, 237, 226, 0.07);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(44, 46, 45, 0.45);
+}
+
+.why-icon-box {
+    width: 76px;
+    height: 76px;
+    background: rgba(90, 122, 102, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.8rem;
+    font-size: 2.2rem;
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.why-card:hover .why-icon-box {
+    background: var(--accent);
+    color: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(90, 122, 102, 0.4);
+}
+
+.why-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+}
+
+.why-card-desc {
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* ============ WORKFLOW TIMELINE ============ */
+.workflow-timeline {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.8rem;
+    margin-top: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(241, 237, 226, 0.02);
+    border: 1px solid rgba(241, 237, 226, 0.06);
+    border-radius: 14px;
+    padding: 2.2rem 1.8rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover {
+    background: rgba(241, 237, 226, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(44, 46, 45, 0.25);
+}
+
+.workflow-number {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: rgba(90, 122, 102, 0.25);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.workflow-step:hover .workflow-number {
+    color: var(--accent);
+}
+
+.workflow-content {
+    margin-top: 1.5rem;
+}
+
+.workflow-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.workflow-content p {
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.75;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ============ CUSTOM ACCORDION ============ */
+.custom-accordion .accordion-item {
+    background: rgba(241, 237, 226, 0.02);
+    border: 1px solid rgba(241, 237, 226, 0.08);
+    margin-bottom: 1.2rem;
+    border-radius: 10px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-item:hover {
+    border-color: var(--accent);
+    background: rgba(241, 237, 226, 0.04);
+}
+
+.custom-accordion .accordion-button {
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1.3rem 1.8rem;
+    border: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--accent);
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button::after {
+    filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    filter: invert(47%) sepia(10%) saturate(697%) hue-rotate(85deg) brightness(97%) contrast(92%);
+}
+
+.custom-accordion .accordion-body {
+    background: rgba(44, 46, 45, 0.6);
+    color: var(--white);
+    opacity: 0.85;
+    font-size: 1rem;
+    line-height: 1.75;
+    padding: 1.3rem 1.8rem 1.8rem;
+    border-top: 1px solid rgba(241, 237, 226, 0.05);
+}
+
+/* ============ ANIMATION KEYFRAMES ============ */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ BANNER DESKTOP ORIGINAL SIZE ============ */
+.hero-banner-flat {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero-ilus-img {
+    width: 100%;
+    transform: scale(1.15);
+    filter: drop-shadow(0 15px 25px rgba(44, 46, 45, 0.6));
+}
+
+/* ============ TRANSPARENT HEADER ON SCROLL ============ */
+.header {
+    background: transparent;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header.scrolled {
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(44, 46, 45, 0.35);
+}
+
+/* ============ REVEAL ON SCROLL ============ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============ STATS COUNTER ============ */
+.stat-item {
+    background: rgba(241, 237, 226, 0.02);
+    border: 1px solid rgba(241, 237, 226, 0.05);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(241, 237, 226, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* ============ RESPONSIVE LAYOUT OVERRIDES ============ */
+@media (max-width: 991px) {
+    .hero-banner-flat {
+        aspect-ratio: auto;
+        min-height: auto;
+        padding: 120px 0 60px;
+    }
+
+    .hero-ilus-img {
+        transform: scale(1);
+        margin-top: 2.5rem;
+        max-width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        filter: drop-shadow(0 10px 15px rgba(44, 46, 45, 0.4));
+    }
+
+    .hero-banner-flat h1 {
+        font-size: 2.6rem !important;
+    }
+
+    .hero-banner-flat p.lead {
+        font-size: 1.05rem !important;
+    }
+
+    .banner-two-heading {
+        font-size: 2.2rem;
+    }
+}
+
+/* ============ CLEAN MOBILE RESPONSIVE NAVBAR & ELEMENTS ============ */
 @media (max-width: 768px) {
     .header-container {
         position: static;
@@ -286,29 +672,19 @@ main {
         display: block;
     }
 
-
     .nav-menu {
         display: none;
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
-        background: rgba(44, 46, 45, 0.75);
-        /* Dark transparent */
+        background: rgba(44, 46, 45, 0.95);
         backdrop-filter: blur(15px);
-        /* Glassmorphism effect */
         -webkit-backdrop-filter: blur(15px);
-        padding: 1rem 5%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem 5%;
+        box-shadow: 0 4px 15px rgba(44, 46, 45, 0.3);
+        border-bottom: 1px solid rgba(90, 122, 102, 0.2);
     }
-
-    .nav-list a {
-        color: var(--white);
-        /* Ensure text is visible on dark transparent bg */
-        font-size: 1.1rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
 
     .nav-menu.active {
         display: block;
@@ -316,77 +692,203 @@ main {
 
     .nav-list {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
     }
 
-    .brand {
-        font-size: 1.4rem;
+    .nav-list a {
+        color: var(--white);
+        font-size: 1.15rem;
+        text-shadow: 0 2px 4px rgba(44, 46, 45, 0.5);
+        display: block;
+        padding: 8px 0;
+    }
+    
+    .nav-list a.active {
+        border-bottom: none;
+        border-left: 3px solid var(--accent);
+        padding-left: 10px;
     }
 
-    .content-box {
-        min-height: 50vh;
-        padding: 2rem;
+    .brand-logo {
+        height: 36px;
+        margin-left: 0;
     }
 
-    .content-box h2 {
+    /* Hero Banner Mobile Adjustments */
+    .hero-banner-flat h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .hero-banner-flat p.lead {
+        font-size: 0.95rem !important;
+    }
+
+    /* Banner 2 Mobile Adjustments */
+    .banner-two-section {
+        padding: 80px 0;
+    }
+
+    .banner-two-heading {
         font-size: 1.8rem;
+        line-height: 1.3;
     }
 
-    .footer-container {
+    .banner-two-paragraph {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Why Choose Us Mobile Adjustments */
+    .why-card {
+        padding: 2.2rem 1.8rem;
+    }
+
+    .why-card-title {
+        font-size: 1.25rem;
+    }
+
+    /* Workflow Mobile Adjustments */
+    .workflow-timeline {
         flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .workflow-step {
+        min-width: 100%;
+        padding: 1.8rem 1.5rem;
+    }
+
+    .workflow-number {
+        font-size: 2.2rem;
+        top: 10px;
+        right: 15px;
+    }
+    
+    /* Stats Counter Mobile */
+    .stat-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-item h2 {
+        font-size: 2.2rem;
     }
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        position: static;
-    }
-
+/* ============ MOBILE PORTRAIT ADAPTATIONS ============ */
+@media (max-width: 576px) {
+    /* Hero Banner Mobile Portrait */
     .hero-banner-flat {
-    width: 100%;
-    margin-bottom: 60px;
-    overflow: hidden;
-    display: flex;
-}
+        padding: 90px 0 40px;
+    }
 
-    .brand-logo {
-        height: 20px;
-        /* Sedikit lebih kecil lagi di handphone agar tidak sempit */
+    .hero-banner-flat h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.3;
+    }
+
+    .hero-banner-flat p.lead {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hero-ilus-img {
+        max-width: 90%;
+        margin-top: 1.5rem;
+    }
+
+    /* Banner 2 Portrait */
+    .banner-two-section {
+        padding: 60px 0;
+    }
+
+    .banner-two-heading {
+        font-size: 1.45rem;
+        line-height: 1.35;
+        margin-bottom: 1.2rem;
+    }
+
+    .banner-two-paragraph {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .banner-two-decor-line {
+        margin: 1.5rem auto;
+    }
+
+    .banner-two-quote {
+        font-size: 0.8rem;
+        max-width: 280px;
+    }
+
+    /* Why Choose Us Cards Portrait */
+    .why-card {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .why-icon-box {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .why-card-title {
+        font-size: 1.15rem;
+    }
+
+    .why-card-desc {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    /* Stats Counter Portrait side-by-side */
+    .stat-item {
+        padding: 1rem 0.25rem;
+    }
+
+    .stat-item h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.2rem;
+    }
+
+    .stat-item p {
+        font-size: 0.78rem;
+    }
+
+    /* Workflow Portrait */
+    .workflow-step {
+        padding: 1.4rem 1.2rem;
+    }
+
+    .workflow-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .workflow-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .workflow-number {
+        font-size: 1.8rem;
+        top: 8px;
+        right: 12px;
+    }
+
+    /* FAQ Portrait */
+    .custom-accordion .accordion-button {
+        font-size: 0.95rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .custom-accordion .accordion-body {
+        font-size: 0.88rem;
+        padding: 1rem 1.2rem;
+        line-height: 1.65;
     }
 }
-
-
-@media (max-width: 768px) {
-    .brand-logo {
-        height: 32px; /* Ukuran seragam untuk semua halaman di mobile */
-        margin-left: 0; /* Kembalikan margin di mobile agar tidak terpotong */
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-banner-flat > img:first-of-type, .portfolio-hero-section > img:first-of-type {
-        object-position: 20% center !important; /* Menggeser bg saat mobile agar logo tidak bertabrakan dengan warna gelap */
-    }
-}
-
-/* === Styles extracted from HTML === */
-.hero-banner-flat { aspect-ratio: 16/9; overflow: hidden; padding: 0; }
-        .hero-ilus-img { width: 100%; transform: scale(1.15); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6)); }
-        @media (max-width: 991px) {
-            .hero-banner-flat { aspect-ratio: auto; min-height: 100vh; padding: 120px 0; }
-            .hero-ilus-img { transform: scale(1); margin-top: 2rem; }
-            .hero-banner-flat h1 { font-size: 2.2rem !important; }
-        }
 
