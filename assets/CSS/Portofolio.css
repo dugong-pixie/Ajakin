@@ -513,6 +513,9 @@ main {
 .box-square .img-wrapper {
   aspect-ratio: 1 / 1; /* Rasio Kotak Sempurna 1350 x 1350 */
 }
+.box-potrait .img-wrapper {
+  aspect-ratio: 3 / 4; /* Rasio Potret Sempurna 1080 x 1440 */
+}
 
 .box-landscape .img-wrapper {
   aspect-ratio: 3 / 2; /* Rasio Persegi Panjang Sempurna 1620 x 1080 */
