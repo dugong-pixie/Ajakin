@@ -495,7 +495,7 @@ main {
   font-size: 14px;
 }
 
-/* Container Utama Kertas Putih Gading */
+/* Container Utama — Dark Theme sesuai warna web */
 .asymmetric-clockwise-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr; /* Membagi halaman menjadi 3 kolom seimbang */
@@ -503,12 +503,13 @@ main {
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
-  background-color: var(--white);
+  background-color: var(--primary);
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
   align-items: center; /* Menjaga semua box sejajar lurus secara horizontal */
+  border: 1px solid rgba(90, 122, 102, 0.15);
 }
 
 /* Item Box Pembungkus Utama */
@@ -552,15 +553,15 @@ main {
   aspect-ratio: 3 / 2; /* Rasio Persegi Panjang Sempurna 1620 x 1080 */
 }
 
-/* Dekorasi Titik Bulat Oranye */
+/* Dekorasi Titik Bulat Accent */
 .orange-dot {
   position: absolute;
   width: 14px;
   height: 14px;
-  background-color: #d35400;
+  background-color: var(--accent);
   border-radius: 50%;
   z-index: 10;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(90, 122, 102, 0.5);
 }
 
 /* --- PEMETAAN POSISI GRID DAN PIN POINT TITIK ORANYE --- */
@@ -588,10 +589,11 @@ main {
 }
 
 .grid-text-center p {
-  color: #2c2e2d;
-  font-size: 25px;
+  color: var(--white);
+  font-size: 22px;
   line-height: 1.6;
   margin: 0;
+  opacity: 0.85;
 }
 
 .box-5 { grid-column: 3; grid-row: 2; }
@@ -617,7 +619,7 @@ main {
   font-family: 'Segoe UI', sans-serif;
   font-weight: 800;
   font-size: 56px;
-  color: #1a1c1b;
+  color: var(--white);
   line-height: 1.1;
   margin: 0;
 }/* ============ NAV & UTILITIES ============ */
