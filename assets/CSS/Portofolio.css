@@ -56,7 +56,7 @@ main {
 }
 
 .section-divider-title span {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   letter-spacing: 4px;
   color: var(--accent);
   /* Hijau Sage */
@@ -65,7 +65,7 @@ main {
 }
 
 .section-divider-title h2 {
-  font-size: 36px;
+  font-size: clamp(24px, 4vw, 36px);
   color: var(--white);
   /* Mengikuti warna teks terang di bg gelap */
   font-family: 'Segoe UI', sans-serif;
@@ -120,7 +120,7 @@ main {
 }
 
 .masking-header h2 {
-  font-size: 8.5rem;
+  font-size: clamp(3.2rem, 10vw, 8.5rem);
   color: var(--white);
   font-family: 'Impact', 'Arial Black', sans-serif;
   letter-spacing: 12px;
@@ -130,7 +130,7 @@ main {
 }
 
 .masking-header p {
-  font-size: 14px;
+  font-size: clamp(11px, 1.5vw, 14px);
   color: var(--accent);
   /* Hijau Sage */
   letter-spacing: 3px;
@@ -338,7 +338,6 @@ main {
 @media (max-width: 768px) {
   /* Skala Ukuran Judul Gallery agar Muat di Layar HP */
   .masking-header h2 {
-    font-size: 4.5rem;
     letter-spacing: 6px;
   }
 
@@ -445,13 +444,11 @@ main {
 @media (max-width: 576px) {
   /* Skala tambahan khusus smartphone layar kecil (iPhone 12 / Android Portrait) */
   .masking-header h2 {
-    font-size: 3.2rem;
     letter-spacing: 4px;
     margin-bottom: 5px;
   }
   
   .masking-header p {
-    font-size: 11px;
     letter-spacing: 2px;
   }
 
@@ -485,14 +482,14 @@ main {
 }
 
 .project-info-header h3 {
-  font-size: 24px;
+  font-size: clamp(18px, 2.5vw, 24px);
   color: var(--white);
   letter-spacing: 2px;
 }
 
 .project-info-header p {
   color: var(--accent);
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 /* Container Utama — Dark Theme sesuai warna web */
@@ -590,7 +587,7 @@ main {
 
 .grid-text-center p {
   color: var(--white);
-  font-size: 22px;
+  font-size: clamp(9.5px, 2.5vw, 22px);
   line-height: 1.6;
   margin: 0;
   opacity: 0.85;
@@ -618,7 +615,7 @@ main {
 .grid-title-bottom h2 {
   font-family: 'Segoe UI', sans-serif;
   font-weight: 800;
-  font-size: 56px;
+  font-size: clamp(16px, 5.5vw, 56px);
   color: var(--white);
   line-height: 1.1;
   margin: 0;
@@ -824,7 +821,7 @@ ul {
 
 .portfolio-cta-banner h2 {
   color: var(--primary);
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 700;
   margin-bottom: 1rem;
   position: relative;
@@ -834,7 +831,7 @@ ul {
 .portfolio-cta-banner p {
   color: var(--primary);
   opacity: 0.8;
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
   max-width: 650px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
@@ -853,7 +850,7 @@ ul {
 
 .portfolio-cta-btn {
   padding: 12px 28px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   font-weight: 700;
   border-radius: 50px;
   transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -993,12 +990,7 @@ ul {
   }
 
   .grid-text-center p {
-    font-size: 14px;
     line-height: 1.5;
-  }
-
-  .grid-title-bottom h2 {
-    font-size: 32px;
   }
 
   .orange-dot {
@@ -1031,7 +1023,6 @@ ul {
   }
 
   .grid-text-center p {
-    font-size: 9.5px;
     line-height: 1.45;
   }
 
@@ -1040,7 +1031,6 @@ ul {
   }
 
   .grid-title-bottom h2 {
-    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -1069,16 +1059,11 @@ ul {
     margin-top: 2rem;
     border-radius: 12px;
   }
-  .portfolio-cta-banner h2 {
-    font-size: 1.6rem;
-  }
   .portfolio-cta-banner p {
-    font-size: 0.95rem;
     margin-bottom: 1.8rem;
   }
   .portfolio-cta-btn {
     padding: 10px 22px;
-    font-size: 0.9rem;
     width: 100%; /* Tombol memanjang penuh di HP */
     text-align: center;
   }

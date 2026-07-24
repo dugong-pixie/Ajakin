@@ -155,13 +155,13 @@ main {
 }
 
 .content-box h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
     margin-bottom: 1rem;
     color: var(--primary);
 }
 
 .content-box p {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     opacity: 0.8;
 }
 
@@ -391,9 +391,7 @@ form {
         padding: 2rem;
     }
 
-    .content-box h2 {
-        font-size: 1.8rem;
-    }
+
 
     .footer-container {
         flex-direction: column;

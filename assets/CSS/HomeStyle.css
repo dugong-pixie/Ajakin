@@ -114,6 +114,14 @@ ul {
     display: flex;
 }
 
+.hero-banner-flat h1 {
+    font-size: clamp(1.85rem, 4.2vw, 3.5rem) !important;
+}
+
+.hero-banner-flat p.lead {
+    font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+}
+
 .hero-flat-img {
     width: 100%;
     height: auto;
@@ -370,7 +378,7 @@ main {
 }
 
 .banner-two-heading {
-    font-size: 2.8rem;
+    font-size: clamp(1.45rem, 4.5vw, 2.8rem);
     font-weight: 800;
     line-height: 1.35;
     margin-bottom: 1.8rem;
@@ -380,7 +388,7 @@ main {
 }
 
 .banner-two-paragraph {
-    font-size: 1.15rem;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
     opacity: 0.85;
     line-height: 1.85;
     margin-bottom: 2.2rem;
@@ -443,14 +451,14 @@ main {
 }
 
 .why-card-title {
-    font-size: 1.4rem;
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
     font-weight: 700;
     color: var(--white);
     margin-bottom: 1.2rem;
 }
 
 .why-card-desc {
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
     color: var(--white);
     opacity: 0.8;
     line-height: 1.7;
@@ -485,7 +493,7 @@ main {
 }
 
 .workflow-number {
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     font-weight: 900;
     color: rgba(90, 122, 102, 0.25);
     position: absolute;
@@ -504,14 +512,14 @@ main {
 }
 
 .workflow-content h4 {
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.2rem);
     font-weight: 700;
     color: var(--white);
     margin-bottom: 1rem;
 }
 
 .workflow-content p {
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
     color: var(--white);
     opacity: 0.75;
     line-height: 1.6;
@@ -537,7 +545,7 @@ main {
     background: transparent;
     color: var(--white);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     padding: 1.3rem 1.8rem;
     border: none;
     box-shadow: none;
@@ -562,7 +570,7 @@ main {
     background: rgba(44, 46, 45, 0.6);
     color: var(--white);
     opacity: 0.85;
-    font-size: 1rem;
+    font-size: clamp(0.88rem, 1.6vw, 1rem);
     line-height: 1.75;
     padding: 1.3rem 1.8rem 1.8rem;
     border-top: 1px solid rgba(241, 237, 226, 0.05);
@@ -625,6 +633,10 @@ main {
     transition: all 0.3s ease;
 }
 
+.stat-item h2 {
+    font-size: clamp(1.6rem, 5vw, 3.5rem) !important;
+}
+
 .stat-item:hover {
     background: rgba(241, 237, 226, 0.05);
     border-color: var(--accent);
@@ -649,17 +661,7 @@ main {
         filter: drop-shadow(0 10px 15px rgba(44, 46, 45, 0.4));
     }
 
-    .hero-banner-flat h1 {
-        font-size: 2.6rem !important;
-    }
 
-    .hero-banner-flat p.lead {
-        font-size: 1.05rem !important;
-    }
-
-    .banner-two-heading {
-        font-size: 2.2rem;
-    }
 }
 
 /* ============ CLEAN MOBILE RESPONSIVE NAVBAR & ELEMENTS ============ */
@@ -715,13 +717,7 @@ main {
     }
 
     /* Hero Banner Mobile Adjustments */
-    .hero-banner-flat h1 {
-        font-size: 2.2rem !important;
-    }
 
-    .hero-banner-flat p.lead {
-        font-size: 0.95rem !important;
-    }
 
     /* Banner 2 Mobile Adjustments */
     .banner-two-section {
@@ -729,12 +725,10 @@ main {
     }
 
     .banner-two-heading {
-        font-size: 1.8rem;
         line-height: 1.3;
     }
 
     .banner-two-paragraph {
-        font-size: 1rem;
         line-height: 1.7;
     }
 
@@ -743,9 +737,7 @@ main {
         padding: 2.2rem 1.8rem;
     }
 
-    .why-card-title {
-        font-size: 1.25rem;
-    }
+
 
     /* Workflow Mobile Adjustments */
     .workflow-timeline {
@@ -759,7 +751,6 @@ main {
     }
 
     .workflow-number {
-        font-size: 2.2rem;
         top: 10px;
         right: 15px;
     }
@@ -769,9 +760,7 @@ main {
         padding: 1.5rem 1rem;
     }
     
-    .stat-item h2 {
-        font-size: 2.2rem;
-    }
+
 }
 
 /* ============ MOBILE PORTRAIT ADAPTATIONS ============ */
@@ -782,12 +771,10 @@ main {
     }
 
     .hero-banner-flat h1 {
-        font-size: 1.85rem !important;
         line-height: 1.3;
     }
 
     .hero-banner-flat p.lead {
-        font-size: 0.9rem !important;
         line-height: 1.5;
         margin-bottom: 1.5rem !important;
     }
@@ -803,13 +790,11 @@ main {
     }
 
     .banner-two-heading {
-        font-size: 1.45rem;
         line-height: 1.35;
         margin-bottom: 1.2rem;
     }
 
     .banner-two-paragraph {
-        font-size: 0.9rem;
         line-height: 1.6;
         margin-bottom: 1.5rem;
     }
@@ -819,7 +804,7 @@ main {
     }
 
     .banner-two-quote {
-        font-size: 0.8rem;
+        font-size: clamp(0.75rem, 1.5vw, 0.8rem);
         max-width: 280px;
     }
 
@@ -835,12 +820,7 @@ main {
         margin-bottom: 1.2rem;
     }
 
-    .why-card-title {
-        font-size: 1.15rem;
-    }
-
     .why-card-desc {
-        font-size: 0.85rem;
         line-height: 1.6;
     }
 
@@ -850,12 +830,11 @@ main {
     }
 
     .stat-item h2 {
-        font-size: 1.6rem !important;
         margin-bottom: 0.2rem;
     }
 
     .stat-item p {
-        font-size: 0.78rem;
+        font-size: clamp(0.72rem, 1.5vw, 0.78rem);
     }
 
     /* Workflow Portrait */
@@ -864,29 +843,24 @@ main {
     }
 
     .workflow-content h4 {
-        font-size: 1.1rem;
         margin-bottom: 0.5rem;
     }
 
     .workflow-content p {
-        font-size: 0.85rem;
         line-height: 1.5;
     }
 
     .workflow-number {
-        font-size: 1.8rem;
         top: 8px;
         right: 12px;
     }
 
     /* FAQ Portrait */
     .custom-accordion .accordion-button {
-        font-size: 0.95rem;
         padding: 1rem 1.2rem;
     }
 
     .custom-accordion .accordion-body {
-        font-size: 0.88rem;
         padding: 1rem 1.2rem;
         line-height: 1.65;
     }

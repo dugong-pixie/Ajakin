@@ -119,7 +119,7 @@ ul {
 }
 
 .hero-about-title {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: clamp(2rem, 8vw, 6rem);
     letter-spacing: 10px;
     transform: scaleX(1.1);
 }
@@ -148,7 +148,7 @@ main {
 }
 
 .section-divider-title span {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   letter-spacing: 4px;
   color: var(--accent);
   font-weight: 600;
@@ -156,7 +156,7 @@ main {
 }
 
 .section-divider-title h2 {
-  font-size: 36px;
+  font-size: clamp(24px, 4vw, 36px);
   color: var(--white);
   font-family: 'Segoe UI', sans-serif;
   margin-top: 5px;
@@ -531,7 +531,6 @@ main {
 
   .hero-about-title {
     letter-spacing: 5px !important;
-    font-size: 2.5rem !important;
     transform: scaleX(1) !important;
   }
 
@@ -612,10 +611,6 @@ main {
     padding: 90px 0 40px;
   }
   
-  .hero-about-title {
-      font-size: 2rem !important;
-  }
-
   .hero-about-img {
     max-height: 28vh !important;
   }
