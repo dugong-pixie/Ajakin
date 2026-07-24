@@ -96,13 +96,12 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 6px;
+    height: 3px;
     background: var(--accent);
     width: 0%;
     transition: width 0.3s ease;
     z-index: 1001;
-    border-radius: 0 4px 4px 0;
-    box-shadow: 0 0 10px var(--white);
+    border-radius: 0 2px 2px 0;
 }
 
 /* ============ MAIN CONTENT ============ */
